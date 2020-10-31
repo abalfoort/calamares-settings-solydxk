@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Install SolydXK
+GenericName=Calamares Installer
+Exec=install-solydxk
+Comment=Calamares — Installer for SolydXK Live
+Keywords=calamares;system;install;solydxk;installer
+Icon=install-solydxk
+Terminal=false
+Categories=Qt;System;
+StartupWMClass=calamares
+StartupNotify=True

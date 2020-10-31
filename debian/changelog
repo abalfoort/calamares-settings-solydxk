@@ -1,0 +1,5 @@
+calamares-settings-solydxk (11.0.4) unstable; urgency=low
+
+  * Initial release (base: calamares-settings-debian-11.0.3)
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Mon, 26 Oct 2020 10:12:24 +0100

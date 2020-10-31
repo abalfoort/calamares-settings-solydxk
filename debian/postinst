@@ -1,0 +1,73 @@
+#!/bin/bash
+# postinst script for live-installer-3
+#
+# see: dh_installdeb(1)
+
+set -e
+
+# summary of how this script can be called:
+#        * <postinst> `configure' <most-recently-configured-version>
+#        * <old-postinst> `abort-upgrade' <new version>
+#        * <conflictor's-postinst> `abort-remove' `in-favour' <package>
+#          <new-version>
+#        * <deconfigured's-postinst> `abort-deconfigure' `in-favour'
+#          <failed-install-package> <version> `removing'
+#          <conflicting-package> <version>
+# for details, see http://www.debian.org/doc/debian-policy/ or
+# the debian-policy package
+#
+
+case "$1" in
+    configure)
+    LIVECNF='/etc/live/config.conf.d/solydxk.conf'
+    if [ -f "$LIVECNF" ]; then
+        . "$LIVECNF"
+    fi
+    # Configure LightDM
+    CONF='/etc/lightdm/lightdm.conf'
+    XSESSION='/etc/lightdm/Xsession'
+    if [ -e "$CONF" ]; then
+        for F in $(find etc/live/ -type f -name "*.conf"); do source "$F"; done
+        if [ ! -z "$LIVE_USERNAME" ]; then
+            sed -i -r -e "s|^#.*autologin-user=.*\$|autologin-user=$LIVE_USERNAME|" \
+                        -e "s|^#.*autologin-user-timeout=.*\$|autologin-user-timeout=0|" \
+                        "$CONF"
+            echo "Lightdm autologin-user set to $LIVE_USERNAME"
+        fi
+        sed -i -r -e "s|^#.*allow-user-switching=.*\$|allow-user-switching=true|" \
+                    -e "s|^#.*greeter-hide-users=.*\$|greeter-hide-users=false|" \
+                    "$CONF"
+        if [ -e "$XSESSION" ]; then
+            sed -i -r -e "s|^#.*session-wrapper=.*\$|session-wrapper=$XSESSION|"    "$CONF"
+        else
+            # Comment the line if not already commented
+            sed -i -r -e '/^session-wrapper=.*/ s/^#*/#/' "$CONF"
+        fi
+    fi
+    
+    if [ ! -z "$LIVE_USERNAME" ]; then
+        # Change the default live password to configured live user name
+        USRSETUP='/lib/live/config/0030-user-setup'
+        if [ -f $USRSETUP ]; then
+            # Use live configured user name as password
+            LIVEPWD=$(echo "$LIVE_USERNAME" | mkpasswd -s)
+            # sha-512 works partially: it will boot live but you cannot login if you go back to lightdm
+            #LLIVEPWD=$(echo "$LIVE_USERNAME" | mkpasswd --method=sha-512 -s)
+            sed -i -e "s#_PASSWORD=.*#_PASSWORD=\"$LIVEPWD\"#" $USRSETUP
+            echo "Live user $LIVE_USERNAME password changed"
+        fi
+    fi
+    ;;
+    abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+#DEBHELPER#
+
+exit 0
+
+

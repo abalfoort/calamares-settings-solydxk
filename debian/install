@@ -1,0 +1,11 @@
+calamares usr/share
+calamares-modules/* usr/lib/calamares/modules
+scripts/* usr/sbin
+*.desktop usr/share/applications
+install-solydxk usr/bin
+artwork/install-solydxk.png usr/share/pixmaps
+conf/calamares-desktop-icon.desktop etc/xdg/autostart
+conf/zz-disable-power-mgr.desktop etc/xdg/autostart
+conf/zz-light-locker-live.desktop etc/xdg/autostart
+conf/solydxk.conf etc/live/config.conf.d
+add-calamares-desktop-icon usr/bin

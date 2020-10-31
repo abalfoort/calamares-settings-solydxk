@@ -1,0 +1,22 @@
+Source: calamares-settings-solydxk
+Section: utils
+Priority: optional
+Maintainer: Arjen Balfoort <arjenbalfoort@hotmail.com>
+Build-Depends: debhelper-compat (= 13), libglib2.0-bin
+Standards-Version: 4.5.0
+Rules-Requires-Root: no
+
+Package: calamares-settings-solydxk
+Architecture: all
+Depends: calamares,
+         cryptsetup,
+         keyutils,
+         qml-module-qtquick-window2,
+         qml-module-qtquick2,
+         ${misc:Depends}
+Provides: calamares-settings
+Description: SolydXK theme and settings for the Calamares Installer
+ Calamares is a generic installer framework for Linux distributions.
+ By default, it contains a set of boilerplate wording and images. This
+ package provides the latest SolydXK artwork as well as scripts that
+ supports EFI installations.
