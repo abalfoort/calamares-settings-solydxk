@@ -2,6 +2,7 @@ calamares usr/share
 calamares-modules/* usr/lib/calamares/modules
 scripts/* usr/sbin
 *.desktop usr/share/applications
+install-solydxk.desktop etc/xdg/autostart
 install-solydxk usr/bin
 artwork/install-solydxk.png usr/share/pixmaps
 conf/calamares-desktop-icon.desktop etc/xdg/autostart
