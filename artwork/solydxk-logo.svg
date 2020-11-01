@@ -13,7 +13,7 @@
    version="1.1"
    inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
    sodipodi:docname="solydxk-logo.svg"
-   inkscape:export-filename="/home/WERK/artwork/solydxk-flat/solydxk-logo.png"
+   inkscape:export-filename="/home/arjen/dev/calamares-settings-solydxk/src/calamares/branding/solydxk/solydxk-logo.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
   <defs
@@ -83,55 +83,55 @@
      transform="translate(-331.635,-498.51425)">
     <g
        id="g850"
-       transform="matrix(0.90712336,0,0,0.90712336,37.297182,52.782)">
+       transform="translate(7.6436264,7.5106943)">
       <circle
-         r="57.181488"
-         cy="683.29016"
-         cx="-118.03457"
-         style="fill:#ff9a36;fill-opacity:1;stroke:#666666;stroke-width:4.26667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         r="45.477886"
+         cy="672.81128"
+         cx="-118.11288"
+         style="fill:#ff9a36;fill-opacity:1;stroke:#666666;stroke-width:3.39339;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="path2990-3-9-6-2-5-1-9-1"
          transform="rotate(-45)" />
       <path
-         style="fill:#ff7f01;fill-opacity:1;stroke:#666666;stroke-width:4.26667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="m 352.75236,520.62039 c -13.60302,13.35146 -19.88994,31.03475 -19.20921,48.52369 16.09545,0.62056 32.01228,6.86615 44.30045,18.92706 12.29624,12.06897 18.7331,27.74588 19.35811,43.55445 17.80863,0.65973 35.76808,-5.58324 49.36334,-18.92719 13.58338,-13.33208 19.9979,-31.04404 19.35825,-48.52372 -16.12076,-0.60401 -32.06786,-6.92074 -44.37484,-19.00017 -12.31914,-12.09132 -18.75375,-27.71576 -19.35825,-43.55432 -17.80898,-0.62784 -35.85445,5.668 -49.43785,19.0002 z"
+         style="fill:#ff7f01;fill-opacity:1;stroke:#666666;stroke-width:3.39339;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 354.89548,522.68146 c -10.81883,10.61876 -15.81898,24.68272 -15.27758,38.59212 12.80112,0.49355 25.46018,5.46083 35.23328,15.05318 9.7795,9.59875 14.89891,22.06699 15.39599,34.63996 14.16366,0.52469 28.44726,-4.4405 39.25992,-15.05328 10.8032,-10.60334 15.90483,-24.69011 15.39611,-38.59215 -12.82126,-0.48038 -25.50438,-5.50423 -35.29244,-15.11132 -9.79772,-9.61653 -14.91534,-22.04304 -15.3961,-34.63985 -14.16395,-0.49934 -28.51596,4.50791 -39.31918,15.11134 z"
          id="path2990-9-5-9-6-0-5-3-0-9"
          inkscape:connector-curvature="0" />
       <path
-         style="fill:#33c6ff;fill-opacity:1;stroke:#666666;stroke-width:4.26667;stroke-miterlimit:4;stroke-opacity:1"
-         d="m 440.11759,526.17692 c -22.33072,-22.33071 -58.53869,-22.30723 -80.86947,0.0236 l 80.86947,80.86947 c 22.33071,-22.33086 22.33071,-58.5623 0,-80.89302 z"
+         style="fill:#33c6ff;fill-opacity:1;stroke:#666666;stroke-width:3.39339;stroke-miterlimit:4;stroke-opacity:1"
+         d="m 424.37926,527.10072 c -17.76019,-17.76019 -46.5573,-17.74151 -64.31754,0.0188 l 64.31754,64.31754 c 17.76018,-17.7603 17.76018,-46.57608 0,-64.33627 z"
          id="path2990-3-9-6-2-5-12-0"
          inkscape:connector-curvature="0" />
       <path
-         style="fill:#009bd4;fill-opacity:1;stroke:#666666;stroke-width:4.26667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="m 465.89057,564.20647 c -16.12076,-0.60401 -32.07585,-6.9416 -44.38276,-19.0211 -12.31907,-12.09124 -18.74667,-27.69568 -19.35111,-43.53416 -17.59897,-0.62063 -35.40533,5.51536 -48.93179,18.52605 l 92.91383,92.91384 c 0.12672,-0.12672 0.25011,-0.25011 0.3771,-0.3771 13.58317,-13.33215 20.01431,-31.02778 19.37473,-48.50753 z"
+         style="fill:#009bd4;fill-opacity:1;stroke:#666666;stroke-width:3.39339;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 444.87716,557.34658 c -12.82125,-0.48038 -25.51073,-5.52083 -35.29873,-15.12797 -9.79767,-9.61646 -14.9097,-22.02707 -15.39043,-34.62382 -13.99691,-0.4936 -28.15875,4.38651 -38.91669,14.73424 l 73.89672,73.89674 c 0.10079,-0.10079 0.19893,-0.19892 0.29992,-0.29992 10.80304,-10.6034 15.91789,-24.67718 15.40921,-38.57927 z"
          id="path2990-9-5-9-6-0-5-2-8"
          inkscape:connector-curvature="0" />
       <rect
-         style="fill:#009bd4;fill-opacity:1;stroke:none;stroke-width:1.06667"
+         style="fill:#009bd4;fill-opacity:1;stroke:none;stroke-width:0.848349"
          id="rect4400-4"
-         width="126.78877"
-         height="4.3367038"
-         x="619.81116"
-         y="115.84969"
+         width="100.83832"
+         height="3.4490907"
+         x="622.32483"
+         y="116.37519"
          transform="rotate(45)" />
       <circle
-         style="fill:none;stroke:#666666;stroke-width:4.26667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.46875"
+         style="fill:none;stroke:#666666;stroke-width:3.39339;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.46875"
          id="path2990-0-4-7-1-7-6-0-4-6-2"
          transform="rotate(-45)"
-         cx="-118.03483"
-         cy="683.29004"
-         r="57.181488" />
+         cx="-118.11308"
+         cy="672.81122"
+         r="45.477886" />
       <text
          xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.8px;line-height:0%;font-family:MathJax_Script;-inkscape-font-specification:MathJax_Script;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.06667"
-         x="349.43143"
-         y="591.32959"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.1802px;line-height:0%;font-family:MathJax_Script;-inkscape-font-specification:MathJax_Script;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:#666666;stroke-width:0.848349;stroke-opacity:1"
+         x="352.25427"
+         y="578.91827"
          id="text3282-7-7"><tspan
            sodipodi:role="line"
            id="tspan3284-1-5"
-           x="349.43143"
-           y="591.32959"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:70.9975px;line-height:1.25;font-family:'Roboto Slab';-inkscape-font-specification:'Roboto Slab Bold';fill:#ffffff;stroke-width:1.06667">XK</tspan></text>
+           x="352.25427"
+           y="578.91827"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:56.4661px;line-height:1.25;font-family:'Roboto Slab';-inkscape-font-specification:'Roboto Slab Bold';fill:#ffffff;stroke:#666666;stroke-width:0.848349;stroke-opacity:1">XK</tspan></text>
     </g>
   </g>
 </svg>

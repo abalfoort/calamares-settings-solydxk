@@ -37,7 +37,7 @@ Presentation
     }
     
     Image {
-        source: "background.svg"
+        source: "background.png"
         anchors.fill: parent
     }
 
@@ -58,7 +58,7 @@ Presentation
             wrapMode: Text.WordWrap
             horizontalAlignment: Text.AlignLeft
             font.pixelSize: parent.width * .020
-            color: 'white'
+            color: '#4c4c4c'
         }
     }
     
@@ -78,7 +78,7 @@ Presentation
             wrapMode: Text.WordWrap
             horizontalAlignment: Text.AlignLeft
             font.pixelSize: parent.width * .020
-            color: 'white'
+            color: '#4c4c4c'
         }
     }
     
@@ -99,7 +99,7 @@ Presentation
             wrapMode: Text.WordWrap
             horizontalAlignment: Text.AlignLeft
             font.pixelSize: parent.width * .020
-            color: 'white'
+            color: '#4c4c4c'
         }
     }
     
@@ -120,7 +120,7 @@ Presentation
             wrapMode: Text.WordWrap
             horizontalAlignment: Text.AlignLeft
             font.pixelSize: parent.width * .020
-            color: 'white'
+            color: '#4c4c4c'
         }
     }
     
@@ -140,7 +140,7 @@ Presentation
             wrapMode: Text.WordWrap
             horizontalAlignment: Text.AlignLeft
             font.pixelSize: parent.width * .020
-            color: 'white'
+            color: '#4c4c4c'
         }
     }
     
@@ -162,7 +162,7 @@ Presentation
             wrapMode: Text.WordWrap
             horizontalAlignment: Text.AlignLeft
             font.pixelSize: parent.width * .020
-            color: 'white'
+            color: '#4c4c4c'
         }
     }
     
@@ -182,7 +182,7 @@ Presentation
             wrapMode: Text.WordWrap
             horizontalAlignment: Text.AlignLeft
             font.pixelSize: parent.width * .020
-            color: 'white'
+            color: '#4c4c4c'
         }
     }
 

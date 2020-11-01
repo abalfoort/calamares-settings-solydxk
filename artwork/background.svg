@@ -14,7 +14,7 @@
    version="1.1"
    inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
    sodipodi:docname="background.svg"
-   inkscape:export-filename="/home/WERK/artwork/solydxk-flat/um-welcome-ddm-background.png"
+   inkscape:export-filename="/home/arjen/dev/calamares-settings-solydxk/src/calamares/branding/solydxk/background.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
   <defs
@@ -295,6 +295,142 @@
          x="316.95926"
          y="1255.1112" />
     </clipPath>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Greyscale"
+       id="filter888">
+      <feColorMatrix
+         values="0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0 0 0 1 0 "
+         id="feColorMatrix886" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Lightness-Contrast"
+       id="filter892">
+      <feColorMatrix
+         values="0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0 0 0 1 0 "
+         id="feColorMatrix890"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix912" />
+      <feColorMatrix
+         id="feColorMatrix914"
+         values="0.556535 0 0 0.352166 0.221732 0 0.556535 0 0.352166 0.221732 0 0 0.556535 0.352166 0.221732 0 0 0 1 0"
+         in="fbSourceGraphic" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Greyscale"
+       id="filter896">
+      <feColorMatrix
+         values="0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0 0 0 1 0 "
+         id="feColorMatrix894" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Greyscale"
+       id="filter900">
+      <feColorMatrix
+         values="0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0 0 0 1 0 "
+         id="feColorMatrix898" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Lightness-Contrast"
+       id="filter892-3"
+       x="-0.00012"
+       width="1.00024"
+       y="-0.00012"
+       height="1.00024">
+      <feColorMatrix
+         values="0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0 0 0 1 0 "
+         id="feColorMatrix890-6"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix912-7" />
+      <feColorMatrix
+         id="feColorMatrix914-5"
+         values="0.556535 0 0 0.352166 0.221732 0 0.556535 0 0.352166 0.221732 0 0 0.556535 0.352166 0.221732 0 0 0 1 0"
+         in="fbSourceGraphic" />
+      <feGaussianBlur
+         stdDeviation="0.00027033896"
+         id="feGaussianBlur1288" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Lightness-Contrast"
+       id="filter1125">
+      <feColorMatrix
+         values="1.17313 0 0 0.474056 -0.0865661 0 1.17313 0 0.474056 -0.0865661 0 0 1.17313 0.474056 -0.0865661 0 0 0 1 0"
+         id="feColorMatrix1123" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Lightness-Contrast"
+       id="filter892-3-3">
+      <feColorMatrix
+         values="0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0 0 0 1 0 "
+         id="feColorMatrix890-6-6"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix912-7-0" />
+      <feColorMatrix
+         id="feColorMatrix914-5-6"
+         values="0.556535 0 0 0.352166 0.221732 0 0.556535 0 0.352166 0.221732 0 0 0.556535 0.352166 0.221732 0 0 0 1 0"
+         in="fbSourceGraphic" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Lightness-Contrast"
+       id="filter892-3-3-6">
+      <feColorMatrix
+         values="0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0 0 0 1 0 "
+         id="feColorMatrix890-6-6-1"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix912-7-0-8" />
+      <feColorMatrix
+         id="feColorMatrix914-5-6-7"
+         values="0.556535 0 0 0.352166 0.221732 0 0.556535 0 0.352166 0.221732 0 0 0.556535 0.352166 0.221732 0 0 0 1 0"
+         in="fbSourceGraphic" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Lightness-Contrast"
+       id="filter892-3-2"
+       x="-0.00012"
+       width="1.00024"
+       y="-0.00012"
+       height="1.00024">
+      <feColorMatrix
+         values="0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0 0 0 1 0 "
+         id="feColorMatrix890-6-0"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix912-7-2" />
+      <feColorMatrix
+         id="feColorMatrix914-5-3"
+         values="0.556535 0 0 0.352166 0.221732 0 0.556535 0 0.352166 0.221732 0 0 0.556535 0.352166 0.221732 0 0 0 1 0"
+         in="fbSourceGraphic" />
+      <feGaussianBlur
+         stdDeviation="0.00027033896"
+         id="feGaussianBlur1288-7" />
+    </filter>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -303,9 +439,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.70910507"
-     inkscape:cx="324.93368"
-     inkscape:cy="324.05349"
+     inkscape:zoom="0.48229806"
+     inkscape:cx="1102.4919"
+     inkscape:cy="490.67421"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -337,7 +473,7 @@
      id="layer1"
      transform="translate(-184.21906,-372.79887)">
     <rect
-       style="fill:#646464;stroke:none;stroke-width:15.327"
+       style="fill:#efefef;stroke:none;stroke-width:15.327;filter:url(#filter888);fill-opacity:1"
        id="rect903"
        width="800"
        height="520"
@@ -345,7 +481,8 @@
        y="372.79886" />
     <g
        transform="matrix(2.8068102,2.8068102,-2.8068102,2.8068102,1122.4015,-4983.5914)"
-       id="g4418-7">
+       id="g4418-7"
+       style="filter:url(#filter892)">
       <g
          id="g4414-5"
          transform="translate(-0.15510641)">
@@ -394,37 +531,30 @@
          cy="35.228813"
          r="2.7033896" />
     </g>
-    <rect
-       style="fill:#646464;fill-opacity:0.4;stroke:none;stroke-width:15.327"
-       id="rect903-3"
-       width="800"
-       height="520"
-       x="184.21906"
-       y="372.79886" />
-    <g
-       id="g920">
-      <text
-         id="text3282-7-7"
+    <text
+       id="text3282-7-7"
+       y="904.05273"
+       x="705.4646"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:47.6331px;line-height:0%;font-family:MathJax_Script;-inkscape-font-specification:MathJax_Script;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:#c9c9c9;stroke-width:3.969;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;filter:url(#filter896);"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:264.206px;line-height:1.25;font-family:'Roboto Slab';-inkscape-font-specification:'Roboto Slab Bold';fill:#ffffff;stroke-width:3.969;stroke:#c9c9c9;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;"
          y="904.05273"
          x="705.4646"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:47.6331px;line-height:0%;font-family:MathJax_Script;-inkscape-font-specification:MathJax_Script;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.96943"
-         xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:264.206px;line-height:1.25;font-family:'Roboto Slab';-inkscape-font-specification:'Roboto Slab Bold';fill:#ffffff;stroke-width:3.96943"
-           y="904.05273"
-           x="705.4646"
-           id="tspan3284-1-5"
-           sodipodi:role="line">XK</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.5507px;line-height:0%;font-family:MathJax_Script;-inkscape-font-specification:MathJax_Script;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.29589"
-         x="236.26337"
-         y="901.88306"
-         id="text3282-7-8"><tspan
-           sodipodi:role="line"
-           id="tspan3284-1-1"
-           x="236.26337"
-           y="901.88306"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:148.242px;line-height:1.25;font-family:'Roboto Slab';-inkscape-font-specification:'Roboto Slab';fill:#ffffff;stroke-width:1.29589">Solyd</tspan></text>
-    </g>
+         id="tspan3284-1-5"
+         sodipodi:role="line">XK</tspan></text>
+    <circle
+       style="fill:none;stroke:#666666;stroke-width:0.425671;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.123823;filter:url(#filter892-3)"
+       id="path2990-0-4-7-1-7-6-0-4-6-2-9"
+       transform="matrix(88.629649,-88.629649,88.629649,88.629649,186.51834,-4774.2523)"
+       cx="-27.59322"
+       cy="35.228813"
+       r="2.7033896" />
+    <circle
+       style="fill:none;stroke:#d9d9d9;stroke-width:0.42124938;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.12382286;filter:url(#filter892-3-2)"
+       id="path2990-0-4-7-1-7-6-0-4-6-2-9-5"
+       transform="matrix(127.00076,-127.00076,127.00076,127.00076,-163.81678,-7213.2332)"
+       cx="-27.59322"
+       cy="35.228813"
+       r="2.7033896" />
   </g>
 </svg>

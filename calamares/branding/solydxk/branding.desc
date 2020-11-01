@@ -108,9 +108,9 @@ strings:
 #
 # These filenames can also use substitutions from os-release (see above).
 images:
-    productLogo:            "solydxk-logo.svg"
-    productIcon:             "solydxk-logo.svg"
-    productWelcome:     "solydxk-logo-full.svg"
+    productLogo:            "solydxk-logo.png"
+    productIcon:             "solydxk-logo.png"
+    productWelcome:     "solydxk-logo-full.png"
 
 # The slideshow is displayed during execution steps (e.g. when the
 # installer is actually writing to disk and doing other slow things).
@@ -139,7 +139,7 @@ slideshowAPI: 2
 # branding component also ships a stylesheet.qss. Then they are
 # the corresponding CSS attributes of #sidebarApp.
 style:
-   sidebarBackground:        "#2c3133"
+   sidebarBackground:        "#4c4c4c"
    sidebarText:                     "#FFFFFF"
-   sidebarTextSelect:           "#2c3133"
+   sidebarTextSelect:           "#4c4c4c"
    #sidebarTextHighlight:    "#292F34"
