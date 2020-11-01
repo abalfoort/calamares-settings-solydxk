@@ -51,7 +51,7 @@ Presentation
                             "Enjoy this new release and thank you for choosing SolydXK.<br />" +
                             "The installation takes 15-30 minutes, depending on your settings.")
             anchors.fill: parent
-            anchors.rightMargin: 20
+            anchors.rightMargin: 300
             anchors.leftMargin: 20
             anchors.bottomMargin: 20
             anchors.topMargin: 20
@@ -71,7 +71,7 @@ Presentation
                             "SolydXK uses either the lightweight Xfce desktop for SolydX or the highly configurable and stunningly appealing KDE desktop for SolydK.<br /><br />" +
                             "Our innovations, the rapid development of Debian and the huge Debian package selection make SolydXK one of the most attractive desktop operating systems available to home users.")
             anchors.fill: parent
-            anchors.rightMargin: 20
+            anchors.rightMargin: 300
             anchors.leftMargin: 20
             anchors.bottomMargin: 20
             anchors.topMargin: 20
@@ -92,7 +92,7 @@ Presentation
                             "A wide variety of software can be installed with a click of the mouse.<br /><br />" +
                             "SolydXK is compatible with most popular file formats such as: docx, xlsx, doc, xls, pdf, zip, rar, mp3, mpg, and many more.")
             anchors.fill: parent
-            anchors.rightMargin: 20
+            anchors.rightMargin: 300
             anchors.leftMargin: 20
             anchors.bottomMargin: 20
             anchors.topMargin: 20
@@ -113,7 +113,7 @@ Presentation
                             "You can use it to create letters, presentations and spreadsheets, as well as diagrams and databases.<br /><br />" +
                             "LibreOffice uses the standard OpenDocument format and it works with documents from other popular office applications including WordPerfect and Microsoft Office.")
             anchors.fill: parent
-            anchors.rightMargin: 20
+            anchors.rightMargin: 300
             anchors.leftMargin: 20
             anchors.bottomMargin: 20
             anchors.topMargin: 20
@@ -133,7 +133,7 @@ Presentation
                             "SolydXK is safe and stable. Unlike other operating systems, it is not prone to computer viruses or spyware, it does not suffer from disk fragmentation, and it has no registry that requires periodic cleaning.<br /><br />" +
                             "SolydXK can detect other operating systems and install itself beside them.You can choose which operating system to launch when you start the computer.")
             anchors.fill: parent
-            anchors.rightMargin: 20
+            anchors.rightMargin: 300
             anchors.leftMargin: 20
             anchors.bottomMargin: 20
             anchors.topMargin: 20
@@ -155,7 +155,7 @@ Presentation
                             "All files are stored in special secure repositories for your use.<br /><br />" +
                             "The security repository is synchronized daily.")
             anchors.fill: parent
-            anchors.rightMargin: 20
+            anchors.rightMargin: 300
             anchors.leftMargin: 20
             anchors.bottomMargin: 20
             anchors.topMargin: 20
@@ -175,7 +175,7 @@ Presentation
                             "SolydXK users are happy to share their passion and enthusiasm and are eager to help. Don't hesitate to ask questions on the forums or to get involved in the community.<br /><br />" +
                             "Send us your feedback and tell us about your experience. We'll listen to your ideas and use them to further improve SolydXK.")
             anchors.fill: parent
-            anchors.rightMargin: 20
+            anchors.rightMargin: 300
             anchors.leftMargin: 20
             anchors.bottomMargin: 20
             anchors.topMargin: 20

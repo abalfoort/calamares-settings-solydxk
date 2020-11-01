@@ -1,3 +1,9 @@
+calamares-settings-solydxk (11.0.5) unstable; urgency=low
+
+  * Fix not removing live/calamares packages after installation
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Sun, 01 Nov 2020 17:35:33 +0100
+
 calamares-settings-solydxk (11.0.4) unstable; urgency=low
 
   * Initial release (base: calamares-settings-debian-11.0.3)

@@ -4,7 +4,7 @@
     <message>
         <location filename="../calamares/branding/solydxk/show.qml" line="48"/>
         <source>&lt;h3&gt;Thank you for choosing SolydXK&lt;/h3&gt;&lt;br /&gt;You&apos;ve chosen a Linux distribution that is:&lt;br /&gt;&lt;ul&gt;&lt;li&gt;Secure and stable&lt;/li&gt;&lt;li&gt;Fast and responsive&lt;/li&gt;&lt;li&gt;Desktop-ready&lt;/li&gt;&lt;/ul&gt;&lt;br /&gt;Enjoy this new release and thank you for choosing SolydXK.&lt;br /&gt;The installation takes 15-30 minutes, depending on your settings.</source>
-        <translation>&lt;h3&gt;Bedankt dat u SolydXK hebt gekozen.&lt;/h3&gt;&lt;br /&gt;Deze Linuxdistributie is:&lt;br /&gt;&lt;ul&gt;&lt;li&gt;veilig en stabiel;&lt;/li&gt;&lt;li&gt;snel en responsief;&lt;/li&gt;&lt;li&gt;desktop-klaar.&lt;/li&gt;&lt;/ul&gt;&lt;br /&gt;Geniet van deze nieuwe release en dank u voor het kiezen van SolydXK.&lt;br /&gt;Afhankelijk van uw instellingen duurt de installatie 15-30 minuten.</translation>
+        <translation>&lt;h3&gt;Bedankt dat u SolydXK hebt gekozen&lt;/h3&gt;&lt;br /&gt;Deze Linuxdistributie is:&lt;br /&gt;&lt;ul&gt;&lt;li&gt;veilig en stabiel;&lt;/li&gt;&lt;li&gt;snel en responsief;&lt;/li&gt;&lt;li&gt;desktop-klaar.&lt;/li&gt;&lt;/ul&gt;&lt;br /&gt;Geniet van deze nieuwe release en dank u voor het kiezen van SolydXK.&lt;br /&gt;Afhankelijk van uw instellingen duurt de installatie 15-30 minuten.</translation>
     </message>
     <message>
         <location filename="../calamares/branding/solydxk/show.qml" line="69"/>
