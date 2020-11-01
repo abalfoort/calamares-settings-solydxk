@@ -7,12 +7,39 @@ SHELL := /bin/bash
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
+.PHONY: update
+
 source := $(shell dpkg-parsechangelog -S Source)
+tsfiles := $(shell find ./ts -name "*.ts" | grep -v "en_US" 2>/dev/null)
+
+# Create qm from the ts files
+# https://www.gnu.org/software/make/manual/make.html#Pattern-Rules
+%.qm : %.ts
+	lrelease $< -qm ./calamares/branding/solydxk/lang/$(basename $(notdir $<)).qm
 
 %:
 	dh $@
-	
+
+override_dh_auto_clean:
+	# Cleanup first
+	find ./calamares/branding/solydxk/lang -type f -name "*.qm" -delete
+
+override_dh_auto_install: update $(patsubst %.ts,%.qm,$(tsfiles))
+
 override_dh_builddeb:
 	dh_builddeb
 	# Cleanup build directory when done
 	rm -rf ./debian/$(source)
+
+update:
+	# Push ts file to Transifex
+	#tx push -s
+
+	# Get translations from Transifex
+	tx pull -a
+
+	# Create the lang directory if it does not exist
+	mkdir -p ./calamares/branding/solydxk/lang
+	
+	# Update base ts file
+	@ cd ./calamares/branding/solydxk; lupdate show.qml -no-obsolete -source-language en_US -ts ../../../ts/calamares-solydxk_en_US.ts -target-language en_US

@@ -1,42 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="it" sourcelanguage="en">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="it" sourcelanguage="en_US" version="2.1">
 <context>
     <name>show</name>
     <message>
         <location filename="../calamares/branding/solydxk/show.qml" line="48"/>
         <source>&lt;h3&gt;Thank you for choosing SolydXK&lt;/h3&gt;&lt;br /&gt;You&apos;ve chosen a Linux distribution that is:&lt;br /&gt;&lt;ul&gt;&lt;li&gt;Secure and stable&lt;/li&gt;&lt;li&gt;Fast and responsive&lt;/li&gt;&lt;li&gt;Desktop-ready&lt;/li&gt;&lt;/ul&gt;&lt;br /&gt;Enjoy this new release and thank you for choosing SolydXK.&lt;br /&gt;The installation takes 15-30 minutes, depending on your settings.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Grazie per aver scelto SolydXK&lt;/h3&gt;&lt;br /&gt;Hai scelto una distribuzione Linux che è:&lt;br /&gt;&lt;ul&gt;&lt;li&gt;Sicura e stabile&lt;/li&gt;&lt;li&gt;Veloce e reattiva&lt;/li&gt;&lt;li&gt;Pronta per l&apos;uso&lt;/li&gt;&lt;/ul&gt;&lt;br /&gt;Grazie per aver scelto SolydXK.&lt;br /&gt;L&apos;installazione durerà 15-30 minuti, a seconda delle impostazioni selezionate.</translation>
     </message>
     <message>
         <location filename="../calamares/branding/solydxk/show.qml" line="69"/>
         <source>&lt;h3&gt;Standing on the shoulders of Giants&lt;/h3&gt;&lt;br /&gt;SolydXK is a Debian-based GNU/Linux distribution derived from and compatible with Debian.&lt;br /&gt;&lt;br /&gt;SolydXK uses either the lightweight Xfce desktop for SolydX or the highly configurable and stunningly appealing KDE desktop for SolydK.&lt;br /&gt;&lt;br /&gt;Our innovations, the rapid development of Debian and the huge Debian package selection make SolydXK one of the most attractive desktop operating systems available to home users.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Sulle spalle dei giganti&lt;/h3&gt;&lt;br /&gt;SolydXK è una distribuzione GNU/Linux derivata da Debian e pienamente compatibile con Debian.&lt;br /&gt;&lt;br /&gt;SolydXK utilizza il leggero ambiente desktop XFCE in SolydX o in alternativa l&apos;altamente configurabile ed incredibilmente accattivante ambiente desktop KDE in SolydK.&lt;br /&gt;&lt;br /&gt;Le nostre innovazioni e l&apos;enorme quantità di pacchetti per Debian, fanno di SolydXK uno dei sistemi operativi desktop più interessanti disponibili per l&apos;utenza domestica.</translation>
     </message>
     <message>
         <location filename="../calamares/branding/solydxk/show.qml" line="89"/>
         <source>&lt;h3&gt;Out of the box&lt;/h3&gt;&lt;br /&gt;Firefox, Thunderbird, and LibreOffice come pre-installed in SolydXK, so you can get started immediately with the desktop and the Internet.&lt;br /&gt;&lt;br /&gt;Unlike other Linux distributions SolydXK is also ready to play your music, internet videos and more.&lt;br /&gt;&lt;br /&gt;A wide variety of software can be installed with a click of the mouse.&lt;br /&gt;&lt;br /&gt;SolydXK is compatible with most popular file formats such as: docx, xlsx, doc, xls, pdf, zip, rar, mp3, mpg, and many more.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Pronto all&apos;uso&lt;/h3&gt;&lt;br /&gt;Firefox, Thunderbird e LibreOffice sono preinstallati in SolydXK, così puoi iniziare da subito ad utilizzare il computer e internet.&lt;br /&gt;&lt;br /&gt;A differenza di altre distribuzioni Linux, SolydXK è in grado di riprodurre la tua musica, i video sul web e molto altro.&lt;br /&gt;&lt;br /&gt;Una gran varietà di programmi aggiuntivi è installabile con un click del mouse.&lt;br /&gt;&lt;br /&gt;SolydXK è compatibile con molti diffusi formati di file: docx, xlsx, doc, xls, pdf, zip, rar, mp3, mpg e molti altri.</translation>
     </message>
     <message>
         <location filename="../calamares/branding/solydxk/show.qml" line="110"/>
         <source>&lt;h3&gt;Office tools are ready to use as soon as you install SolydXK&lt;/h3&gt;&lt;br /&gt;LibreOffice, a powerful office software suite, comes built into SolydXK.&lt;br /&gt;&lt;br /&gt;LibreOffice is very easy to learn and use.&lt;br /&gt;&lt;br /&gt;You can use it to create letters, presentations and spreadsheets, as well as diagrams and databases.&lt;br /&gt;&lt;br /&gt;LibreOffice uses the standard OpenDocument format and it works with documents from other popular office applications including WordPerfect and Microsoft Office.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Gli strumenti per l&apos;ufficio sono disponibili dal primo avvio di SolydXK&lt;/h3&gt;&lt;br /&gt;LibreOffice, potente suite da ufficio, è già installata in SolydXK.&lt;br /&gt;&lt;br /&gt;È semplice imparare ad utilizzare LibreOffice.&lt;br /&gt;&lt;br /&gt;Puoi usarlo per scrivere lettere, presentazioni e fogli di calcolo, oltre che diagrammi e database.&lt;br /&gt;&lt;br /&gt;LibreOffice utilizza i formati standard di OpenDocument e può lavorare con documenti creati da altre applicazioni per l&apos;ufficio inclusi WordPerfect e Microsoft Office.</translation>
     </message>
     <message>
         <location filename="../calamares/branding/solydxk/show.qml" line="131"/>
         <source>&lt;h3&gt;An alternative to mainstream operating systems&lt;/h3&gt;&lt;br /&gt;SolydXK is easy to use, powerful and configurable.&lt;br /&gt;&lt;br /&gt;SolydXK is safe and stable. Unlike other operating systems, it is not prone to computer viruses or spyware, it does not suffer from disk fragmentation, and it has no registry that requires periodic cleaning.&lt;br /&gt;&lt;br /&gt;SolydXK can detect other operating systems and install itself beside them.You can choose which operating system to launch when you start the computer.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Un&apos;alternativa ai sistemi operativi più diffusi&lt;/h3&gt;&lt;br /&gt;SolydXK è facile da usare, potente e configurabile.&lt;br /&gt;&lt;br /&gt;SolydXK è sicuro e stabile. A differenza di altri sistemi operativi, non è soggetto a virus o spyware, non soffre della frammentazione dei dischi e non ha un registro che richieda una pulizia periodica.&lt;br /&gt;&lt;br /&gt;SolydXK è in grado di rilevare la presenza di altri sistemi operativi presenti sul sistema e di installarsi accanto a loro senza alterarli o comprometterne le funzionalità. All&apos;avvio del computer, dunque, potrai liberamente scegliere quale sistema operativo avviare.</translation>
     </message>
     <message>
         <location filename="../calamares/branding/solydxk/show.qml" line="151"/>
         <source>&lt;h3&gt;Safe updates&lt;/h3&gt;&lt;br /&gt;Some operating systems make updating your system harder than it really needs to be. SolydXK thinks upgrades should be quick and easy, and then get out of the way.&lt;br /&gt;&lt;br /&gt;The Update Manager sits discreetly in your system tray and lets you know when updates are available. You don&apos;t have to apply updates when you don&apos;t want to. The Update Manager won&apos;t pop up or annoy you in any way.&lt;br /&gt;&lt;br /&gt;All updated files are maintained and closely checked by trusted developers and maintainers.&lt;br /&gt;&lt;br /&gt;All files are stored in special secure repositories for your use.&lt;br /&gt;&lt;br /&gt;The security repository is synchronized daily.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Aggiornamenti sicuri&lt;/h3&gt;&lt;br /&gt;Alcuni sistemi operativi rendono l&apos;aggiornamento del sistema più complicato del necessario. Per SolydXK gli aggiornamenti devono essere veloci e semplici, senza fronzoli.&lt;br /&gt;&lt;br /&gt;L&apos;Update Manager si posiziona con discrezione nella tua barra di sistema e ti avvisa quando degli aggiornamenti sono disponibili. Non hai bisogno di applicare gli aggiornamenti se non vuoi. L&apos;Update Manager non ti infastidirà o annoierà in nessun modo.&lt;br /&gt;&lt;br /&gt;Tutti gli aggiornamenti sono mantenuti e severamente controllati da sviluppatori e manutentori fidati.&lt;br /&gt;&lt;br /&gt;Tutti i pacchetti sono archiviati in repositories dedicati e sicuri.&lt;br /&gt;&lt;br /&gt;Il repository di sicurezza è sincronizzato giornalmente.</translation>
     </message>
     <message>
         <location filename="../calamares/branding/solydxk/show.qml" line="173"/>
         <source>&lt;h3&gt;A great community&lt;/h3&gt;&lt;br /&gt;The SolydXK community is one of the best on the Internet. Our users provide most of our funding, as well as ideas, artwork and sometimes even source code.&lt;br /&gt;&lt;br /&gt;SolydXK users are happy to share their passion and enthusiasm and are eager to help. Don&apos;t hesitate to ask questions on the forums or to get involved in the community.&lt;br /&gt;&lt;br /&gt;Send us your feedback and tell us about your experience. We&apos;ll listen to your ideas and use them to further improve SolydXK.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Una grande comunità&lt;/h3&gt;&lt;br /&gt;La comunità SolydXK è una delle migliori su internet. I nostri utenti forniscono la maggior parte dei nostri fondi, ma anche idee, artwork e qualche volta persino codice sorgente.&lt;br /&gt;&lt;br /&gt;Gli utenti di SolydXK di solito sono felici di condividere la loro passione ed entusiasmo e sono desiderosi di aiutare. Non esitate a porre domande sul forum o a partecipare alla comunità.&lt;br /&gt;&lt;br /&gt;Mandaci le tue impressioni e raccontaci la tua esperienza. Ascolteremo le tue idee e le useremo per migliorare ulteriormente SolydXK.</translation>
     </message>
 </context>
 </TS>

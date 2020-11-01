@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="nl" sourcelanguage="en">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="nl" sourcelanguage="en_US" version="2.1">
 <context>
     <name>show</name>
     <message>
@@ -16,7 +14,7 @@
     <message>
         <location filename="../calamares/branding/solydxk/show.qml" line="89"/>
         <source>&lt;h3&gt;Out of the box&lt;/h3&gt;&lt;br /&gt;Firefox, Thunderbird, and LibreOffice come pre-installed in SolydXK, so you can get started immediately with the desktop and the Internet.&lt;br /&gt;&lt;br /&gt;Unlike other Linux distributions SolydXK is also ready to play your music, internet videos and more.&lt;br /&gt;&lt;br /&gt;A wide variety of software can be installed with a click of the mouse.&lt;br /&gt;&lt;br /&gt;SolydXK is compatible with most popular file formats such as: docx, xlsx, doc, xls, pdf, zip, rar, mp3, mpg, and many more.</source>
-        <translation>&lt;h3&gt;Uit de doos&lt;/h3&gt;&lt;br /&gt;Firefox, Thunderbird, OpenOffice.org zijn reeds geïnstalleerd in SolydXK, zodat u meteen aan de slag kunt met de computer en het internet.&lt;br /&gt;&lt;br /&gt;In tegenstelling tot veel andere Linuxdistributies kan SolydXK uw muziek, internet video&apos;s en meer afspelen.&lt;br /&gt;&lt;br /&gt;Een brede verscheidenheid aan software kan worden geïnstalleerd met een klik van de muis.&lt;br /&gt;&lt;br /&gt;SolydXK is compatibel met de meest populaire bestandsformaten zoals docx, xlsx, doc, xls, pdf, zip, rar, mp3, mpg, en nog veel meer.</translation>
+        <translation>&lt;h3&gt;Klaar voor gebruik&lt;/h3&gt;&lt;br /&gt;Firefox, Thunderbird, OpenOffice.org zijn reeds geïnstalleerd in SolydXK, zodat u meteen aan de slag kunt met de computer en het internet.&lt;br /&gt;&lt;br /&gt;In tegenstelling tot veel andere Linuxdistributies kan SolydXK uw muziek, internet video&apos;s en meer afspelen.&lt;br /&gt;&lt;br /&gt;Een brede verscheidenheid aan software kan worden geïnstalleerd met een klik van de muis.&lt;br /&gt;&lt;br /&gt;SolydXK is compatibel met de meest populaire bestandsformaten zoals docx, xlsx, doc, xls, pdf, zip, rar, mp3, mpg, en nog veel meer.</translation>
     </message>
     <message>
         <location filename="../calamares/branding/solydxk/show.qml" line="110"/>
