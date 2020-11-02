@@ -1,3 +1,9 @@
+calamares-settings-solydxk (11.0.6) unstable; urgency=low
+
+  * Extend packages to remove after installation (packages.conf)
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Mon, 02 Nov 2020 08:46:53 +0100
+
 calamares-settings-solydxk (11.0.5) unstable; urgency=low
 
   * Fix not removing live/calamares packages after installation
