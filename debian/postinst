@@ -47,15 +47,13 @@ case "$1" in
     
     if [ ! -z "$LIVE_USERNAME" ]; then
         # Change the default live password to configured live user name
-        USRSETUP='/lib/live/config/0030-user-setup'
-        if [ -f $USRSETUP ]; then
+        CFGS=$(grep '_PASSWORD='  /lib/live/config/* | cut -d':' -f 1)
+        for CFG in $CFGS; do
             # Use live configured user name as password
             LIVEPWD=$(echo "$LIVE_USERNAME" | mkpasswd -s)
-            # sha-512 works partially: it will boot live but you cannot login if you go back to lightdm
-            #LLIVEPWD=$(echo "$LIVE_USERNAME" | mkpasswd --method=sha-512 -s)
-            sed -i -e "s#_PASSWORD=.*#_PASSWORD=\"$LIVEPWD\"#" $USRSETUP
-            echo "Live user $LIVE_USERNAME password changed"
-        fi
+            sed -i -e "s#_PASSWORD=.*#_PASSWORD='${LIVEPWD}'#" $CFG
+            echo "Live user $LIVE_USERNAME password changed in $CFG"
+        done
     fi
     ;;
     abort-upgrade|abort-remove|abort-deconfigure)

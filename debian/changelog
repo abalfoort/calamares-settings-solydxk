@@ -1,3 +1,10 @@
+calamares-settings-solydxk (11.0.7) unstable; urgency=low
+
+  * Fix bug in SolydK 11: not showing install icon
+  * Fix bug not able to re-login with live user
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Thu, 05 Nov 2020 09:36:45 +0100
+
 calamares-settings-solydxk (11.0.6) unstable; urgency=low
 
   * Extend packages to remove after installation (packages.conf)
