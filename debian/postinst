@@ -18,7 +18,7 @@ set -e
 #
 
 case "$1" in
-    configure)
+    configure|upgrade|update|reconfigure|triggered)
     LIVECNF='/etc/live/config.conf.d/solydxk.conf'
     if [ -f "$LIVECNF" ]; then
         . "$LIVECNF"

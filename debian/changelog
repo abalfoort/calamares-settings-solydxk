@@ -1,3 +1,9 @@
+calamares-settings-solydxk (11.0.8) unstable; urgency=low
+
+  * Add triggers
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Fri, 06 Nov 2020 11:29:42 +0100
+
 calamares-settings-solydxk (11.0.7) unstable; urgency=low
 
   * Fix bug in SolydK 11: not showing install icon
