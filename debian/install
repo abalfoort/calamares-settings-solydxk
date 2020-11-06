@@ -4,7 +4,7 @@ scripts/* usr/sbin
 *.desktop usr/share/applications
 install-solydxk.desktop etc/xdg/autostart
 install-solydxk usr/bin
-artwork/install-solydxk.png usr/share/pixmaps
+artwork/installsolydxk.xpm usr/share/pixmaps
 conf/calamares-desktop-icon.desktop etc/xdg/autostart
 conf/zz-disable-power-mgr.desktop etc/xdg/autostart
 conf/zz-light-locker-live.desktop etc/xdg/autostart
