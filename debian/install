@@ -2,11 +2,12 @@ calamares usr/share
 calamares-modules/* usr/lib/calamares/modules
 scripts/* usr/sbin
 *.desktop usr/share/applications
-install-solydxk.desktop etc/xdg/autostart
 install-solydxk usr/bin
 artwork/installsolydxk.xpm usr/share/pixmaps
 conf/calamares-desktop-icon.desktop etc/xdg/autostart
+conf/calamares-launch-startup.desktop etc/xdg/autostart
 conf/zz-disable-power-mgr.desktop etc/xdg/autostart
 conf/zz-light-locker-live.desktop etc/xdg/autostart
 conf/solydxk.conf etc/live/config.conf.d
 add-calamares-desktop-icon usr/bin
+po/mo/*  usr/share/locale/

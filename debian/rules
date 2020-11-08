@@ -11,11 +11,16 @@ SHELL := /bin/bash
 
 source := $(shell dpkg-parsechangelog -S Source)
 tsfiles := $(shell find ./ts -name "*.ts" | grep -v "en_US" 2>/dev/null)
+desktopfls := $(shell find . -wholename "./debian" -prune -o -wholename "./conf" -prune -o -name "*.desktop" -print 2>/dev/null)
 
 # Create qm from the ts files
 # https://www.gnu.org/software/make/manual/make.html#Pattern-Rules
 %.qm : %.ts
 	lrelease $< -qm ./calamares/branding/solydxk/lang/$(basename $(notdir $<)).qm
+
+%.mo : %.po
+	mkdir -p ./po/mo/$(basename $(notdir $<))/LC_MESSAGES/
+	msgfmt $< -o ./po/mo/$(basename $(notdir $<))/LC_MESSAGES/$(source).mo
 
 %:
 	dh $@
@@ -23,8 +28,12 @@ tsfiles := $(shell find ./ts -name "*.ts" | grep -v "en_US" 2>/dev/null)
 override_dh_auto_clean:
 	# Cleanup first
 	find ./calamares/branding/solydxk/lang -type f -name "*.qm" -delete
+	rm -rf ./po/mo
+	mkdir ./po/mo
+	# Create .pot file if it does not exist
+	touch ./po/$(source).pot
 
-override_dh_auto_install: update $(patsubst %.ts,%.qm,$(tsfiles))
+override_dh_auto_install: update $(patsubst %.ts,%.qm,$(tsfiles)) $(patsubst %.po,%.mo,$(wildcard ./po/*.po))
 
 override_dh_builddeb:
 	dh_builddeb
@@ -40,6 +49,29 @@ update:
 
 	# Create the lang directory if it does not exist
 	mkdir -p ./calamares/branding/solydxk/lang
-	
+
 	# Update base ts file
 	@ cd ./calamares/branding/solydxk; lupdate show.qml -no-obsolete -source-language en_US -ts ../../../ts/calamares-solydxk_en_US.ts -target-language en_US
+
+	# Get strings from the desktop file
+	@ for LAUNCHER in $(desktopfls); do \
+		sed -r \
+			-e '/^(Name|Comment|GenericName|Keywords)\[/d' \
+			-e 's/^(Name=|Comment=|GenericName=|Keywords=)/_\1/' \
+			$$LAUNCHER > $$LAUNCHER.in ; \
+		intltool-extract --type=gettext/ini $$LAUNCHER.in ; \
+		xgettext \
+			--join-existing \
+			--keyword=N_:1 \
+			--output ./po/$(source).pot \
+			$$LAUNCHER.in.h ; \
+	done && echo "Desktop files scanned for translations"
+
+	# Fix charset
+	@ find ./po -type f -name "*.po*" -exec sed -i 's/charset=CHARSET/charset=UTF-8/' {} \;
+
+	# Apply desktop file modifications
+	@ for LAUNCHER in $(desktopfls); do \
+		intltool-merge --quiet --desktop-style ./po $$LAUNCHER.in $$LAUNCHER ; \
+		rm $$LAUNCHER.in.h $$LAUNCHER.in ; \
+	done && echo "Desktop files updated with new translations"

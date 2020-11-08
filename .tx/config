@@ -8,3 +8,9 @@ file_filter = ts/calamares-solydxk_<lang>.ts
 source_lang = en_US
 type = QT
 
+[calamares-settings-solydxk.calamares-settings-solydxkpot]
+source_file = po/calamares-settings-solydxk.pot
+file_filter = po/<lang>.po
+source_lang = en_US
+type = PO
+
