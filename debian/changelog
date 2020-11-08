@@ -2,6 +2,8 @@ calamares-settings-solydxk (11.0.9) unstable; urgency=low
 
   * Translate .desktop files
   * Add triggers for lightdm files
+  * Safely remove live and calamares packages and dependencies
+  * Upgrade system after installation
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Sun, 08 Nov 2020 11:04:37 +0100
 
