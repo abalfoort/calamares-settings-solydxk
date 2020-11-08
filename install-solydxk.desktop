@@ -2,10 +2,14 @@
 Type=Application
 Version=1.0
 Name=Install SolydXK
+Name[nl]=Installeer SolydXK
 GenericName=Calamares Installer
+GenericName[nl]=Calamares Installatieprogramma
 Exec=install-solydxk
-Comment=Calamares — Installer for SolydXK Live
+Comment=Calamares - Installer for SolydXK Live
+Comment[nl]=Calamares - Installatieprogramma voor SolydXK Live
 Keywords=calamares;system;install;solydxk;installer
+Keywords[nl]=calamares;systeem;installeren;solydxk;installatieprogramma
 Icon=installsolydxk
 Terminal=false
 Categories=Qt;System;
