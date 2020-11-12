@@ -1,0 +1,36 @@
+#!/bin/bash
+
+CHROOT=$(mount | grep proc | grep calamares | awk '{print $3}' | sed -e "s#/proc##g")
+MEDIA_LIST=$CHROOT/etc/apt/sources.list.d/solydxk-live-media.list
+MEDIUM_PATH="/run/live/medium"
+
+if [ "$1" = "-u" ] && [ -e "$CHROOT/$MEDIUM_PATH" ]; then
+    umount $CHROOT/$MEDIUM_PATH
+    rm -r $CHROOT/$MEDIUM_PATH
+    if [ -f $MEDIA_LIST ]; then
+        rm -f $MEDIA_LIST
+        chroot $CHROOT apt-get update
+    fi
+    exit 0
+fi
+
+if [ -d $MEDIUM_PATH/pool ]; then
+    # Bind pool directory
+    if [ ! -z "$CHROOT" ]; then
+        # We don't have to do this outside chroot
+        mkdir -p $CHROOT/$MEDIUM_PATH
+        mount --bind $MEDIUM_PATH $CHROOT/$MEDIUM_PATH
+    fi
+    # Get release and components info from Release file
+    RELEASE=$(grep -i 'codename:'  $MEDIUM_PATH/dists/*/Release | awk '{print $2}' | tr -d '"')
+    COMPONENTS=$(grep -i 'components:'  $MEDIUM_PATH/dists/*/Release | awk '{print $2}' | tr -d '"')
+    # Create apt list file and update
+    echo "deb [trusted=yes] file:$MEDIUM_PATH $RELEASE $COMPONENTS" > $MEDIA_LIST
+    if [ -z "$CHROOT" ]; then
+        apt-get update
+    else
+        chroot $CHROOT apt-get update
+    fi
+fi
+
+exit 0

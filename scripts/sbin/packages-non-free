@@ -1,0 +1,43 @@
+#!/bin/bash
+
+# Install non-free drivers
+
+CHROOT=$(mount | grep proc | grep calamares | awk '{print $3}' | sed -e "s#/proc##g")
+DKMS=$(dpkg-query -l dkms 2>/dev/null | grep ^ii)
+MEDIUM_PATH="/run/live/medium"
+LIVE=$1
+
+function install_pck() {
+    if [ "$LIVE" = "-l" ] && [ -z "$DKMS" ]; then
+        # We are live - dkms needs to be installed
+        exit 0
+    fi
+    # Install the package
+    if [ -z "$CHROOT" ]; then
+        DEBIAN_FRONTEND=noninteractive apt-get -y -q -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" install $1
+    else
+        DEBIAN_FRONTEND=noninteractive chroot $CHROOT apt-get -y -q -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" install $1
+    fi
+}
+
+# Broadcom (can also be installed on a live system)
+DEVICEID=$(lspci -n -d 14e4: | awk '{print $3}' | cut -d':' -f 2)
+if [ ! -z "$DEVICEID" ]; then
+    install_pck "broadcom-sta-dkms"
+    if [ "$LIVE" = "-l" ]; then
+        # Load the wl module
+        modprobe wl
+    fi
+fi
+
+# Nvidia
+if [ -z "$LIVE" ]; then
+    if [ ! -z $(which nvidia-detect) ]; then
+        DRIVER=$(nvidia-detect | egrep "^ *nvidia-" | tr -d ' ')
+        if [ ! -z "$DRIVER" ]; then
+            install_pck "$DRIVER"
+        fi
+    fi
+fi
+
+exit 0
