@@ -8,12 +8,14 @@ Rules-Requires-Root: no
 
 Package: calamares-settings-solydxk
 Architecture: all
-Depends: calamares,
-         cryptsetup,
-         keyutils,
-         qml-module-qtquick-window2,
-         qml-module-qtquick2,
-         ${misc:Depends}
+# For welcomeq, localeq and keyboardq modules add these dependencies:
+# qml-module-qtgraphicaleffects, qml-module-qtquick-controls, qml-module-org-kde-kirigami2
+Depends: ${misc:Depends},
+    calamares,
+    cryptsetup,
+    keyutils,
+    qml-module-qtquick-window2,
+    qml-module-qtquick2
 Provides: calamares-settings
 Description: SolydXK theme and settings for the Calamares Installer
  Calamares is a generic installer framework for Linux distributions.

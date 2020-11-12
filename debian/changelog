@@ -1,3 +1,11 @@
+calamares-settings-solydxk (11.0.10) unstable; urgency=low
+
+  * Finetune modules configuration
+  * Create packages-non-free module
+  * Install non-fee drivers for live system if available
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Tue, 10 Nov 2020 13:16:24 +0100
+
 calamares-settings-solydxk (11.0.9) unstable; urgency=low
 
   * Translate .desktop files
