@@ -1,0 +1,6 @@
+---
+type:       "job"
+name:       "packages-non-free"
+interface:  "process"
+command:    "/usr/sbin/packages-non-free"
+timeout:    600
