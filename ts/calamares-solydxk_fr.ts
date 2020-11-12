@@ -3,8 +3,8 @@
     <name>show</name>
     <message>
         <location filename="../calamares/branding/solydxk/show.qml" line="48"/>
-        <source>&lt;h3&gt;Thank you for choosing SolydXK&lt;/h3&gt;&lt;br /&gt;You&apos;ve chosen a Linux distribution that is:&lt;br /&gt;&lt;ul&gt;&lt;li&gt;Secure and stable&lt;/li&gt;&lt;li&gt;Fast and responsive&lt;/li&gt;&lt;li&gt;Desktop-ready&lt;/li&gt;&lt;/ul&gt;&lt;br /&gt;Enjoy this new release and thank you for choosing SolydXK.&lt;br /&gt;The installation takes 15-30 minutes, depending on your settings.</source>
-        <translation>&lt;h3&gt;Merci d&apos;avoir choisi SolydXK&lt;/h3&gt;&lt;br /&gt;Vous avez choisi une distribution Linux qui est:&lt;br /&gt;&lt;ul&gt;&lt;li&gt;Sûre et stable&lt;/li&gt;&lt;li&gt;Rapide et réactive&lt;/li&gt;&lt;li&gt;Prête à l&apos;emploi&lt;/li&gt;&lt;/ul&gt;&lt;br /&gt;Profitez de cette nouvelle version et encore merci d&apos;avoir choisi SolydXK.&lt;br /&gt;L&apos;installation prend 15-30 minutes, selon votre configuration.</translation>
+        <source>&lt;h3&gt;Thank you for choosing SolydXK&lt;/h3&gt;&lt;br /&gt;You&apos;ve chosen a Linux distribution that is:&lt;br /&gt;&lt;ul&gt;&lt;li&gt;Secure and stable&lt;/li&gt;&lt;li&gt;Fast and responsive&lt;/li&gt;&lt;li&gt;Desktop-ready&lt;/li&gt;&lt;/ul&gt;&lt;br /&gt;Enjoy this new release and thank you for choosing SolydXK.&lt;br /&gt;&lt;br /&gt;The installation takes 15-30 minutes, depending on your settings.</source>
+        <translation>&lt;h3&gt;Merci d&apos;avoir choisi SolydXK&lt;/h3&gt;&lt;br /&gt;Vous avez choisi une distribution Linux qui est:&lt;br /&gt;&lt;ul&gt;&lt;li&gt;Sûre et stable&lt;/li&gt;&lt;li&gt;Rapide et réactive&lt;/li&gt;&lt;li&gt;Prête à l&apos;emploi&lt;/li&gt;&lt;/ul&gt;&lt;br /&gt;Profitez de cette nouvelle version et encore merci d&apos;avoir choisi SolydXK.&lt;br /&gt;&lt;br /&gt;L&apos;installation prend 15-30 minutes, selon votre configuration.</translation>
     </message>
     <message>
         <location filename="../calamares/branding/solydxk/show.qml" line="69"/>

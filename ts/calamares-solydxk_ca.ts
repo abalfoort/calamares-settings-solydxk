@@ -3,8 +3,8 @@
     <name>show</name>
     <message>
         <location filename="../calamares/branding/solydxk/show.qml" line="48"/>
-        <source>&lt;h3&gt;Thank you for choosing SolydXK&lt;/h3&gt;&lt;br /&gt;You&apos;ve chosen a Linux distribution that is:&lt;br /&gt;&lt;ul&gt;&lt;li&gt;Secure and stable&lt;/li&gt;&lt;li&gt;Fast and responsive&lt;/li&gt;&lt;li&gt;Desktop-ready&lt;/li&gt;&lt;/ul&gt;&lt;br /&gt;Enjoy this new release and thank you for choosing SolydXK.&lt;br /&gt;The installation takes 15-30 minutes, depending on your settings.</source>
-        <translation>&lt;h3&gt;Gràcies per triar SolydXK&lt;/h3&gt;&lt;br /&gt;Heu triat una distribució que és:&lt;br /&gt;&lt;ul&gt;&lt;li&gt;Segura i estable&lt;/li&gt;&lt;li&gt;Ràpida i efectiva&lt;/li&gt;&lt;li&gt;A punt per l&apos;escriptori&lt;/li&gt;&lt;/ul&gt;&lt;br /&gt;Gaudiu d&apos;aquesta nova edició.&lt;br /&gt;La instal·lació triga entre 15 i 30 minuts, depenent del vostre maquinari.</translation>
+        <source>&lt;h3&gt;Thank you for choosing SolydXK&lt;/h3&gt;&lt;br /&gt;You&apos;ve chosen a Linux distribution that is:&lt;br /&gt;&lt;ul&gt;&lt;li&gt;Secure and stable&lt;/li&gt;&lt;li&gt;Fast and responsive&lt;/li&gt;&lt;li&gt;Desktop-ready&lt;/li&gt;&lt;/ul&gt;&lt;br /&gt;Enjoy this new release and thank you for choosing SolydXK.&lt;br /&gt;&lt;br /&gt;The installation takes 15-30 minutes, depending on your settings.</source>
+        <translation>&lt;h3&gt;Gràcies per triar SolydXK&lt;/h3&gt;&lt;br /&gt;Heu triat una distribució que és:&lt;br /&gt;&lt;ul&gt;&lt;li&gt;Segura i estable&lt;/li&gt;&lt;li&gt;Ràpida i efectiva&lt;/li&gt;&lt;li&gt;A punt per l&apos;escriptori&lt;/li&gt;&lt;/ul&gt;&lt;br /&gt;Gaudiu d&apos;aquesta nova edició.&lt;br /&gt;&lt;br /&gt;La instal·lació triga entre 15 i 30 minuts, depenent del vostre maquinari.</translation>
     </message>
     <message>
         <location filename="../calamares/branding/solydxk/show.qml" line="69"/>

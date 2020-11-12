@@ -3,8 +3,8 @@
     <name>show</name>
     <message>
         <location filename="../calamares/branding/solydxk/show.qml" line="48"/>
-        <source>&lt;h3&gt;Thank you for choosing SolydXK&lt;/h3&gt;&lt;br /&gt;You&apos;ve chosen a Linux distribution that is:&lt;br /&gt;&lt;ul&gt;&lt;li&gt;Secure and stable&lt;/li&gt;&lt;li&gt;Fast and responsive&lt;/li&gt;&lt;li&gt;Desktop-ready&lt;/li&gt;&lt;/ul&gt;&lt;br /&gt;Enjoy this new release and thank you for choosing SolydXK.&lt;br /&gt;The installation takes 15-30 minutes, depending on your settings.</source>
-        <translation>&lt;h3&gt;SolydXK&apos;yı seçtiğiniz için teşekkür ederiz&lt;/h3&gt;&lt;br /&gt;Seçtiğiniz Linux dağıtımının özellikleri:&lt;br /&gt;&lt;ul&gt;&lt;li&gt;Güvenli ve kararlı&lt;/li&gt;&lt;li&gt;Hızlı ve esnek&lt;/li&gt;&lt;li&gt;Masaüstü kullanımına hazır&lt;/li&gt;&lt;/ul&gt;&lt;br /&gt;Bu yeni sürümün tadını çıkartın ve SolydXK&apos;yı seçtiğiniz için teşekkür ederiz.&lt;br /&gt;Kurulum ayarlarınıza bağlı olarak 15-30 dakika alacak.</translation>
+        <source>&lt;h3&gt;Thank you for choosing SolydXK&lt;/h3&gt;&lt;br /&gt;You&apos;ve chosen a Linux distribution that is:&lt;br /&gt;&lt;ul&gt;&lt;li&gt;Secure and stable&lt;/li&gt;&lt;li&gt;Fast and responsive&lt;/li&gt;&lt;li&gt;Desktop-ready&lt;/li&gt;&lt;/ul&gt;&lt;br /&gt;Enjoy this new release and thank you for choosing SolydXK.&lt;br /&gt;&lt;br /&gt;The installation takes 15-30 minutes, depending on your settings.</source>
+        <translation>&lt;h3&gt;SolydXK&apos;yı seçtiğiniz için teşekkür ederiz&lt;/h3&gt;&lt;br /&gt;Seçtiğiniz Linux dağıtımının özellikleri:&lt;br /&gt;&lt;ul&gt;&lt;li&gt;Güvenli ve kararlı&lt;/li&gt;&lt;li&gt;Hızlı ve esnek&lt;/li&gt;&lt;li&gt;Masaüstü kullanımına hazır&lt;/li&gt;&lt;/ul&gt;&lt;br /&gt;Bu yeni sürümün tadını çıkartın ve SolydXK&apos;yı seçtiğiniz için teşekkür ederiz.&lt;br /&gt;&lt;br /&gt;Kurulum ayarlarınıza bağlı olarak 15-30 dakika alacak.</translation>
     </message>
     <message>
         <location filename="../calamares/branding/solydxk/show.qml" line="69"/>

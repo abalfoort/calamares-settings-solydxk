@@ -3,9 +3,9 @@
     <name>show</name>
     <message>
         <location filename="../calamares/branding/solydxk/show.qml" line="48"/>
-        <source>&lt;h3&gt;Thank you for choosing SolydXK&lt;/h3&gt;&lt;br /&gt;You&apos;ve chosen a Linux distribution that is:&lt;br /&gt;&lt;ul&gt;&lt;li&gt;Secure and stable&lt;/li&gt;&lt;li&gt;Fast and responsive&lt;/li&gt;&lt;li&gt;Desktop-ready&lt;/li&gt;&lt;/ul&gt;&lt;br /&gt;Enjoy this new release and thank you for choosing SolydXK.&lt;br /&gt;The installation takes 15-30 minutes, depending on your settings.</source>
+        <source>&lt;h3&gt;Thank you for choosing SolydXK&lt;/h3&gt;&lt;br /&gt;You&apos;ve chosen a Linux distribution that is:&lt;br /&gt;&lt;ul&gt;&lt;li&gt;Secure and stable&lt;/li&gt;&lt;li&gt;Fast and responsive&lt;/li&gt;&lt;li&gt;Desktop-ready&lt;/li&gt;&lt;/ul&gt;&lt;br /&gt;Enjoy this new release and thank you for choosing SolydXK.&lt;br /&gt;&lt;br /&gt;The installation takes 15-30 minutes, depending on your settings.</source>
         <translation>&lt;h3&gt;SolydXK を選んでいただき、ありがとうございます。&lt;/h3&gt;&lt;br /&gt;選択された Linux ディストリビューションは:&lt;br /&gt;&lt;ul&gt;&lt;li&gt;安全で、安定している&lt;/li&gt;&lt;li&gt;速くて、すぐに反応する&lt;/li&gt;&lt;li&gt;デスクトップ向けに最適化している&lt;/li&gt;&lt;/ul&gt;&lt;br /&gt;この新たなリリースをお楽しみ下さい。SolydXK を選んでいただきありがとうござい&quot;
-&quot;ます。&lt;br /&gt;インストールには15〜30分要します。設定によって変わります。</translation>
+&quot;ます。&lt;br /&gt;&lt;br /&gt;インストールには15〜30分要します。設定によって変わります。</translation>
     </message>
     <message>
         <location filename="../calamares/branding/solydxk/show.qml" line="69"/>

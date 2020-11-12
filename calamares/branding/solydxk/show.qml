@@ -48,7 +48,7 @@ Presentation
             text: qsTr("<h3>Thank you for choosing SolydXK</h3><br />" +
                             "You've chosen a Linux distribution that is:<br />" +
                             "<ul><li>Secure and stable</li><li>Fast and responsive</li><li>Desktop-ready</li></ul><br />" +
-                            "Enjoy this new release and thank you for choosing SolydXK.<br />" +
+                            "Enjoy this new release and thank you for choosing SolydXK.<br /><br />" +
                             "The installation takes 15-30 minutes, depending on your settings.")
             anchors.fill: parent
             anchors.rightMargin: 300

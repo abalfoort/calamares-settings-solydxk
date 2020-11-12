@@ -3,8 +3,8 @@
     <name>show</name>
     <message>
         <location filename="../calamares/branding/solydxk/show.qml" line="48"/>
-        <source>&lt;h3&gt;Thank you for choosing SolydXK&lt;/h3&gt;&lt;br /&gt;You&apos;ve chosen a Linux distribution that is:&lt;br /&gt;&lt;ul&gt;&lt;li&gt;Secure and stable&lt;/li&gt;&lt;li&gt;Fast and responsive&lt;/li&gt;&lt;li&gt;Desktop-ready&lt;/li&gt;&lt;/ul&gt;&lt;br /&gt;Enjoy this new release and thank you for choosing SolydXK.&lt;br /&gt;The installation takes 15-30 minutes, depending on your settings.</source>
-        <translation>&lt;h3&gt;Dziękujemy za wybranie SolydXK&lt;/h3&gt;&lt;br /&gt;Wybrałaś/eś dystrybucję Linuxa, która jest:&lt;br /&gt;&lt;ul&gt;&lt;li&gt;bezpieczna i stabilna&lt;/li&gt;&lt;li&gt;szybka i godna zaufania&lt;/li&gt;&lt;li&gt;gotowa do pracy&lt;/li&gt;&lt;/ul&gt;&lt;br /&gt;Wierzymy, że znajdziesz satysfakcję pracując z nowym wydaniem SolydXK i dziękujemy Ci za wybranie naszej dystrybucji.&lt;br /&gt;Instalacja trwa  15-30 min w zależności od Twojego sprzętu.</translation>
+        <source>&lt;h3&gt;Thank you for choosing SolydXK&lt;/h3&gt;&lt;br /&gt;You&apos;ve chosen a Linux distribution that is:&lt;br /&gt;&lt;ul&gt;&lt;li&gt;Secure and stable&lt;/li&gt;&lt;li&gt;Fast and responsive&lt;/li&gt;&lt;li&gt;Desktop-ready&lt;/li&gt;&lt;/ul&gt;&lt;br /&gt;Enjoy this new release and thank you for choosing SolydXK.&lt;br /&gt;&lt;br /&gt;The installation takes 15-30 minutes, depending on your settings.</source>
+        <translation>&lt;h3&gt;Dziękujemy za wybranie SolydXK&lt;/h3&gt;&lt;br /&gt;Wybrałaś/eś dystrybucję Linuxa, która jest:&lt;br /&gt;&lt;ul&gt;&lt;li&gt;bezpieczna i stabilna&lt;/li&gt;&lt;li&gt;szybka i godna zaufania&lt;/li&gt;&lt;li&gt;gotowa do pracy&lt;/li&gt;&lt;/ul&gt;&lt;br /&gt;Wierzymy, że znajdziesz satysfakcję pracując z nowym wydaniem SolydXK i dziękujemy Ci za wybranie naszej dystrybucji.&lt;br /&gt;&lt;br /&gt;Instalacja trwa  15-30 min w zależności od Twojego sprzętu.</translation>
     </message>
     <message>
         <location filename="../calamares/branding/solydxk/show.qml" line="69"/>
