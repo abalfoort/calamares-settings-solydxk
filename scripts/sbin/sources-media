@@ -21,11 +21,17 @@ if [ -d $MEDIUM_PATH/pool ]; then
         mkdir -p $CHROOT/$MEDIUM_PATH
         mount --bind $MEDIUM_PATH $CHROOT/$MEDIUM_PATH
     fi
-    # Get release and components info from Release file
-    RELEASE=$(grep -i 'codename:'  $MEDIUM_PATH/dists/*/Release | awk '{print $2}' | tr -d '"')
-    COMPONENTS=$(grep -i 'components:'  $MEDIUM_PATH/dists/*/Release | awk '{print $2}' | tr -d '"')
+    # Get info from Release file
+    RELEASE=$(grep -i 'codename:'  $MEDIUM_PATH/dists/*/Release | awk '{print $2}')
+    COMPONENTS=$(grep -i 'components:'  $MEDIUM_PATH/dists/*/Release | cut -d':' -f 2)
+    ARCH=$(grep -i 'architectures:'  $MEDIUM_PATH/dists/*/Release | awk '{print $2}')
+    # Check for single/multiple architectures
+    case $ARCH in  
+        *\ * ) DEBOPT="trusted=yes";;
+        *) DEBOPT="arch=$ARCH trusted=yes" ;;
+    esac
     # Create apt list file and update
-    echo "deb [trusted=yes] file:$MEDIUM_PATH $RELEASE $COMPONENTS" > $MEDIA_LIST
+    echo "deb [$DEBOPT] file:$MEDIUM_PATH $RELEASE $COMPONENTS" > $MEDIA_LIST
     if [ -z "$CHROOT" ]; then
         apt-get update
     else
