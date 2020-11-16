@@ -23,7 +23,7 @@ if [ -d $MEDIUM_PATH/pool ]; then
     fi
     # Get info from Release file
     RELEASE=$(grep -i 'codename:'  $MEDIUM_PATH/dists/*/Release | awk '{print $2}')
-    COMPONENTS=$(grep -i 'components:'  $MEDIUM_PATH/dists/*/Release | cut -d':' -f 2)
+    COMPONENTS=$(grep -i 'components:'  $MEDIUM_PATH/dists/*/Release | cut -d':' -f 2 | tr ',' ' ')
     ARCH=$(grep -i 'architectures:'  $MEDIUM_PATH/dists/*/Release | awk '{print $2}')
     # Check for single/multiple architectures
     case $ARCH in  
