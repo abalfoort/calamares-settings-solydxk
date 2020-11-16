@@ -2,20 +2,21 @@
 
 # Install non-free drivers
 
+# lkddb web-list for amdgpu: https://cateee.net/lkddb/web-lkddb/DRM_AMDGPU.html
+LKDDB="https://cateee.net/sources/lkddb"
 CHROOT=$(mount | grep proc | grep calamares | awk '{print $3}' | sed -e "s#/proc##g")
 DKMS=$(dpkg-query -l dkms 2>/dev/null | grep ^ii)
 MEDIUM_PATH="/run/live/medium"
-LIVE=$1
 
 function install_pck() {
-    if [ "$LIVE" = "-l" ] && [ -z "$DKMS" ]; then
-        # We are live - dkms needs to be installed
-        exit 0
-    fi
     # Install the package
     if [ -z "$CHROOT" ]; then
-        DEBIAN_FRONTEND=noninteractive apt-get -y -q -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" install $1
+        # We are live - dkms needs to be installed
+        if [ ! -z "$DKMS" ]; then
+            DEBIAN_FRONTEND=noninteractive apt-get -y -q -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" install $1
+        fi
     else
+        # We are in the new system
         DEBIAN_FRONTEND=noninteractive chroot $CHROOT apt-get -y -q -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" install $1
     fi
 }
@@ -24,14 +25,14 @@ function install_pck() {
 DEVICEID=$(lspci -n -d 14e4: | awk '{print $3}' | cut -d':' -f 2)
 if [ ! -z "$DEVICEID" ]; then
     install_pck "broadcom-sta-dkms"
-    if [ "$LIVE" = "-l" ]; then
+    if [ -z "$CHROOT" ]; then
         # Load the wl module
         modprobe wl
     fi
 fi
 
 # Nvidia
-if [ -z "$LIVE" ]; then
+if [ ! -z "$CHROOT" ]; then
     if [ ! -z $(which nvidia-detect) ]; then
         DRIVER=$(nvidia-detect | egrep "^ *nvidia-" | tr -d ' ')
         if [ ! -z "$DRIVER" ]; then
@@ -40,4 +41,23 @@ if [ -z "$LIVE" ]; then
     fi
 fi
 
+# AMD (GCN 1.2 ("GCN 3rd generation") or newer)
+if [ ! -z "$CHROOT" ]; then
+    DEVICEID=$(lspci -nn -d 1002: | egrep -i ' 3d | display | vga ' | head -n 1 | grep -oP '(?<=:)[a-z0-9]*(?=\])')
+    #DEVICEID='67df'
+    if [ ! -z "$DEVICEID" ] && [ ! -z "$LKDDB" ]; then
+        # Get a list of supported device IDs from this kernel's lkddb list
+        KV=$(uname -r)
+        LKDDB="$LKDDB/lkddb-${KV:0:3}.list"
+        IDS=$(curl "$LKDDB" | grep -oP '(?<=1002\s)[a-z0-9]*(?=\s.*CONFIG_DRM_AMDGPU)')
+        if [ ! -z "$IDS" ]; then
+            for ID in $IDS; do
+                if [ "$ID" == "$DEVICEID" ]; then
+                    install_pck "firmware-linux firmware-linux-nonfree xserver-xorg-video-amdgpu mesa-vulkan-drivers libgl1-mesa-dri libglx-mesa0"
+                    break
+                fi
+            done
+        fi
+    fi
+fi
 exit 0

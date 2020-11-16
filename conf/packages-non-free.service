@@ -4,7 +4,7 @@ Description=Install non-free packages in live system
 [Service]
 Type=simple
 ExecStartPre=/usr/sbin/sources-media
-ExecStart=/usr/sbin/packages-non-free -l
+ExecStart=/usr/sbin/packages-non-free
 User=root
 
 [Install]
