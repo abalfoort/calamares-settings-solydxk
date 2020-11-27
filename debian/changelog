@@ -1,3 +1,17 @@
+calamares-settings-solydxk (11.0.15) unstable; urgency=low
+
+  * Add modules:
+    - packages-conditional: install/remove packages when conditions are met.
+    - packages-localize: localize packages and install additional packages for locale.
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Thu, 26 Nov 2020 20:35:31 +0100
+
+calamares-settings-solydxk (11.0.14) unstable; urgency=low
+
+  * Fix bug not configuring Grub theme
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Thu, 19 Nov 2020 11:35:10 +0100
+
 calamares-settings-solydxk (11.0.13) unstable; urgency=low
 
   * Fix bug listing multiple repo components with a comma instead of a space
