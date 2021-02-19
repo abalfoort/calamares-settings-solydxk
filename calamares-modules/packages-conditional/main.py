@@ -9,10 +9,15 @@ import subprocess
 from libcalamares.utils import check_target_env_call
 
 def run():
-    virt = subprocess.check_output('systemd-detect-virt').decode('utf-8').strip()
-    
+    virt = ''
+    try:
+        virt = subprocess.check_output('systemd-detect-virt').decode('utf-8').strip()
+    except:
+        # Best effort
+        pass
+
     if not 'oracle' in virt:
         # Remove VirtualBox Guest packages
         check_target_env_call(["apt-get", "--purge", "-q", "-y", "remove", "virtualbox-guest*"])
-        
+
     return None
