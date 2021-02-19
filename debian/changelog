@@ -1,3 +1,22 @@
+calamares-settings-solydxk (11.0.18) unstable; urgency=low
+
+  * Add module to configre system for SSD: ssd-config
+  * Updated translations: pt, it
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Thu, 18 Feb 2021 13:38:45 +0100
+
+calamares-settings-solydxk (11.0.17) unstable; urgency=low
+
+  * Fix bug crash in packages-conditional when installing on metal
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Thu, 31 Dec 2020 10:04:14 +0100
+
+calamares-settings-solydxk (11.0.16) unstable; urgency=low
+
+  * Set system groups in users.conf
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Tue, 29 Dec 2020 10:57:47 +0100
+
 calamares-settings-solydxk (11.0.15) unstable; urgency=low
 
   * Add modules:
