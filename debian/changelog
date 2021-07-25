@@ -1,3 +1,17 @@
+calamares-settings-solydxk (11.0.20) unstable; urgency=low
+
+  * Remove Calamares auto-launch
+  * Add qttools5-dev-tools as a build dependency
+  * Add hide-back-and-next-during-exec to settings.conf
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Mon, 21 Jun 2021 09:04:45 +0200
+
+calamares-settings-solydxk (11.0.19) unstable; urgency=low
+
+  * Updated translation: de
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Tue, 13 Apr 2021 18:03:13 +0200
+
 calamares-settings-solydxk (11.0.18) unstable; urgency=low
 
   * Add module to configre system for SSD: ssd-config
