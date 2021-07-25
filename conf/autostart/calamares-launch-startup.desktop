@@ -1,9 +1,0 @@
-[Desktop Entry]
-Type=Application
-Version=1.0
-Name=Launch Calamares Installer
-Exec=install-solydxk
-StartupNotify=false
-
-X-GNOME-Autostart-Phase=Initialization
-X-KDE-autostart-phase=1
