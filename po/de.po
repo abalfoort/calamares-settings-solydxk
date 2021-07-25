@@ -1,0 +1,38 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# pitfd, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-08 11:32+0100\n"
+"PO-Revision-Date: 2020-11-08 10:33+0000\n"
+"Last-Translator: pitfd, 2021\n"
+"Language-Team: German (https://www.transifex.com/abalfoort/teams/54212/de/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: install-solydxk.desktop.in.h:1 install-solydxk.desktop.in.h:1
+msgid "Install SolydXK"
+msgstr "SolydXK installieren"
+
+#: install-solydxk.desktop.in.h:2 install-solydxk.desktop.in.h:2
+msgid "Calamares Installer"
+msgstr "Calamares Installationsprogramm"
+
+#: install-solydxk.desktop.in.h:3 install-solydxk.desktop.in.h:3
+msgid "Calamares - Installer for SolydXK Live"
+msgstr "Calamares - Installationsprogramm für SolydXK Live"
+
+#: install-solydxk.desktop.in.h:4 install-solydxk.desktop.in.h:4
+msgid "calamares;system;install;solydxk;installer"
+msgstr "Calamares;System;Installation;Solydxk;Installationsprogramm"
