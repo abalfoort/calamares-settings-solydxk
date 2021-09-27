@@ -1,3 +1,16 @@
+calamares-settings-solydxk (11.0.22) unstable; urgency=low
+
+  * Move /usr/share/calamares to /etc/calamares to comply with calamares-settings-debian
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Fri, 24 Sep 2021 15:04:47 +0200
+
+calamares-settings-solydxk (11.0.21) unstable; urgency=low
+
+  * postinst: add save bootloaderEntryName and efiBootloaderId in bootloader.conf
+  * Changed install order in settings.conf
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Wed, 04 Aug 2021 10:09:40 +0200
+
 calamares-settings-solydxk (11.0.20) unstable; urgency=low
 
   * Remove Calamares auto-launch
