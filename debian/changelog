@@ -1,3 +1,9 @@
+calamares-settings-solydxk (11.0.23) unstable; urgency=low
+
+  * Add custom partition layout (root + home)
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Mon, 27 Sep 2021 10:57:17 +0200
+
 calamares-settings-solydxk (11.0.22) unstable; urgency=low
 
   * Move /usr/share/calamares to /etc/calamares to comply with calamares-settings-debian
