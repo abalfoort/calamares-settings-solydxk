@@ -1,4 +1,4 @@
-calamares usr/share
+calamares etc
 calamares-modules/* usr/lib/calamares/modules
 scripts/sbin/* usr/sbin
 scripts/bin/* usr/bin
