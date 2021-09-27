@@ -18,7 +18,7 @@ set -e
 #
 
 case "$1" in
-    configure|upgrade|update|reconfigure|triggered)
+    configure)
     LIVECNF='/etc/live/config.conf.d/solydxk.conf'
     if [ -f "$LIVECNF" ]; then
         . "$LIVECNF"
@@ -55,6 +55,26 @@ case "$1" in
             echo "Live user $LIVE_USERNAME password changed in $CFG"
         done
     fi
+    
+    # Save bootloaderEntryName and efiBootloaderId in bootloader.conf
+    CONF='/usr/share/calamares/modules/bootloader.conf'
+    DEFGRUB='/etc/default/grub'
+    if [ -f $CONF ] && [ -f $DEFGRUB ]; then
+        # Get command or name from GRUB_DISTRIBUTOR
+        GD=$(grep GRUB_DISTRIBUTOR $DEFGRUB | cut -d'=' -f 2 | tr -d '"`')
+        # Assume it is a command, but save the string as-is if it errors out
+        DIST=$(eval $GD 2>/dev/null || echo $GD)
+        if [ ! -z "$DIST" ]; then
+            # Replace the variables only if they are currently commented out
+            DISTID=$(echo ${DIST,,} | awk '{print $1}')
+            sed -i -r -e "s|^#.*bootloaderEntryName:.*\$|bootloaderEntryName: \"$DIST\"|" \
+                        -e "s|^#.*efiBootloaderId:.*\$|efiBootloaderId: \"$DISTID\"|" \
+                        "$CONF"
+            echo "Calamares bootloaderEntryName set to: $DIST"
+            echo "Calamares efiBootloaderId set to: $DISTID"
+        fi
+    fi
+    
     ;;
     abort-upgrade|abort-remove|abort-deconfigure)
     ;;
