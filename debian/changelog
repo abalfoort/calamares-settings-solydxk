@@ -1,3 +1,21 @@
+calamares-settings-solydxk (11.0.26) unstable; urgency=low
+
+  * Move luksbootkeyfile and plymouthcfg up in settings.conf
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Thu, 31 Mar 2022 15:05:58 +0200
+
+calamares-settings-solydxk (11.0.25) unstable; urgency=low
+
+  * Fix ssd-config not adding to fstab
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Tue, 18 Jan 2022 12:59:01 +0100
+
+calamares-settings-solydxk (11.0.24) unstable; urgency=low
+
+  * Updated translation: tr
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Fri, 08 Oct 2021 09:26:11 +0200
+
 calamares-settings-solydxk (11.0.23) unstable; urgency=low
 
   * Add custom partition layout (root + home)
