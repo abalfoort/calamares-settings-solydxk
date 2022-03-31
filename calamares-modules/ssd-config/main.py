@@ -34,7 +34,7 @@ def disk_name_for_partition(partition):
     """
     name = os.path.basename(partition["device"])
 
-    if name.startswith("/dev/mmcblk") or name.startswith("/dev/nvme"):
+    if name.startswith("mmcblk") or name.startswith("nvme"):
         return re.sub("p[0-9]+$", "", name)
 
     return re.sub("[0-9]+$", "", name)
@@ -68,7 +68,7 @@ def run():
         "#tmpfs   /var/log/samba          tmpfs   defaults,noatime,mode=0755              0       0\n" \
         "tmpfs   /var/log/cups           tmpfs   defaults,noatime,mode=0755               0       0\n" \
         "tmpfs   /var/log/ConsoleKit     tmpfs   defaults,noatime,mode=0755               0       0\n" \
-        "tmpfs   /var/log/clamav         tmpfs   defaults,noatime,mode=0755,uid=clamav,gid=clamav 0       0\n"
+        "#tmpfs   /var/log/clamav         tmpfs   defaults,noatime,mode=0755,uid=clamav,gid=clamav 0       0\n"
         
         fstab_path = os.path.join(install_path, 'etc/fstab')
         with open(fstab_path, "a") as fstab:
