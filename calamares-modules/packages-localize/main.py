@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-#   SPDX-FileCopyrightText: 2020 Arjen Balfoort <arjenbalfoort@hotmial.com>
+#   SPDX-FileCopyrightText: 2020 Arjen Balfoort <arjenbalfoort@hotmail.com>
 #   SPDX-License-Identifier: GPL-3.0-or-later
 #
 
@@ -11,12 +11,15 @@ import re
 
 def run():
     # Only continue when having an internet connection
-    if not libcalamares.globalstorage.value("hasInternet"):
-        libcalamares.utils.warning( "Package localization has been skipped: no internet" )
+    skip_this = libcalamares.job.configuration.get("skip_if_no_internet", False)
+    if skip_this and not libcalamares.globalstorage.value("hasInternet"):
+        libcalamares.utils.warning( "Package installation has been skipped: no internet" )
         return None
 
     # Get user selected language
     lang = libcalamares.globalstorage.value("localeConf")["LANG"].lower().split(".")[0]
+    if not lang or lang == "en_us":
+        return None
     
     # List configured applications
     localize = libcalamares.job.configuration.get('localize', [])
