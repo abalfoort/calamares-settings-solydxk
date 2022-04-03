@@ -6,7 +6,6 @@
 LKDDB="https://cateee.net/sources/lkddb"
 CHROOT=$(mount | grep proc | grep calamares | awk '{print $3}' | sed -e "s#/proc##g")
 DKMS=$(dpkg-query -l dkms 2>/dev/null | grep ^ii)
-MEDIUM_PATH="/run/live/medium"
 
 function install_pck() {
     # Install the package
