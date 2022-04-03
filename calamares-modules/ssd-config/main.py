@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-#   SPDX-FileCopyrightText: 2020 Arjen Balfoort <arjenbalfoort@hotmial.com>
+#   SPDX-FileCopyrightText: 2020 Arjen Balfoort <arjenbalfoort@hotmail.com>
 #   SPDX-License-Identifier: GPL-3.0-or-later
 #
 
