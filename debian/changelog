@@ -1,3 +1,9 @@
+calamares-settings-solydxk (11.0.28) unstable; urgency=low
+
+  * Remove luksopenswaphookcfg from settings.conf
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Mon, 04 Apr 2022 10:10:37 +0200
+
 calamares-settings-solydxk (11.0.27) unstable; urgency=high
 
   * Add module to fix system when using unencrypted /boot and encrypted /
