@@ -1,3 +1,11 @@
+calamares-settings-solydxk (11.0.29) unstable; urgency=low
+
+  * Add error handling to luks-ubootfix
+  * Replace sed command with python regexp
+  * Make luks-ubootfix more readable
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Tue, 05 Apr 2022 09:54:57 +0200
+
 calamares-settings-solydxk (11.0.28) unstable; urgency=low
 
   * Remove luksopenswaphookcfg from settings.conf

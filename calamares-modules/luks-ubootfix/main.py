@@ -5,48 +5,73 @@
 #   SPDX-License-Identifier: GPL-3.0-or-later
 #
 
-import libcalamares
+import os
+import re
 import subprocess
-from os.path import exists, join
-
+import libcalamares
 
 def run():
     root_mount_point = libcalamares.globalstorage.value("rootMountPoint")
     if root_mount_point:
-        crypttab_path = join(root_mount_point, "etc", "crypttab")
-        key_file = join(root_mount_point, "crypto_keyfile.bin")
         partitions = libcalamares.globalstorage.value("partitions")
-        unencrypted_separate_boot = None
-        encrypted_root = None
+        crypttab_path = os.path.join(root_mount_point, "etc", "crypttab")
+        key_file = os.path.join(root_mount_point, "crypto_keyfile.bin")
+        unencrypted_boot = False
+        root_luksUuid = None
         enc_devices = []
-        
+
+        # Check if /boot is unencrypted and / is encrypted
         for partition in partitions:
-            #{'claimed': True, 'device': '/dev/sda3', 'features': {}, 'fs': 'ext4', 'fsName': 'luks', 'luksMapperName': 'luks-a493dc53-ae65-417f-b072-e4944131e5df', 'luksPassphrase': 'solydxk', 'luksUuid': 'a493dc53-ae65-417f-b072-e4944131e5df', 'mountPoint': '/', 'partattrs': 0, 'partlabel': '', 'parttype': '', 'partuuid': '1684749C-B3AB-DE4A-8D20-DA5EE8581D36', 'uuid': 'a493dc53-ae65-417f-b072-e4944131e5df'}
             has_luks = "luksMapperName" in partition
             if partition["mountPoint"] == "/boot" and not has_luks:
-                unencrypted_separate_boot = partition
+                unencrypted_boot = True
             elif partition["mountPoint"] == "/" and has_luks:
-                encrypted_root = partition
+                root_luksUuid = partition["luksUuid"]
             elif has_luks:
-                # Save encrypted devices and passphrases in dict (enc_devs["/dev/sda4"] = "passphrase")
+                # Save encrypted devices and passphrases
                 enc_devices.append((partition["device"], partition["luksPassphrase"]))
-        
-        if unencrypted_separate_boot and encrypted_root and exists(crypttab_path):
-            libcalamares.utils.debug("Unencrypted /boot and encrypted / partition - fix crypttab:")
-            # Fix crypttab: set password to none
-            sed_command = "sed -i 's#UUID={!s}.*#UUID={!s}     none#' {!s}".format(encrypted_root["luksUuid"], encrypted_root["luksUuid"], crypttab_path)
-            #print((sed_command))
-            subprocess.call(sed_command, shell=True)
-            with open(crypttab_path, "r") as f: libcalamares.utils.debug(f.read())
-            
-            if not exists(key_file) and len(enc_devices) > 0:
+
+        if unencrypted_boot and root_luksUuid and os.path.exists(crypttab_path):
+            libcalamares.utils.debug("Set password to none for / partition {!s} in {!s}".format(root_luksUuid, crypttab_path))
+            # Fix crypttab: set password to none for / partition
+            with open(crypttab_path, 'r+') as f:
+                txt = f.read()
+                txt = re.sub("UUID={!s}.*".format(root_luksUuid),
+                             "UUID={!s}     none".format(root_luksUuid),
+                             txt)
+                f.seek(0)
+                f.write(txt)
+                f.truncate()
+
+            with open(crypttab_path, "r") as f:
+                libcalamares.utils.debug(f.read())
+
+            if not os.path.exists(key_file) and len(enc_devices) > 0:
                 libcalamares.utils.debug("Create key file: {!s}".format(key_file))
                 # Create /crypto_keyfile.bin
-                subprocess.call("dd if=/dev/urandom of={!s} bs=512 count=8 iflag=fullblock".format(key_file), shell=True)
-                subprocess.call("chmod 000 {!s}".format(key_file), shell=True)
-                for enc_device in enc_devices:
-                    # Add key for device
-                    libcalamares.utils.debug("Add key to key file for {!s}".format(enc_device[0]))
-                    key_command = "printf \"{!s}\" | cryptsetup luksAddKey {!s} {!s}".format(enc_device[1], enc_device[0], key_file)
-                    #print((key_command))
-                    subprocess.call(key_command, shell=True)
+                p = subprocess.run(["dd",
+                                    "if=/dev/urandom",
+                                    "of={!s}".format(key_file),
+                                    "bs=512",
+                                    "count=8",
+                                    "iflag=fullblock"],
+                                    stdout=subprocess.PIPE,
+                                    stderr=subprocess.PIPE)
+                if p.returncode != 0:
+                    libcalamares.utils.warning("Unable to create {!s}: {!s}".format(key_file, p.stderr))
+                else:
+                    # Remove permissions on key file
+                    subprocess.run(["chmod", "000", key_file])
+
+                    # Add key for each encrypted device (except / partition)
+                    for enc_device in enc_devices:
+                        libcalamares.utils.debug("Add key for {!s} in {!s}".format(enc_device[0], key_file))
+                        p = subprocess.run(["cryptsetup",
+                                            "luksAddKey",
+                                            enc_device[0],
+                                            key_file],
+                                            stdout=subprocess.PIPE,
+                                            stderr=subprocess.PIPE,
+                                            input=enc_device[1].encode())
+                        if p.returncode != 0:
+                            libcalamares.utils.warning("Unable to add key for {!s} in {!s}: {!s}".format(enc_device[0], key_file, p.stderr))
