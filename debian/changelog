@@ -1,3 +1,12 @@
+calamares-settings-solydxk (11.0.30) unstable; urgency=low
+
+  * Rename luks-ubootfix to luksboot-fix
+  * luksboot-fix: add custom error dialog
+  * luksboot-fix: ask for passphrase for previously encrypted partitions
+  * luksboot-fix: make it translatable
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Wed, 06 Apr 2022 10:58:36 +0200
+
 calamares-settings-solydxk (11.0.29) unstable; urgency=low
 
   * Add error handling to luks-ubootfix

@@ -10,8 +10,10 @@ SHELL := /bin/bash
 .PHONY: update
 
 source := $(shell dpkg-parsechangelog -S Source)
+pyfiles := $(shell find ./calamares-modules -name '*.py' -print 2>/dev/null)
 tsfiles := $(shell find ./ts -name "*.ts" | grep -v "en_US" 2>/dev/null)
-desktopfls := $(shell find . -wholename "./debian" -prune -o -wholename "./conf" -prune -o -name "*.desktop" -print 2>/dev/null)
+#desktopfls := $(shell find . -wholename "./debian" -prune -o -wholename "./conf" -prune -o -name "*.desktop" -print 2>/dev/null)
+desktopfls := $(shell find ./conf -maxdepth 1 -name '*.desktop' -print 2>/dev/null)
 
 # Create qm from the ts files
 # https://www.gnu.org/software/make/manual/make.html#Pattern-Rules
@@ -46,6 +48,16 @@ update:
 
 	# Create the lang directory if it does not exist
 	mkdir -p ./calamares/branding/solydxk/lang
+	
+	# Scan for .py files
+	@ xgettext \
+		--keyword=_ \
+		--language=Python \
+		--output=./po/$(source).pot \
+		--package-name=$(source) \
+		--package-version='' \
+		--from-code=UTF-8 \
+		$(pyfiles) && echo "Python files scanned for translations"
 
 	# Update base ts file
 	@ cd ./calamares/branding/solydxk; lupdate show.qml -no-obsolete -source-language en_US -ts ../../../ts/calamares-solydxk_en_US.ts -target-language en_US

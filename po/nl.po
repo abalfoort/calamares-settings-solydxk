@@ -2,33 +2,69 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
+# Translators:
+# Arjen Balfoort <arjenbalfoort@hotmail.com>, 2022
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-08 11:17+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: nl\n"
+"POT-Creation-Date: 2022-04-10 18:00+0200\n"
+"PO-Revision-Date: 2020-11-08 10:33+0000\n"
+"Last-Translator: Arjen Balfoort <arjenbalfoort@hotmail.com>, 2022\n"
+"Language-Team: Dutch (https://www.transifex.com/abalfoort/teams/54212/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: nl\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: install-solydxk.desktop.in.h:1
+#: calamares-modules/luksboot-fix/main.py:28
+msgid "Calamares will continue despite this error."
+msgstr "Calamares gaat door ondanks deze fout."
+
+#: calamares-modules/luksboot-fix/main.py:30
+msgid "Error"
+msgstr "Fout"
+
+#: calamares-modules/luksboot-fix/main.py:46
+msgid "Passphrase"
+msgstr "Wachtwoord"
+
+#: calamares-modules/luksboot-fix/main.py:50
+msgid ""
+"Previously encrypted partition found: {!s}.\n"
+"Please, provide the passphrase to unlock."
+msgstr ""
+"Eerder versleutelde partitie gevonden: {!s}.\n"
+"Geef het wachtwoord om te ontgrendelen."
+
+#: calamares-modules/luksboot-fix/main.py:99
+msgid "Unable to add key for {!s} in {!s}: {!s}"
+msgstr "Niet in staat om sleutel voor {!s} toe te voegen in {!s}: {!s}"
+
+#: calamares-modules/luksboot-fix/main.py:119
+msgid "Unable to connect luks device {!s}: {!s}"
+msgstr "Kan luks apparaat {!s} niet verbinden: {!s}"
+
+#: calamares-modules/luksboot-fix/main.py:203
+msgid "Unable to create {!s}: {!s}"
+msgstr "Niet in staat om {!s} te maken: {!s}"
+
+#: conf/install-solydxk.desktop.in.h:1
 msgid "Install SolydXK"
 msgstr "Installeer SolydXK"
 
-#: install-solydxk.desktop.in.h:2
+#: conf/install-solydxk.desktop.in.h:2
 msgid "Calamares Installer"
 msgstr "Calamares Installatieprogramma"
 
-#: install-solydxk.desktop.in.h:3
+#: conf/install-solydxk.desktop.in.h:3
 msgid "Calamares - Installer for SolydXK Live"
 msgstr "Calamares - Installatieprogramma voor SolydXK Live"
 
-#: install-solydxk.desktop.in.h:4
+#: conf/install-solydxk.desktop.in.h:4
 msgid "calamares;system;install;solydxk;installer"
 msgstr "calamares;systeem;installeren;solydxk;installatieprogramma"

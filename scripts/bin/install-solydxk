@@ -3,6 +3,11 @@
 # Wrapper for running calamares on SolydXK live media
 ###
 
+# Make sure drives are not automounted in xfce
+if [ -x "$(command -v xfconf-query)" ]; then
+    xfconf-query -c thunar-volman -p /automount-drives/enabled -s false
+fi
+
 # Stale file left behind by live-build that messes with partitioning
 sudo mv /etc/fstab /etc/fstab.orig.calamares
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-10 16:30+0100\n"
+"POT-Creation-Date: 2022-04-12 09:07+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,18 +17,48 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: install-solydxk.desktop.in.h:1 install-solydxk.desktop.in.h:1
+#: calamares-modules/luksboot-fix/main.py:28
+msgid "Calamares will continue despite this error."
+msgstr ""
+
+#: calamares-modules/luksboot-fix/main.py:30
+msgid "Error"
+msgstr ""
+
+#: calamares-modules/luksboot-fix/main.py:46
+msgid "Passphrase"
+msgstr ""
+
+#: calamares-modules/luksboot-fix/main.py:50
+msgid ""
+"Previously encrypted partition found: {!s}.\n"
+"Please, provide the passphrase to unlock."
+msgstr ""
+
+#: calamares-modules/luksboot-fix/main.py:99
+msgid "Unable to add key for {!s} in {!s}: {!s}"
+msgstr ""
+
+#: calamares-modules/luksboot-fix/main.py:124
+msgid "Unable to connect luks device {!s}: {!s}"
+msgstr ""
+
+#: calamares-modules/luksboot-fix/main.py:217
+msgid "Unable to create {!s}: {!s}"
+msgstr ""
+
+#: conf/install-solydxk.desktop.in.h:1
 msgid "Install SolydXK"
 msgstr ""
 
-#: install-solydxk.desktop.in.h:2 install-solydxk.desktop.in.h:2
+#: conf/install-solydxk.desktop.in.h:2
 msgid "Calamares Installer"
 msgstr ""
 
-#: install-solydxk.desktop.in.h:3 install-solydxk.desktop.in.h:3
+#: conf/install-solydxk.desktop.in.h:3
 msgid "Calamares - Installer for SolydXK Live"
 msgstr ""
 
-#: install-solydxk.desktop.in.h:4 install-solydxk.desktop.in.h:4
+#: conf/install-solydxk.desktop.in.h:4
 msgid "calamares;system;install;solydxk;installer"
 msgstr ""
