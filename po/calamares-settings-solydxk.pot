@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-14 14:21+0200\n"
+"POT-Creation-Date: 2022-04-14 16:14+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,11 +39,11 @@ msgstr ""
 msgid "Unable to create {!s}: {!s}"
 msgstr ""
 
-#: calamares-modules/luksboot-fix/main.py:142
-msgid "Unable to add key for {!s} in {!s}: {!s}"
+#: calamares-modules/luksboot-fix/main.py:148
+msgid "Unable to add key for {!s} in {!s}: {!s} - {!s}"
 msgstr ""
 
-#: calamares-modules/luksboot-fix/main.py:275
+#: calamares-modules/luksboot-fix/main.py:284
 msgid ""
 "Unable to determine the file system type of {!s}.\n"
 "You need to configure this device manually."
