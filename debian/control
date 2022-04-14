@@ -16,8 +16,7 @@ Depends: ${misc:Depends},
     keyutils,
     qml-module-qtquick-window2,
     qml-module-qtquick2,
-    python3-apt,
-    util-linux
+    python3-apt
 Provides: calamares-settings
 Description: SolydXK theme and settings for the Calamares Installer
  Calamares is a generic installer framework for Linux distributions.
