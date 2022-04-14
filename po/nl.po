@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-10 18:00+0200\n"
+"POT-Creation-Date: 2022-04-14 13:04+0200\n"
 "PO-Revision-Date: 2020-11-08 10:33+0000\n"
 "Last-Translator: Arjen Balfoort <arjenbalfoort@hotmail.com>, 2022\n"
 "Language-Team: Dutch (https://www.transifex.com/abalfoort/teams/54212/nl/)\n"
@@ -36,22 +36,26 @@ msgstr "Wachtwoord"
 #: calamares-modules/luksboot-fix/main.py:50
 msgid ""
 "Previously encrypted partition found: {!s}.\n"
-"Please, provide the passphrase to unlock."
+"Please, provide an existing passphrase to unlock."
 msgstr ""
 "Eerder versleutelde partitie gevonden: {!s}.\n"
-"Geef het wachtwoord om te ontgrendelen."
+"Geef een bestaand wachtwoord om te ontgrendelen."
 
 #: calamares-modules/luksboot-fix/main.py:99
+msgid "Unable to create {!s}: {!s}"
+msgstr "Niet in staat om {!s} te maken: {!s}"
+
+#: calamares-modules/luksboot-fix/main.py:142
 msgid "Unable to add key for {!s} in {!s}: {!s}"
 msgstr "Niet in staat om sleutel voor {!s} toe te voegen in {!s}: {!s}"
 
-#: calamares-modules/luksboot-fix/main.py:119
-msgid "Unable to connect luks device {!s}: {!s}"
-msgstr "Kan luks apparaat {!s} niet verbinden: {!s}"
-
-#: calamares-modules/luksboot-fix/main.py:203
-msgid "Unable to create {!s}: {!s}"
-msgstr "Niet in staat om {!s} te maken: {!s}"
+#: calamares-modules/luksboot-fix/main.py:275
+msgid ""
+"Unable to determine the file system type of {!s}.\n"
+"You need to configure this device manually."
+msgstr ""
+"Kan het bestandssysteemtype van {!s} niet bepalen.\n"
+"U dient dit apparaat handmatig te configureren."
 
 #: conf/install-solydxk.desktop.in.h:1
 msgid "Install SolydXK"
