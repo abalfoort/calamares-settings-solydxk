@@ -2,6 +2,7 @@ calamares-settings-solydxk (11.1.0) unstable; urgency=low
 
   * Fix bug: "All key slots full"
   * Keep asking for passphrase until fstype can be determined or user cancel
+  * Remove faulty /dev/mapper entries in fstab
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Wed, 13 Apr 2022 14:33:26 +0200
 

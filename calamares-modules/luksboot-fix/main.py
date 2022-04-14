@@ -139,8 +139,13 @@ def add_luks_key(device, passphrase, key_file):
                         input=passphrase.encode())
 
     if p.returncode != 0:
-        # Error codes are: 1 wrong parameters, 2 no permission (bad passphrase), 3 out of memory, 4 wrong device specified, 5  device already exists or device is busy.
-        message = _("Unable to add key for {!s} in {!s}: {!s}").format(device, key_file, p.stderr.decode())
+        # Error codes are:
+        # 1 wrong parameters
+        # 2 no permission (bad passphrase)
+        # 3 out of memory
+        # 4 wrong device specified
+        # 5  device already exists or device is busy.
+        message = _("Unable to add key for {!s} in {!s}: {!s} - {!s}").format(device, key_file, p.returncode, p.stderr.decode())
         libcalamares.utils.warning(message)
         ErrorDialog(message).show()
 
@@ -261,6 +266,9 @@ def run():
             create_keyfile(key_file)
 
         if os.path.exists(key_file) and len(encrypted_partitions) > 0:
+            # Cleanup fstab first (previously encrypted partitions)
+            replace_in_file(fstab_path, '/dev/mapper/\s.*\n', '')
+            
             # Add key for each encrypted partition (except / partition)
             for partition in encrypted_partitions:
                 if partition['luksPassphrase']:
