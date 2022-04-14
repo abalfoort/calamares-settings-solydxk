@@ -1,3 +1,16 @@
+calamares-settings-solydxk (11.1.0) unstable; urgency=low
+
+  * Fix bug: "All key slots full"
+  * Keep asking for passphrase until fstype can be determined or user cancel
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Wed, 13 Apr 2022 14:33:26 +0200
+
+calamares-settings-solydxk (11.0.31) unstable; urgency=low
+
+  * luksboot-fix: rewrite get_fstype function to fix "all key slots full"
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Wed, 13 Apr 2022 11:52:37 +0200
+
 calamares-settings-solydxk (11.0.30) unstable; urgency=low
 
   * Rename luks-ubootfix to luksboot-fix
