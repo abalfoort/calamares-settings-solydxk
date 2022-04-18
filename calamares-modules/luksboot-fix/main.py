@@ -109,7 +109,7 @@ def add_luks_key(device, passphrase, key_file):
     Add a key to a luks key.
     Args: device (/dev/sdXN), luks passphrase for device
     """
-    
+
     # Sometimes this error is thrown: "All key slots full"
     # luksAddKey will fail. So, remove the first slot to make room
     luks_dump = ''
@@ -118,7 +118,7 @@ def add_luks_key(device, passphrase, key_file):
     except Exception as e:
         # We shouldn't get here
         libcalamares.utils.warning("luksDump error: {!s}".format(e))
-        
+
     pattern = re.compile(r'(\d+):\s*enabled', re.IGNORECASE)
     slots = re.findall(pattern, luks_dump)
     if len(slots) > 7:
@@ -201,18 +201,44 @@ def get_fstype(device, uuid, passphrase):
 
     return fstype
 
-def replace_in_file(file_path, pattern, replace_string):
+def adapt_file(file_path, new_line, pattern=None):
     """
-    Replace a pattern with a string in a file.
-    Args: regular expression pattern to replace, string to replace pattern with
+    Replace a pattern with new_line or insert new_line on the first empty line in a file.
+    Args: file path, new line, pattern to replace
     """
-    if os.path.exists(file_path):
-        with open(file_path, 'r+') as f:
-            txt = f.read()
-            txt = re.sub(pattern, replace_string, txt)
-            f.seek(0)
-            f.write(txt)
-            f.truncate()
+    tmp_list = []
+    new_line_added = False
+    # First check for pattern and replace pattern with new line
+    if pattern:
+        cont = None
+        p_obj = re.compile(pattern, re.MULTILINE)
+        with open(file_path, 'r') as f:
+            cont = f.read()
+        if re.search(p_obj, cont):
+            tmp_list = re.sub(p_obj, new_line, cont).split('\n')
+            new_line_added = True
+
+    # Insert new line on first empty line if possible
+    # else add as last line
+    if not new_line_added:
+        with open(file_path, 'r') as f:
+            file_list = f.readlines()
+        for line in file_list:
+            line = line.strip()
+            if not line and not new_line_added:
+                tmp_list.append(new_line)
+                tmp_list.append('')
+                new_line_added = True
+            else:
+                tmp_list.append(line)
+
+    # New line not added - just add it now
+    if not new_line_added:
+        tmp_list.append(new_line)
+
+    # Save to the file
+    with open(file_path, 'w') as f:
+        f.write('\n'.join(tmp_list))
 
 def run():
     root_mount_point = libcalamares.globalstorage.value('rootMountPoint')
@@ -254,7 +280,7 @@ def run():
             # Fix crypttab: set password to none for / partition
             pattern = 'UUID={!s}.*'.format(root_partition_uuid)
             repl_string = 'UUID={!s}     none'.format(root_partition_uuid)
-            replace_in_file(crypttab_path, pattern, repl_string)
+            adapt_file(crypttab_path, repl_string, pattern)
 
             with open(crypttab_path, 'r') as f:
                 if not repl_string in f.read():
@@ -267,8 +293,8 @@ def run():
 
         if os.path.exists(key_file) and len(encrypted_partitions) > 0:
             # Cleanup fstab first (previously encrypted partitions)
-            replace_in_file(fstab_path, '/dev/mapper/\s.*\n', '')
-            
+            adapt_file(fstab_path, '', '/dev/mapper/\s.*\n')
+
             # Add key for each encrypted partition (except / partition)
             for partition in encrypted_partitions:
                 if partition['luksPassphrase']:
@@ -286,7 +312,7 @@ def run():
                             libcalamares.utils.warning(message)
                             ErrorDialog(message).show()
                             break
-                        
+
                         if passphrase:
                             # Get real fs type
                             fstype = get_fstype(partition['device'],
@@ -295,29 +321,18 @@ def run():
 
                     if fstype:
                         # Fix fstab:
-                        pattern = '.*\s{!s}\s.*'.format(partition['mountPoint'])
-                        repl_string = '/dev/mapper/luks-{!s} {!s} {!s} defaults,noatime 0 2'.format(partition['uuid'], 
-                                                                                                    partition['mountPoint'],
-                                                                                                    fstype)
-                        libcalamares.utils.debug("FSTAB: {!s}".format(repl_string))
-                        replace_in_file(fstab_path, pattern, repl_string)
-
-                        with open(fstab_path, 'r') as f:
-                            if not repl_string in f.read():
-                                libcalamares.utils.warning("Unable to adapt {!s}. Line should be: ...{!s}"
-                                                           .format(fstab_path, repl_string))
+                        fstab_line = '/dev/mapper/luks-{!s} {!s} {!s} defaults,noatime 0 2'.format(partition['uuid'], 
+                                                                                                   partition['mountPoint'],
+                                                                                                   fstype)
+                        libcalamares.utils.debug("Adapt {!s}: {!s}".format(fstab_path, fstab_line))
+                        adapt_file(fstab_path, fstab_line, '.*{!s}.*'.format(partition['uuid']))
 
                         # Fix crypttab
-                        crypttab_cont = ''
-                        with open(crypttab_path, 'r') as f:
-                            crypttab_cont = f.read()
-                        if not partition['uuid'] in crypttab_cont:
-                            # UUID not found - append partition to crypttab
-                            crypttab_line = 'luks-{uuid} UUID={uuid} /crypto_keyfile.bin luks,keyscript=/bin/cat\n'.format(uuid=partition['uuid'])
-                            libcalamares.utils.debug("CRYPTTAB: {!s}".format(crypttab_line))
-                            with open(crypttab_path, 'a') as f:
-                                f.write(crypttab_line)
-                            # Add the key to the key file
-                            add_luks_key(partition['device'], passphrase, key_file)
+                        crypttab_line = 'luks-{uuid} UUID={uuid}     /crypto_keyfile.bin luks,keyscript=/bin/cat\n'.format(uuid=partition['uuid'])
+                        libcalamares.utils.debug("Adapt {!s}: {!s}".format(crypttab_path, crypttab_line))
+                        adapt_file(crypttab_path, crypttab_line, '.*{!s}.*'.format(partition['uuid']))
+
+                        # Add the key to the key file
+                        add_luks_key(partition['device'], passphrase, key_file)
 
     return None
