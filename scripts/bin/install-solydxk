@@ -3,6 +3,23 @@
 # Wrapper for running calamares on SolydXK live media
 ###
 
+DEBUG=''
+while getopts 'dh' OPT; do
+    case $OPT in
+        d)
+            # Shut down when done
+            DEBUG='-d'
+            ;;
+        h)
+            echo 'Usage: install-solydxk [-d]'
+            echo '-d: start Calamares in debug mode'
+            echo 'Do not close Calamares when finished'
+            echo 'but save /root/.cache/calamares/session.log'
+            exit 0
+            ;;
+    esac
+done
+
 # Make sure drives are not automounted in xfce
 if [ -x "$(command -v xfconf-query)" ]; then
     xfconf-query -c thunar-volman -p /automount-drives/enabled -s false
@@ -13,7 +30,7 @@ sudo mv /etc/fstab /etc/fstab.orig.calamares
 
 # Access control to run calamares as root for xwayland
 xhost +si:localuser:root
-pkexec calamares
+pkexec calamares $DEBUG
 xhost -si:localuser:root
 
 # Restore stale fstab, for what it's worth
