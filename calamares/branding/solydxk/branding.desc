@@ -125,7 +125,7 @@ strings:
     shortVersion:                  SolydXK
     versionedName:              SolydXK 11
     shortVersionedName:     SolydXK 11
-    bootloaderEntryName:   SolydXK
+    bootloaderEntryName:   solydxk11
     productUrl:                      https://solydxk.com/
     supportUrl:                      https://forums.solydxk.com/
     knownIssuesUrl:             https://forums.solydxk.com/
