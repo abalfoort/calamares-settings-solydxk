@@ -41,14 +41,14 @@ class PassphraseDialog(Gtk.MessageDialog):
     Args: device (/dev/sdXN)
     Returns: passphrase string or None
     """
-    def __init__(self, device):
+    def __init__(self, device_string):
         parent = next((w for w in Gtk.Window.list_toplevels() if w.get_title()), None)
         super().__init__(title=_("Passphrase"), transient_for=parent, modal=True, destroy_with_parent=True)
         self.add_buttons(Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL, Gtk.STOCK_OK, Gtk.ResponseType.OK)
         self.set_default_response(Gtk.ResponseType.OK)
         self.set_response_sensitive(Gtk.ResponseType.OK, False)
-        self.set_markup(_("Previously encrypted partition found: {!s}.\n"
-                        "Please, provide an existing passphrase to unlock.").format(device))
+        self.set_markup(_("Previously encrypted partition found:\n{!s}.\n"
+                        "Please, provide an existing passphrase to unlock.").format(device_string))
         # Add entry fields
         box = self.get_content_area()
         box.set_property('margin-left', 10)
@@ -181,8 +181,7 @@ def get_fstype(device, uuid, passphrase):
 
         if os.path.exists(mapped_device):
             # Get file system
-            # psutil only lists loop devices in a live session
-            # Use lsblk instead
+            # psutil returns incomplete list of partitions - use lsblk instead
             fstype = subprocess.check_output(['lsblk', '-no', 'FSTYPE', mapped_device]).decode().strip()
             libcalamares.utils.debug("fstype of luks device {!s}: {!s}".format(mapped_device, fstype))
 
@@ -243,6 +242,7 @@ def adapt_file(file_path, new_line, pattern=None):
 def run():
     root_mount_point = libcalamares.globalstorage.value('rootMountPoint')
     partitions = libcalamares.globalstorage.value('partitions')
+    conf = libcalamares.job.configuration
 
     if not root_mount_point:
         libcalamares.utils.warning("rootMountPoint is empty, {!s}"
@@ -256,7 +256,9 @@ def run():
 
     crypttab_path = os.path.join(root_mount_point, 'etc', 'crypttab')
     fstab_path = os.path.join(root_mount_point, 'etc', 'fstab')
-    key_file = os.path.join(root_mount_point, 'crypto_keyfile.bin')
+    key_file_name = conf.get('cryptoKeyFile', 'crypto_keyfile.bin')
+    key_file = os.path.join(root_mount_point, key_file_name)
+    mount_options = conf.get('mountOptions', {'default': 'defaults,noatime'})
     unencrypted_boot = False
     root_partition_uuid = None
     encrypted_partitions = []
@@ -304,7 +306,8 @@ def run():
                     # This partition is a previously encrypted partition and has no passphrase - ask user for passphrase
                     fstype = ''
                     while not fstype:
-                        passphrase = PassphraseDialog(partition['device']).show()
+                        device_string = '<b>{!s}</b> (mount point: {!s})'.format(partition['device'], partition['mountPoint'])
+                        passphrase = PassphraseDialog(device_string).show()
                         if passphrase is None:
                             # User hit the Cancel button
                             message = _("Unable to determine the file system type of {!s}.\n"
@@ -321,14 +324,20 @@ def run():
 
                     if fstype:
                         # Fix fstab:
-                        fstab_line = '/dev/mapper/luks-{!s} {!s} {!s} defaults,noatime 0 2'.format(partition['uuid'], 
-                                                                                                   partition['mountPoint'],
-                                                                                                   fstype)
+                        fs_mount_options = mount_options.get(fstype, mount_options['default'])
+                        fstab_line = '/dev/mapper/luks-{!s} {:<14} {:<7} {:<10} 0 2'.format(partition['uuid'], 
+                                                                                            partition['mountPoint'],
+                                                                                            fstype,
+                                                                                            fs_mount_options)
                         libcalamares.utils.debug("Adapt {!s}: {!s}".format(fstab_path, fstab_line))
                         adapt_file(fstab_path, fstab_line, '.*{!s}.*'.format(partition['uuid']))
 
                         # Fix crypttab
-                        crypttab_line = 'luks-{uuid} UUID={uuid}     /crypto_keyfile.bin luks,keyscript=/bin/cat\n'.format(uuid=partition['uuid'])
+                        crypttab_options = conf.get('crypttabOptions', 'luks')
+                        crypttab_line = 'luks-{!s} UUID={:<40} /{!s} {!s}\n'.format(partition['uuid'],
+                                                                                    partition['uuid'],
+                                                                                    key_file_name, 
+                                                                                    crypttab_options)
                         libcalamares.utils.debug("Adapt {!s}: {!s}".format(crypttab_path, crypttab_line))
                         adapt_file(crypttab_path, crypttab_line, '.*{!s}.*'.format(partition['uuid']))
 

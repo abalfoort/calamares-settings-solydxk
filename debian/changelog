@@ -1,3 +1,10 @@
+calamares-settings-solydxk (11.1.4) unstable; urgency=low
+
+  * Add luksboot-fix.conf
+  * Add mount point when asking for passphrase of encrypted partition
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Mon, 18 Apr 2022 10:53:02 +0200
+
 calamares-settings-solydxk (11.1.3) unstable; urgency=low
 
   * Build separate packages for different solydxk versions
