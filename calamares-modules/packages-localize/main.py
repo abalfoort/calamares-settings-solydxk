@@ -9,7 +9,23 @@ import libcalamares
 import apt
 import re
 
+def install_locale_package(package, lang):
+    # Install the localized packages for package
+    lang = lang.replace('_', '-')
+    pattern = "^(%s)((?!-[a-z]{2}-).)*-%s$" % (package, lang)
+    for pck in cache.keys():
+        if re.match(pattern, pck):
+            if not cache[pck].is_installed:
+                libcalamares.utils.debug("Install localized package: {}".format(pck))
+                libcalamares.utils.target_env_call(["apt-get", "-q", "-y", "install", pck])
+                return True
+    return False
+
 def run():
+    # Create global variable for apt cache
+    global cache
+    cache = apt.Cache()
+
     # Only continue when having an internet connection
     skip_this = libcalamares.job.configuration.get("skip_if_no_internet", False)
     if skip_this and not libcalamares.globalstorage.value("hasInternet"):
@@ -20,43 +36,32 @@ def run():
     lang = libcalamares.globalstorage.value("localeConf")["LANG"].lower().split(".")[0]
     if not lang or lang == "en_us":
         return None
-    
+
     # List configured applications
     localize = libcalamares.job.configuration.get('localize', [])
     if lang and localize:
-        for pck in localize[:]:
-            cache = apt.Cache()
-            try:
-                # Check if package is installed
-                if cache[pck].is_installed:
-                    # Install localized packages in this order:
-                    # 1. package.*-en-gb
+        for pck in localize:
+            # Libreoffice can be partially installed without the libreoffice package
+            if pck == 'libreoffice':
+                is_installed = cache[pck + '-writer'].is_installed
+            else:
+                is_installed = cache[pck].is_installed
+            if is_installed:
+                # Install localized packages in this order:
+                # 1. package.*-en-gb
+                if not install_locale_package(pck, lang):
                     # 2. package.*-en
-                    pck_name = '{}.*-{}$'.format(pck, lang.replace('_', '-'))
-                    libcalamares.utils.debug("Try to install locale package {}".format(pck_name))
-                    err_code = libcalamares.utils.target_env_call(["apt-get", "-q", "-y", "install", pck_name])
-                    if err_code > 0:
-                        # Match thunderbird-help-nl but not thunderbird-help-fy-nl
-                        pattern = "^(%s)((?!-[a-z]{2}-).)*-%s$" % (pck, lang[:2])
-                        libcalamares.utils.debug("Match package name with pattern={}".format(pattern))
-                        for p in cache.keys():
-                            if re.match(pattern, p):
-                                libcalamares.utils.debug("Try to install locale package {}".format(p))
-                                libcalamares.utils.target_env_call(["apt-get", "-q", "-y", "install", p])
-            except NameError as error:
-                libcalamares.utils.debug("Package not available: {}".format(pck))
-            except Exception as exception:
-                libcalamares.utils.debug(exception)
-                
-            
+                    install_locale_package(pck, lang[:2])
+
     # Check and install additional packages for lang
     additional = libcalamares.job.configuration.get("additional", [])
     for lang_dict in additional:
         try:
             # Install packages separately in case one is not available
             for pck in lang_dict[lang].split():
-                libcalamares.utils.debug("Install additional packages for language {}: {}".format(lang, pck))
-                libcalamares.utils.check_target_env_call(["apt-get", "-q", "-y", "install", pck])
+                if not cache[pck].is_installed:
+                    libcalamares.utils.debug("Install additional packages for language {}: {}".format(lang, pck))
+                    libcalamares.utils.check_target_env_call(["apt-get", "-q", "-y", "install", pck])
         except:
             pass
 
