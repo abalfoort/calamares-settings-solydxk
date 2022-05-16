@@ -5,15 +5,16 @@
 # 
 # Translators:
 # abc Def <hdogan1974@gmail.com>, 2021
+# ortanca_samuray <ortanca_samuray@hotmail.com>, 2022
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-08 11:32+0100\n"
+"POT-Creation-Date: 2022-04-18 11:15+0200\n"
 "PO-Revision-Date: 2020-11-08 10:33+0000\n"
-"Last-Translator: abc Def <hdogan1974@gmail.com>, 2021\n"
+"Last-Translator: ortanca_samuray <ortanca_samuray@hotmail.com>, 2022\n"
 "Language-Team: Turkish (https://www.transifex.com/abalfoort/teams/54212/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,18 +22,56 @@ msgstr ""
 "Language: tr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: install-solydxk.desktop.in.h:1 install-solydxk.desktop.in.h:1
+#: calamares-modules/luksboot-fix/main.py:28
+msgid "Calamares will continue despite this error."
+msgstr "Calamares bu hataya rağmen devam edecek."
+
+#: calamares-modules/luksboot-fix/main.py:30
+msgid "Error"
+msgstr "Hata"
+
+#: calamares-modules/luksboot-fix/main.py:46
+msgid "Passphrase"
+msgstr "Parola"
+
+#: calamares-modules/luksboot-fix/main.py:50
+msgid ""
+"Previously encrypted partition found:\n"
+"{!s}.\n"
+"Please, provide an existing passphrase to unlock."
+msgstr ""
+"Daha önce şifrelenmiş bölüm bulundu:\n"
+"{!s}.\n"
+"Lütfen kilidini açmak için mevcut bir parola sağlayın."
+
+#: calamares-modules/luksboot-fix/main.py:99
+msgid "Unable to create {!s}: {!s}"
+msgstr "{!s} oluşturulamıyor: {!s}"
+
+#: calamares-modules/luksboot-fix/main.py:148
+msgid "Unable to add key for {!s} in {!s}: {!s} - {!s}"
+msgstr "{!s} içindeki {!s} için anahtar eklenemiyor: {!s} - {!s}"
+
+#: calamares-modules/luksboot-fix/main.py:310
+msgid ""
+"Unable to determine the file system type of {!s}.\n"
+"You need to configure this device manually."
+msgstr ""
+"{!s} dosya sistemi türü belirlenemiyor.\n"
+"Bu cihazı manuel olarak yapılandırmanız gerekir."
+
+#: conf/install-solydxk.desktop.in.h:1
 msgid "Install SolydXK"
 msgstr "SolydXK Yükle"
 
-#: install-solydxk.desktop.in.h:2 install-solydxk.desktop.in.h:2
+#: conf/install-solydxk.desktop.in.h:2
 msgid "Calamares Installer"
 msgstr "Calamares Yükleyici"
 
-#: install-solydxk.desktop.in.h:3 install-solydxk.desktop.in.h:3
+#: conf/install-solydxk.desktop.in.h:3
 msgid "Calamares - Installer for SolydXK Live"
 msgstr "Calamares - SolydXK Live için Yükleyici"
 
-#: install-solydxk.desktop.in.h:4 install-solydxk.desktop.in.h:4
+#: conf/install-solydxk.desktop.in.h:4
 msgid "calamares;system;install;solydxk;installer"
 msgstr "calamares;system;install;solydxk;installer"
