@@ -4,8 +4,8 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Arjen Balfoort <arjenbalfoort@hotmail.com>, 2022
-# Luis Filipe Teixeira <lufilte@gmail.com>, 2022
+# Vibo Lavida <vibo@firemail.cc>, 2020
+# F A <jaw2pc@gmail.com>, 2022
 # 
 #, fuzzy
 msgid ""
@@ -14,25 +14,25 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-04-18 11:15+0200\n"
 "PO-Revision-Date: 2020-11-08 10:33+0000\n"
-"Last-Translator: Luis Filipe Teixeira <lufilte@gmail.com>, 2022\n"
-"Language-Team: Portuguese (https://www.transifex.com/abalfoort/teams/54212/pt/)\n"
+"Last-Translator: F A <jaw2pc@gmail.com>, 2022\n"
+"Language-Team: Spanish (https://www.transifex.com/abalfoort/teams/54212/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pt\n"
-"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Language: es\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: calamares-modules/luksboot-fix/main.py:28
 msgid "Calamares will continue despite this error."
-msgstr "Calamares continuará apesar deste erro."
+msgstr "Calamares continuará a pesar de este error."
 
 #: calamares-modules/luksboot-fix/main.py:30
 msgid "Error"
-msgstr "Erro"
+msgstr "Error"
 
 #: calamares-modules/luksboot-fix/main.py:46
 msgid "Passphrase"
-msgstr "Frase-senha"
+msgstr "Frase de acceso"
 
 #: calamares-modules/luksboot-fix/main.py:50
 msgid ""
@@ -40,25 +40,25 @@ msgid ""
 "{!s}.\n"
 "Please, provide an existing passphrase to unlock."
 msgstr ""
-"Partição previamente cifrada encontrada:\n"
+"Se ha encontrado una partición previamente cifrada:\n"
 "{!s}.\n"
-"Por favor, forneça a frase-senha existente para desbloquear."
+"Por favor, proporcione una frase de acceso existente para desbloquear."
 
 #: calamares-modules/luksboot-fix/main.py:99
 msgid "Unable to create {!s}: {!s}"
-msgstr "Incapaz de criar {!s}: {!s}"
+msgstr "No se puede crear {!s}: {!s}"
 
 #: calamares-modules/luksboot-fix/main.py:148
 msgid "Unable to add key for {!s} in {!s}: {!s} - {!s}"
-msgstr "Incapaz de adicionar chave para {!s} em {!s}: {!s} - {!s}"
+msgstr "No se puede añadir la clave para {!s} in {!s}: {!s} - {!s}"
 
 #: calamares-modules/luksboot-fix/main.py:310
 msgid ""
 "Unable to determine the file system type of {!s}.\n"
 "You need to configure this device manually."
 msgstr ""
-"Não é possível determinar o tipo de sistema de ficheiros de {!s}.\n"
-"Necessita de configurar este dispositivo manualmente."
+"No se ha podido determinar el tipo de sistema de archivos de {!s}.\n"
+"Es necesario configurar este dispositivo manualmente."
 
 #: conf/install-solydxk.desktop.in.h:1
 msgid "Install SolydXK"
@@ -70,8 +70,8 @@ msgstr "Instalador Calamares"
 
 #: conf/install-solydxk.desktop.in.h:3
 msgid "Calamares - Installer for SolydXK Live"
-msgstr "Instalador-Calamares para SolydXK Live"
+msgstr "Calamares - Instalador de SolydXK Live"
 
 #: conf/install-solydxk.desktop.in.h:4
 msgid "calamares;system;install;solydxk;installer"
-msgstr "calamares;sistema;instalar;solydxk;instalador"
+msgstr "calamares;system;install;solydxk;installer"
