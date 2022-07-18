@@ -20,10 +20,9 @@ while getopts 'dh' OPT; do
     esac
 done
 
-# Make sure drives are not automounted in xfce
-if [ -x "$(command -v xfconf-query)" ]; then
-    xfconf-query -c thunar-volman -p /automount-drives/enabled -s false
-fi
+# Make sure drives are not automounted
+qdbus org.kde.kded5 /kded org.kde.kded5.unloadModule device_automounter 2>/dev/null
+xfconf-query -c thunar-volman -p /automount-drives/enabled -s false 2>/dev/null
 
 # Stale file left behind by live-build that messes with partitioning
 sudo mv /etc/fstab /etc/fstab.orig.calamares
@@ -35,3 +34,7 @@ xhost -si:localuser:root
 
 # Restore stale fstab, for what it's worth
 sudo mv /etc/fstab.orig.calamares /etc/fstab
+
+# Restore automount
+qdbus org.kde.kded5 /kded org.kde.kded5.loadModule device_automounter 2>/dev/null
+xfconf-query -c thunar-volman -p /automount-drives/enabled -s true 2>/dev/null
