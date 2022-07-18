@@ -32,7 +32,7 @@ fi
 
 # Nvidia
 if [ ! -z "$CHROOT" ]; then
-    if [ ! -z $(which nvidia-detect) ]; then
+    if [ ! -z "$(which nvidia-detect)" ]; then
         DRIVER=$(nvidia-detect | egrep "^ *nvidia-" | tr -d ' ')
         if [ ! -z "$DRIVER" ]; then
             install_pck "$DRIVER"
