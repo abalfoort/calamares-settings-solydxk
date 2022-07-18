@@ -7,6 +7,11 @@ case "$1" in
         dpkg-divert --quiet --package calamares-settings-solydxk \
                     --divert /usr/share/applications/calamares.desktop.orig \
 		    --rename /usr/share/applications/calamares.desktop
+    
+    # Remove unneeded fstrim job
+    if [ -e "/etc/cron.weekly/fstrim_job" ]; then
+        rm "/etc/cron.weekly/fstrim_job"
+    fi
     ;;
 esac
 
