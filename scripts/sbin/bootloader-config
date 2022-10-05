@@ -8,20 +8,35 @@ if [ -z "$CHROOT" ]; then
     exit
 fi
 
-# Set secure permissions for the initramfs if we're configuring
-# full-disk-encryption. The initramfs is re-generated later in the
-# installation process so we only set the permissions snippet without
-# regenerating the initramfs right now:
-if [ "$(mount | grep $CHROOT" " | cut -c -16)" = "/dev/mapper/luks" ]; then
-    echo "UMASK=0077" > $CHROOT/etc/initramfs-tools/conf.d/initramfs-permissions
-fi
-
 echo "Running bootloader-config..."
+
+if [ "$(mount | grep "$CHROOT " | cut -c -16)" = "/dev/mapper/luks" ]; then
+    # Set secure permissions for the initramfs if we're configuring
+    # full-disk-encryption. The initramfs is re-generated later in the
+    # installation process so we only set the permissions snippet without
+    # regenerating the initramfs right now:
+    echo "UMASK=0077" > $CHROOT/etc/initramfs-tools/conf.d/initramfs-permissions
+    
+    # If there is no unencrypted /boot we need to enable
+    # handling of encrypted partitions by Grub
+    FSTAB="$CHROOT/etc/fstab"
+    DEFGRUB="$CHROOT/etc/default/grub"
+    if [ -e "$FSTAB" ] && [ -e "$DEFGRUB" ]; then
+        # Check for unencrypted /boot partition in fstab
+        if ! grep -q '^UUID.*/boot ' "$FSTAB"; then
+            # Check if GRUB_ENABLE_CRYPTODISK already exists
+            if ! grep -q '^GRUB_ENABLE_CRYPTODISK=' $DEFGRUB; then
+                echo " * Enable handling of encrypted disks in $DEFGRUB..."
+                echo -e '\n# Enable handling of encrypted disks\nGRUB_ENABLE_CRYPTODISK=y' >> $DEFGRUB
+            fi
+        fi
+    fi
+fi
 
 if [ -d /sys/firmware/efi/efivars ]; then
     echo " * Installing grub-efi (uefi)..."
     DEBIAN_FRONTEND=noninteractive chroot $CHROOT apt-get -y install grub-efi-amd64 grub-efi-amd64-signed shim-signed shim-unsigned cryptsetup keyutils
 else
-    echo " * install grub... (bios)"
+    echo " * Installing grub (bios)..."
     DEBIAN_FRONTEND=noninteractive chroot $CHROOT apt-get -y install grub-pc cryptsetup keyutils
 fi
