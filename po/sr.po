@@ -4,16 +4,16 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Slobodan Simić <slsimic@gmail.com>, 2020
+# Slobodan Simić <slsimic@gmail.com>, 2022
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-08 11:32+0100\n"
+"POT-Creation-Date: 2022-04-18 11:15+0200\n"
 "PO-Revision-Date: 2020-11-08 10:33+0000\n"
-"Last-Translator: Slobodan Simić <slsimic@gmail.com>, 2020\n"
+"Last-Translator: Slobodan Simić <slsimic@gmail.com>, 2022\n"
 "Language-Team: Serbian (https://www.transifex.com/abalfoort/teams/54212/sr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,19 +21,57 @@ msgstr ""
 "Language: sr\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: install-solydxk.desktop.in.h:1 install-solydxk.desktop.in.h:1
+#: calamares-modules/luksboot-fix/main.py:28
+msgid "Calamares will continue despite this error."
+msgstr "Каламарес ће наставити упркос овој грешци."
+
+#: calamares-modules/luksboot-fix/main.py:30
+msgid "Error"
+msgstr "Грешка"
+
+#: calamares-modules/luksboot-fix/main.py:46
+msgid "Passphrase"
+msgstr "Лозинка"
+
+#: calamares-modules/luksboot-fix/main.py:50
+msgid ""
+"Previously encrypted partition found:\n"
+"{!s}.\n"
+"Please, provide an existing passphrase to unlock."
+msgstr ""
+"Нађена је раније шифрована партиција:\n"
+"{!s}\n"
+"Наведите лозинку како бисте је откључали."
+
+#: calamares-modules/luksboot-fix/main.py:99
+msgid "Unable to create {!s}: {!s}"
+msgstr "Не могу да направим {!s}: {!s}"
+
+#: calamares-modules/luksboot-fix/main.py:148
+msgid "Unable to add key for {!s} in {!s}: {!s} - {!s}"
+msgstr "Не могу да додам кључ за {!s} у {!s}: {!s} - {!s}"
+
+#: calamares-modules/luksboot-fix/main.py:310
+msgid ""
+"Unable to determine the file system type of {!s}.\n"
+"You need to configure this device manually."
+msgstr ""
+"Не могу да одредим фајл-систем на {!s}.\n"
+"Мораћете ручно да подесите овај уређај."
+
+#: conf/install-solydxk.desktop.in.h:1
 msgid "Install SolydXK"
 msgstr "Инсталирај СолидИксК"
 
-#: install-solydxk.desktop.in.h:2 install-solydxk.desktop.in.h:2
+#: conf/install-solydxk.desktop.in.h:2
 msgid "Calamares Installer"
 msgstr "Каламарес инсталатер"
 
-#: install-solydxk.desktop.in.h:3 install-solydxk.desktop.in.h:3
+#: conf/install-solydxk.desktop.in.h:3
 msgid "Calamares - Installer for SolydXK Live"
 msgstr "Каламарес — инсталатер за СолидИксК"
 
-#: install-solydxk.desktop.in.h:4 install-solydxk.desktop.in.h:4
+#: conf/install-solydxk.desktop.in.h:4
 msgid "calamares;system;install;solydxk;installer"
 msgstr ""
 "calamares;system;install;solydxk;installer;каламарес;инсталатер;систем"
