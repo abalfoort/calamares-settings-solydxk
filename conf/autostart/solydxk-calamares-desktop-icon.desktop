@@ -4,6 +4,5 @@ Name=Add Calamares Desktop Icon
 Exec=add-calamares-desktop-icon
 StartupNotify=false
 NoDisplay=true
-
-X-GNOME-Autostart-Phase=Initialization
-X-KDE-autostart-phase=1
+X-GNOME-Autostart-enabled=true
+X-KDE-autostart-after=panel

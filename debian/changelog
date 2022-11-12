@@ -1,3 +1,9 @@
+calamares-settings-solydxk (11.3.1) stable; urgency=low
+
+  * Fix xdg autostart scripts
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Sat, 12 Nov 2022 19:31:20 +0100
+
 calamares-settings-solydxk (11.3.0) stable; urgency=low
 
   * Updated translation: lt

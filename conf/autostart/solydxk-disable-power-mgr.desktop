@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Disable Power Manager
+Exec=/usr/lib/live-installer-3/scripts/disable-power-mgr.sh
+StartupNotify=false
+NoDisplay=true
+X-GNOME-Autostart-enabled=true
+X-KDE-autostart-after=panel
