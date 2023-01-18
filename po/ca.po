@@ -4,16 +4,16 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Eduard Selma <selma@tinet.cat>, 2020
+# Eduard Selma <selma@tinet.cat>, 2022
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-08 11:32+0100\n"
+"POT-Creation-Date: 2022-04-18 11:15+0200\n"
 "PO-Revision-Date: 2020-11-08 10:33+0000\n"
-"Last-Translator: Eduard Selma <selma@tinet.cat>, 2020\n"
+"Last-Translator: Eduard Selma <selma@tinet.cat>, 2022\n"
 "Language-Team: Catalan (https://www.transifex.com/abalfoort/teams/54212/ca/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,18 +21,56 @@ msgstr ""
 "Language: ca\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: install-solydxk.desktop.in.h:1 install-solydxk.desktop.in.h:1
+#: calamares-modules/luksboot-fix/main.py:28
+msgid "Calamares will continue despite this error."
+msgstr "Calamares continuarà, malgrat aquest error."
+
+#: calamares-modules/luksboot-fix/main.py:30
+msgid "Error"
+msgstr "Error"
+
+#: calamares-modules/luksboot-fix/main.py:46
+msgid "Passphrase"
+msgstr "Paraula de pas"
+
+#: calamares-modules/luksboot-fix/main.py:50
+msgid ""
+"Previously encrypted partition found:\n"
+"{!s}.\n"
+"Please, provide an existing passphrase to unlock."
+msgstr ""
+"He trobat una partició encriptada:\n"
+"{!s}.\n"
+"Si us plau, entreu la paraula de pas per desbloquejar-la."
+
+#: calamares-modules/luksboot-fix/main.py:99
+msgid "Unable to create {!s}: {!s}"
+msgstr "No puc crear {!s}: {!s}"
+
+#: calamares-modules/luksboot-fix/main.py:148
+msgid "Unable to add key for {!s} in {!s}: {!s} - {!s}"
+msgstr "No puc afegir la clau per {!s} a {!s}: {!s} - {!s}"
+
+#: calamares-modules/luksboot-fix/main.py:310
+msgid ""
+"Unable to determine the file system type of {!s}.\n"
+"You need to configure this device manually."
+msgstr ""
+"No puc determinar el tipus de sistema de fitxers de {!s}.\n"
+"Us cal configurar aquest dispositiu manualment."
+
+#: conf/install-solydxk.desktop.in.h:1
 msgid "Install SolydXK"
 msgstr "Instal·la SolydXK"
 
-#: install-solydxk.desktop.in.h:2 install-solydxk.desktop.in.h:2
+#: conf/install-solydxk.desktop.in.h:2
 msgid "Calamares Installer"
 msgstr "Instal·lador Calamares"
 
-#: install-solydxk.desktop.in.h:3 install-solydxk.desktop.in.h:3
+#: conf/install-solydxk.desktop.in.h:3
 msgid "Calamares - Installer for SolydXK Live"
 msgstr "Instal·lador Calamares per a SolydXK Live"
 
-#: install-solydxk.desktop.in.h:4 install-solydxk.desktop.in.h:4
+#: conf/install-solydxk.desktop.in.h:4
 msgid "calamares;system;install;solydxk;installer"
 msgstr "calamares;system;install;solydxk;installer"

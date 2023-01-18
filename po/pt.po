@@ -70,7 +70,7 @@ msgstr "Instalador Calamares"
 
 #: conf/install-solydxk.desktop.in.h:3
 msgid "Calamares - Installer for SolydXK Live"
-msgstr "Instalador-Calamares para SolydXK Live"
+msgstr "Calamares - Instalador para SolydXK Live"
 
 #: conf/install-solydxk.desktop.in.h:4
 msgid "calamares;system;install;solydxk;installer"
