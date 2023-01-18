@@ -1,0 +1,5 @@
+#!/bin/sh
+
+mkdir /tmp/test-share
+mount -t 9p -o trans=virtio test-share /tmp/test-share -oversion=9p2000.L,posixacl,msize=104857600,cache=loose
+echo "test-share mounted on /tmp/test-share"
