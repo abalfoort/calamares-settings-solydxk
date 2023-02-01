@@ -1,16 +1,15 @@
 [main]
 host = https://www.transifex.com
-minimum_perc = 100
 
-[calamares-settings-solydxk.calamares-solydxk_en_usts]
-source_file = ts/calamares-solydxk_en_US.ts
-file_filter = ts/calamares-solydxk_<lang>.ts
-source_lang = en_US
-type = QT
-
-[calamares-settings-solydxk.calamares-settings-solydxkpot]
-source_file = po/calamares-settings-solydxk.pot
+[o:abalfoort:p:calamares-settings-solydxk:r:calamares-settings-solydxkpot]
 file_filter = po/<lang>.po
+source_file = po/calamares-settings-solydxk.pot
 source_lang = en_US
-type = PO
+type        = PO
+
+[o:abalfoort:p:calamares-settings-solydxk:r:calamares-solydxk_en_usts]
+file_filter = ts/calamares-solydxk_<lang>.ts
+source_file = ts/calamares-solydxk_en_US.ts
+source_lang = en_US
+type        = QT
 
