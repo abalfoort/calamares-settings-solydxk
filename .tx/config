@@ -6,10 +6,12 @@ file_filter = po/<lang>.po
 source_file = po/calamares-settings-solydxk.pot
 source_lang = en_US
 type        = PO
+minimum_perc = 80
 
 [o:abalfoort:p:calamares-settings-solydxk:r:calamares-solydxk_en_usts]
 file_filter = ts/calamares-solydxk_<lang>.ts
 source_file = ts/calamares-solydxk_en_US.ts
 source_lang = en_US
 type        = QT
+minimum_perc = 80
 
