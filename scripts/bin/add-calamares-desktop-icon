@@ -13,15 +13,17 @@ mkdir -p $DESKTOP
 # Among the SolydXK desktop environments, LXDE is the only one
 # that behaves completely different.
 if [ -f /usr/bin/lxsession ]; then
-    echo "[Desktop Entry]" > $DESKTOP/install-solydxk.desktop
-    echo "Type=Link" >> $DESKTOP/install-solydxk.desktop
-    echo "Name=Install SolydXK" >> $DESKTOP/install-solydxk.desktop
-    echo "Icon=install-solydxk" >> $DESKTOP/install-solydxk.desktop
-    echo "URL=/usr/share/applications/install-solydxk.desktop" \
-          >> $DESKTOP/install-solydxk.desktop
+    cat > $DESKTOP/install-solydxk.desktop << EOF
+[Desktop Entry]
+Type=Link
+Name=Install SolydXK
+Icon=install-solydxk
+URL=/usr/share/applications/install-solydxk.desktop
+EOF
 else
+    #ln -s /usr/share/applications/install-solydxk.desktop $DESKTOP
     cp /usr/share/applications/install-solydxk.desktop $DESKTOP
-    # Xfce needs this executable otherwise it complains, everything
-    # else doesn't seem to care either way.
-    chmod +x $DESKTOP/install-solydxk.desktop
+    # Xfce: prevent Untrusted Application Launcher dialog
+    chmod g+w,a+x $DESKTOP/install-solydxk.desktop
+    gio set -t string "$DESKTOP/install-solydxk.desktop" metadata::xfce-exe-checksum "$(sha256sum $DESKTOP/install-solydxk.desktop | awk '{print $1}')"
 fi
