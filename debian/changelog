@@ -1,3 +1,10 @@
+calamares-settings-solydxk (11.3.4) stable; urgency=low
+
+  * Add swap-resume module
+  * Fix add-calamares-desktop-icon: needs group write permission
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Sun, 19 Feb 2023 17:07:25 +0100
+
 calamares-settings-solydxk (11.3.3) stable; urgency=low
 
   * Add test-share for testing in Qemu
