@@ -6,7 +6,6 @@
 #
 
 
-import re
 import apt
 import subprocess
 import libcalamares
@@ -76,7 +75,7 @@ def run():
 
     # Install regional packages for lang
     install_regional(lang)
-    
+
     # Remove VB Guest when not in VB
     remove_vbguest()
 
