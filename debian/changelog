@@ -1,3 +1,16 @@
+calamares-settings-solydxk (11.3.6) stable; urgency=low
+
+  * Skip remove the live-medium on shutdown
+  * Fix trigger files not being triggered
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Mon, 13 Mar 2023 10:02:38 +0100
+
+calamares-settings-solydxk (11.3.5) stable; urgency=low
+
+  * Trust desktop install file
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Wed, 08 Mar 2023 17:30:15 +0100
+
 calamares-settings-solydxk (11.3.4) stable; urgency=low
 
   * Add swap-resume module
