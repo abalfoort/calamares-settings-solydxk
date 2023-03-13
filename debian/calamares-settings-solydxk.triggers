@@ -2,3 +2,4 @@ interest-await /lib/live/config/0030-live-debconfig_passwd
 interest-await /lib/live/config/0030-user-setup
 interest-await /etc/lightdm/lightdm.conf
 interest-await /etc/lightdm/Xsession
+interest-await /lib/systemd/system-shutdown/live-tools.shutdown

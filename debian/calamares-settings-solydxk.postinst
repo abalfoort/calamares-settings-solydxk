@@ -17,12 +17,13 @@ set -e
 # the debian-policy package
 #
 
-case "$1" in
-    configure)
-    LIVECNF='/etc/live/config.conf.d/solydxk.conf'
-    if [ -f "$LIVECNF" ]; then
-        . "$LIVECNF"
+function adust_trigger_files {
+    # Skip: Please remove the live-medium, close the tray (if any) and press ENTER to continue
+    FLE='/lib/systemd/system-shutdown/live-tools.shutdown'
+    if [ -f "$FLE" ]; then
+        chmod 640 "$FLE"
     fi
+
     # Configure LightDM
     CONF='/etc/lightdm/lightdm.conf'
     XSESSION='/etc/lightdm/Xsession'
@@ -44,7 +45,8 @@ case "$1" in
             sed -i -r -e '/^session-wrapper=.*/ s/^#*/#/' "$CONF"
         fi
     fi
-    
+
+    # Save password
     if [ ! -z "$LIVE_USERNAME" ]; then
         # Change the default live password to configured live user name
         CFGS=$(grep '_PASSWORD='  /lib/live/config/* | cut -d':' -f 1)
@@ -55,28 +57,43 @@ case "$1" in
             echo "Live user $LIVE_USERNAME password changed in $CFG"
         done
     fi
-    
-    # Save bootloaderEntryName and efiBootloaderId in bootloader.conf
-    CONF='/usr/share/calamares/modules/bootloader.conf'
-    DEFGRUB='/etc/default/grub'
-    if [ -f $CONF ] && [ -f $DEFGRUB ]; then
-        # Get command or name from GRUB_DISTRIBUTOR
-        GD=$(grep GRUB_DISTRIBUTOR $DEFGRUB | cut -d'=' -f 2 | tr -d '"`')
-        # Assume it is a command, but save the string as-is if it errors out
-        DIST=$(eval $GD 2>/dev/null || echo $GD)
-        if [ ! -z "$DIST" ]; then
-            # Replace the variables only if they are currently commented out
-            DISTID=$(echo ${DIST,,} | awk '{print $1}')
-            sed -i -r -e "s|^#.*bootloaderEntryName:.*\$|bootloaderEntryName: \"$DIST\"|" \
-                        -e "s|^#.*efiBootloaderId:.*\$|efiBootloaderId: \"$DISTID\"|" \
-                        "$CONF"
-            echo "Calamares bootloaderEntryName set to: $DIST"
-            echo "Calamares efiBootloaderId set to: $DISTID"
+}
+
+case "$1" in
+    configure|reconfigure)
+        LIVECNF='/etc/live/config.conf.d/solydxk.conf'
+        if [ -f "$LIVECNF" ]; then
+            . "$LIVECNF"
         fi
-    fi
-    
+
+        # Save bootloaderEntryName and efiBootloaderId in bootloader.conf
+        CONF='/usr/share/calamares/modules/bootloader.conf'
+        DEFGRUB='/etc/default/grub'
+        if [ -f $CONF ] && [ -f $DEFGRUB ]; then
+            # Get command or name from GRUB_DISTRIBUTOR
+            GD=$(grep GRUB_DISTRIBUTOR $DEFGRUB | cut -d'=' -f 2 | tr -d '"`')
+            # Assume it is a command, but save the string as-is if it errors out
+            DIST=$(eval $GD 2>/dev/null || echo $GD)
+            if [ ! -z "$DIST" ]; then
+                # Replace the variables only if they are currently commented out
+                DISTID=$(echo ${DIST,,} | awk '{print $1}')
+                sed -i -r -e "s|^#.*bootloaderEntryName:.*\$|bootloaderEntryName: \"$DIST\"|" \
+                            -e "s|^#.*efiBootloaderId:.*\$|efiBootloaderId: \"$DISTID\"|" \
+                            "$CONF"
+                echo "Calamares bootloaderEntryName set to: $DIST"
+                echo "Calamares efiBootloaderId set to: $DISTID"
+            fi
+        fi
+
+        adust_trigger_files
+
+    ;;
+    upgrade|update)
     ;;
     abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+    triggered)
+        adust_trigger_files
     ;;
     *)
         echo "postinst called with unknown argument \`$1'" >&2
