@@ -26,4 +26,5 @@ else
     # Xfce: prevent Untrusted Application Launcher dialog
     chmod g+w,a+x $DESKTOP/install-solydxk.desktop
     gio set -t string "$DESKTOP/install-solydxk.desktop" metadata::xfce-exe-checksum "$(sha256sum $DESKTOP/install-solydxk.desktop | awk '{print $1}')"
+    gio set -t string "$DESKTOP/install-solydxk.desktop" metadata::trust "true"
 fi
