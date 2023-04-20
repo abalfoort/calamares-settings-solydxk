@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Copy logo to user directory
+Exec=solydxk-live-face
+StartupNotify=false
+NoDisplay=true
+X-GNOME-Autostart-enabled=true
