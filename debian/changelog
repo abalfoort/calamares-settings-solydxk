@@ -1,3 +1,16 @@
+calamares-settings-solydxk (11.3.8) stable; urgency=low
+
+  * Use LUKS2 for encryption
+  * Updated conf files
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Thu, 20 Apr 2023 09:09:14 +0200
+
+calamares-settings-solydxk (11.3.7) stable; urgency=low
+
+  * Copy SolydXK logo to $HOME/.face
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Mon, 13 Mar 2023 12:09:28 +0100
+
 calamares-settings-solydxk (11.3.6) stable; urgency=low
 
   * Skip remove the live-medium on shutdown
