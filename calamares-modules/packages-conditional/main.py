@@ -5,13 +5,12 @@
 #   SPDX-License-Identifier: GPL-3.0-or-later
 #
 
-
-import apt
+import sys
 import subprocess
+import apt
 import libcalamares
 
 CACHE = apt.Cache()
-
 
 def install_regional(lang):
     """Install regional packages
@@ -35,22 +34,27 @@ def install_regional(lang):
                             f"Install additional package finished: {pck}")
             break
 
-
-def remove_vbguest():
+def remove_virtguest():
     """
-    Remove VirtualBox Guest packages when not in VirtualBox
+    Remove VirtualBox and Qemu Guest packages when not in VirtualBox
     """
     virt = (subprocess.run('systemd-detect-virt',
                            check=False,
                            stdout=subprocess.PIPE,
                            stderr=subprocess.STDOUT)
-            .stdout.decode('utf-8').strip())
+            .stdout.decode(sys.getfilesystemencoding()).strip())
 
     if 'oracle' not in virt:
         # Remove VirtualBox Guest packages
         libcalamares.utils.check_target_env_call(
             ["apt-get", "--purge", "-q", "-y", "remove", "virtualbox-guest*"])
 
+    if 'kvm' not in virt:
+        # Remove Qemu Guest packages
+        libcalamares.utils.check_target_env_call(
+            ["apt-get", "--purge", "-q", "-y", "remove", "qemu-guest*"])
+        libcalamares.utils.check_target_env_call(
+            ["apt-get", "--purge", "-q", "-y", "remove", "spice-vdagent*"])
 
 def run():
     """Install localized packages
@@ -77,6 +81,6 @@ def run():
     install_regional(lang)
 
     # Remove VB Guest when not in VB
-    remove_vbguest()
+    remove_virtguest()
 
     return None
