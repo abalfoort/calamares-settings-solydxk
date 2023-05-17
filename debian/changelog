@@ -1,3 +1,15 @@
+calamares-settings-solydxk (11.4.1) stable; urgency=low
+
+  * Safely convert LUKS1 partitions to LUKS2 with argon2id
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Tue, 16 May 2023 16:39:53 +0200
+
+calamares-settings-solydxk (11.4.0) stable; urgency=low
+
+  * Include removal of Qemu guest packages if not installing in Qemu
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Mon, 15 May 2023 12:36:34 +0200
+
 calamares-settings-solydxk (11.3.9) stable; urgency=low
 
   * Revert to LUKS1 because of Grub2 issues
