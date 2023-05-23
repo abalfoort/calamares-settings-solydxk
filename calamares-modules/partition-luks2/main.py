@@ -6,6 +6,7 @@
 #
 
 import sys
+import os
 import subprocess
 import libcalamares
 
@@ -45,7 +46,7 @@ def get_output(command):
         return None
 
 def run():
-    """Convert LUKS1 to LUKS2 with argon2id"""
+    """Safely convert LUKS1 to LUKS2"""
     partitions = libcalamares.globalstorage.value("partitions")
     # Check for boot partition
     search_list = [_p for _p in partitions if _p["mountPoint"] == "/boot"]
@@ -55,9 +56,9 @@ def run():
 
     for partition in partitions:
         # Skip the following partitions:
-        # - Non-LUKS1
-        # - Boot partition (Grub2 won't handle it)
-        # - Root partition if there is no boot partition
+        # 1. Non-LUKS1
+        # 2. Boot partition (Grub2 won't handle it)
+        # 3. Root partition if there is no boot partition
         if (partition['fsName'] != 'luks' or
             partition == boot_partition or
             (partition['mountPoint'] == '/' and not boot_partition)):
@@ -70,27 +71,39 @@ def run():
         luks1 = get_output(command=f"cryptsetup luksDump {partition['device']} |"
                                     "egrep 'Version:[[:space:]]*1'")
         if luks1:
+            mapper_path_used = False
+            mapper_path = os.path.join('/dev/mapper', partition['luksMapperName'])
             libcalamares.utils.debug(f"Convert {partition['device']} to LUKS2")
 
             # Make sure the device is not in use
-            mount_point = get_output(command="findmnt -no TARGET "
-                                            f"/dev/mapper/{partition['luksMapperName']}")
+            mount_point = get_output(command=f"findmnt -no TARGET {mapper_path} 2>/dev/null")
             if mount_point:
-                shell_exec(command=f"umount -f {mount_point}")
-            shell_exec(command=f"cryptsetup close {partition['luksMapperName']}")
+                shell_exec(command=f"umount -f {mount_point} 2>/dev/null")
+
+            # Close the encrypted partition
+            if os.path.exists(mapper_path):
+                mapper_path_used = True
+                shell_exec(command=f"cryptsetup close {partition['luksMapperName']} 2>/dev/null")
 
             # Convert to LUKS2
-            ret = shell_exec(command="echo YES | "
-                                    f"cryptsetup convert {partition['device']} --type luks2")
-            if ret == 0:
-                # Use argon2id
+            cmd = f"cryptsetup convert -q --type luks2 {partition['device']}"
+            if shell_exec(command=cmd) != 0:
+                libcalamares.utils.debug(f"Unable to convert {partition['device']} to LUKS2")
+            else:
+                # Convert the key
+                luks2_hash = libcalamares.job.configuration.get("luks2Hash", "pbkdf2")
                 shell_exec(command=f"echo {partition['luksPassphrase']} | "
                                    f"cryptsetup luksConvertKey {partition['device']}"
-                                    " --pbkdf argon2id")
+                                   f" --pbkdf {luks2_hash}")
 
             # Mount the device again
-            shell_exec(command=f"printf \"{partition['luksPassphrase']}\" | "
-                               f"cryptsetup open {partition['device']} "
-                               f"{partition['luksMapperName']}")
-            if mount_point:
-                shell_exec(command=f"mount /dev/mapper/{partition['luksMapperName']} {mount_point}")
+            if mapper_path_used and not os.path.exists(mapper_path):
+                cmd = (f"printf \"{partition['luksPassphrase']}\" | "
+                       f"cryptsetup open {partition['device']} "
+                       f"{partition['luksMapperName']}")
+                if shell_exec(command=cmd) != 0:
+                    libcalamares.utils.debug(f"Unable to open {partition['device']}")
+
+            # Mount the encrypted partition if it was mounted before
+            if os.path.exists(mapper_path) and mount_point:
+                shell_exec(command=f"mount {mapper_path} {mount_point}")
