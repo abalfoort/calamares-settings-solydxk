@@ -1,7 +1,8 @@
 #!/bin/bash
 
-if [[ $(mount) =~ (/tmp/calamares-root-[0-9a-z]+)/proc ]]; then
-    CHROOT=${BASH_REMATCH[1]}
+TMP="/tmp/$(ls /tmp | grep calamares-root)"
+if [ -d "$TMP/proc" ]; then
+    CHROOT=$TMP
 fi
 
 if [ -z "$CHROOT" ]; then
