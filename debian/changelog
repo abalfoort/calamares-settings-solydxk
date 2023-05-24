@@ -1,121 +1,127 @@
-calamares-settings-solydxk (11.4.1) stable; urgency=low
+calamares-settings-solydxk (4.2+r12) stable; urgency=low
+
+  * Add module remove-deborphan
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Wed, 24 May 2023 14:01:04 +0200
+
+calamares-settings-solydxk (4.1+r12) stable; urgency=low
 
   * Safely convert LUKS1 partitions to LUKS2 with argon2id
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Tue, 16 May 2023 16:39:53 +0200
 
-calamares-settings-solydxk (11.4.0) stable; urgency=low
+calamares-settings-solydxk (4.0+r12) stable; urgency=low
 
   * Include removal of Qemu guest packages if not installing in Qemu
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Mon, 15 May 2023 12:36:34 +0200
 
-calamares-settings-solydxk (11.3.9) stable; urgency=low
+calamares-settings-solydxk (3.9+r12) stable; urgency=low
 
   * Revert to LUKS1 because of Grub2 issues
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Mon, 15 May 2023 08:27:16 +0200
 
-calamares-settings-solydxk (11.3.8) stable; urgency=low
+calamares-settings-solydxk (3.8+r12) stable; urgency=low
 
   * Use LUKS2 for encryption
   * Updated conf files
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Thu, 20 Apr 2023 09:09:14 +0200
 
-calamares-settings-solydxk (11.3.7) stable; urgency=low
+calamares-settings-solydxk (3.7+r12) stable; urgency=low
 
   * Copy SolydXK logo to $HOME/.face
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Mon, 13 Mar 2023 12:09:28 +0100
 
-calamares-settings-solydxk (11.3.6) stable; urgency=low
+calamares-settings-solydxk (3.6+r12) stable; urgency=low
 
   * Skip remove the live-medium on shutdown
   * Fix trigger files not being triggered
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Mon, 13 Mar 2023 10:02:38 +0100
 
-calamares-settings-solydxk (11.3.5) stable; urgency=low
+calamares-settings-solydxk (3.5+r12) stable; urgency=low
 
   * Trust desktop install file
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Wed, 08 Mar 2023 17:30:15 +0100
 
-calamares-settings-solydxk (11.3.4) stable; urgency=low
+calamares-settings-solydxk (3.4+r12) stable; urgency=low
 
   * Add swap-resume module
   * Fix add-calamares-desktop-icon: needs group write permission
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Sun, 19 Feb 2023 17:07:25 +0100
 
-calamares-settings-solydxk (11.3.3) stable; urgency=low
+calamares-settings-solydxk (3.3+r12) stable; urgency=low
 
   * Add test-share for testing in Qemu
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Sun, 01 Jan 2023 16:45:58 +0100
 
-calamares-settings-solydxk (11.3.2) stable; urgency=low
+calamares-settings-solydxk (3.2+r12) stable; urgency=low
 
   * Updated translation: pt
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Tue, 27 Dec 2022 16:47:40 +0100
 
-calamares-settings-solydxk (11.3.1) stable; urgency=low
+calamares-settings-solydxk (3.1+r12) stable; urgency=low
 
   * Fix xdg autostart scripts
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Sat, 12 Nov 2022 19:31:20 +0100
 
-calamares-settings-solydxk (11.3.0) stable; urgency=low
+calamares-settings-solydxk (3.0+r12) stable; urgency=low
 
   * Updated translation: lt
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Wed, 12 Oct 2022 08:55:56 +0200
 
-calamares-settings-solydxk (11.2.9) stable; urgency=low
+calamares-settings-solydxk (2.9+r12) stable; urgency=low
 
   * Fix installing localized packages in packages.conf
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Fri, 07 Oct 2022 09:17:40 +0200
 
-calamares-settings-solydxk (11.2.8) stable; urgency=low
+calamares-settings-solydxk (2.8+r12) stable; urgency=low
 
   * Updated translation: de
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Thu, 06 Oct 2022 12:32:17 +0200
 
-calamares-settings-solydxk (11.2.7) stable; urgency=low
+calamares-settings-solydxk (2.7+r12) stable; urgency=low
 
   * Updated translation: sr
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Wed, 05 Oct 2022 08:35:12 +0200
 
-calamares-settings-solydxk (11.2.6) stable; urgency=low
+calamares-settings-solydxk (2.6+r12) stable; urgency=low
 
   * bootloader-config: check for unencrypted /boot
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Mon, 12 Sep 2022 11:41:30 +0200
 
-calamares-settings-solydxk (11.2.5) stable; urgency=low
+calamares-settings-solydxk (2.5+r12) stable; urgency=low
 
   * bootloader-config: add GRUB_ENABLE_CRYPTODISK=y in target /etc/default/grub
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Sun, 11 Sep 2022 15:16:34 +0200
 
-calamares-settings-solydxk (11.2.4) stable; urgency=low
+calamares-settings-solydxk (2.4+r12) stable; urgency=low
 
   * Fix packages-conditional crash when not in virtual environment
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Mon, 18 Jul 2022 10:35:03 +0200
 
-calamares-settings-solydxk (11.2.3) stable; urgency=low
+calamares-settings-solydxk (2.3+r12) stable; urgency=low
 
   * Updated translation: es, es_419 (latin america)
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Tue, 28 Jun 2022 12:03:22 +0200
 
-calamares-settings-solydxk (11.2.2) stable; urgency=low
+calamares-settings-solydxk (2.2+r12) stable; urgency=low
 
   * Add additional checks for ssd configuration
   * Move localizing packages to packages module
@@ -126,19 +132,19 @@ calamares-settings-solydxk (11.2.2) stable; urgency=low
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Tue, 07 Jun 2022 10:30:16 +0200
 
-calamares-settings-solydxk (11.2.1) stable; urgency=low
+calamares-settings-solydxk (2.1+r12) stable; urgency=low
 
   * Make ssd-config better configurable
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Fri, 03 Jun 2022 12:01:27 +0200
 
-calamares-settings-solydxk (11.2.0) stable; urgency=low
+calamares-settings-solydxk (2.0+r12) stable; urgency=low
 
   * Set bootloader.conf - efiBootloaderId: "debian"
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Sun, 29 May 2022 10:45:50 +0200
 
-calamares-settings-solydxk (11.1.9) stable; urgency=low
+calamares-settings-solydxk (1.9+r12) stable; urgency=low
 
   * Add ssd-config.conf for ram disks and swappiness
   * Follow pep8
@@ -146,57 +152,57 @@ calamares-settings-solydxk (11.1.9) stable; urgency=low
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Sat, 21 May 2022 12:11:42 +0200
 
-calamares-settings-solydxk (11.1.8) stable; urgency=low
+calamares-settings-solydxk (1.8+r12) stable; urgency=low
 
   * Add tmpOptions to fstab.conf
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Fri, 20 May 2022 11:46:09 +0200
 
-calamares-settings-solydxk (11.1.7) stable; urgency=low
+calamares-settings-solydxk (1.7+r12) stable; urgency=low
 
   * Updated translation: tr
   * Removed module bootluks-fix: implemented in calamares 3.2.57-2
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Mon, 16 May 2022 08:46:41 +0200
 
-calamares-settings-solydxk (11.1.6) stable; urgency=low
+calamares-settings-solydxk (1.6+r12) stable; urgency=low
 
   * Fix package-localize installing firefox over firefox-esr
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Sat, 07 May 2022 11:24:35 +0200
 
-calamares-settings-solydxk (11.1.5) stable; urgency=low
+calamares-settings-solydxk (1.5+r12) stable; urgency=low
 
   * Fix package-localize only localizing on exact match
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Sat, 23 Apr 2022 18:22:47 +0200
 
-calamares-settings-solydxk (11.1.4) stable; urgency=low
+calamares-settings-solydxk (1.4+r12) stable; urgency=low
 
   * Add luksboot-fix.conf
   * Add mount point when asking for passphrase of encrypted partition
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Mon, 18 Apr 2022 10:53:02 +0200
 
-calamares-settings-solydxk (11.1.3) stable; urgency=low
+calamares-settings-solydxk (1.3+r12) stable; urgency=low
 
   * Build separate packages for different solydxk versions
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Sun, 17 Apr 2022 12:15:11 +0200
 
-calamares-settings-solydxk (11.1.2) stable; urgency=low
+calamares-settings-solydxk (1.2+r12) stable; urgency=low
 
   * Updated translation: pt
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Sat, 16 Apr 2022 07:51:22 +0200
 
-calamares-settings-solydxk (11.1.1) stable; urgency=low
+calamares-settings-solydxk (1.1+r12) stable; urgency=low
 
   * Fix bug introduced by removing faulty /dev/mapper lines
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Fri, 15 Apr 2022 10:24:53 +0200
 
-calamares-settings-solydxk (11.1.0) stable; urgency=low
+calamares-settings-solydxk (1.0+r12) stable; urgency=low
 
   * Fix bug: "All key slots full"
   * Keep asking for passphrase until fstype can be determined or user cancel
@@ -204,13 +210,13 @@ calamares-settings-solydxk (11.1.0) stable; urgency=low
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Wed, 13 Apr 2022 14:33:26 +0200
 
-calamares-settings-solydxk (11.0.31) stable; urgency=low
+calamares-settings-solydxk (0.31+r12) stable; urgency=low
 
   * luksboot-fix: rewrite get_fstype function to fix "all key slots full"
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Wed, 13 Apr 2022 11:52:37 +0200
 
-calamares-settings-solydxk (11.0.30) stable; urgency=low
+calamares-settings-solydxk (0.30+r12) stable; urgency=low
 
   * Rename luks-ubootfix to luksboot-fix
   * luksboot-fix: add custom error dialog
@@ -219,7 +225,7 @@ calamares-settings-solydxk (11.0.30) stable; urgency=low
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Wed, 06 Apr 2022 10:58:36 +0200
 
-calamares-settings-solydxk (11.0.29) stable; urgency=low
+calamares-settings-solydxk (0.29+r12) stable; urgency=low
 
   * Add error handling to luks-ubootfix
   * Replace sed command with python regexp
@@ -227,57 +233,57 @@ calamares-settings-solydxk (11.0.29) stable; urgency=low
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Tue, 05 Apr 2022 09:54:57 +0200
 
-calamares-settings-solydxk (11.0.28) stable; urgency=low
+calamares-settings-solydxk (0.28+r12) stable; urgency=low
 
   * Remove luksopenswaphookcfg from settings.conf
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Mon, 04 Apr 2022 10:10:37 +0200
 
-calamares-settings-solydxk (11.0.27) stable; urgency=high
+calamares-settings-solydxk (0.27+r12) stable; urgency=high
 
   * Add module to fix system when using unencrypted /boot and encrypted /
   * Skip localizing packages when lang = en_US
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Sat, 02 Apr 2022 19:25:06 +0200
 
-calamares-settings-solydxk (11.0.26) stable; urgency=low
+calamares-settings-solydxk (0.26+r12) stable; urgency=low
 
   * Move luksbootkeyfile and plymouthcfg up in settings.conf
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Thu, 31 Mar 2022 15:05:58 +0200
 
-calamares-settings-solydxk (11.0.25) stable; urgency=low
+calamares-settings-solydxk (0.25+r12) stable; urgency=low
 
   * Fix ssd-config not adding to fstab
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Tue, 18 Jan 2022 12:59:01 +0100
 
-calamares-settings-solydxk (11.0.24) stable; urgency=low
+calamares-settings-solydxk (0.24+r12) stable; urgency=low
 
   * Updated translation: tr
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Fri, 08 Oct 2021 09:26:11 +0200
 
-calamares-settings-solydxk (11.0.23) stable; urgency=low
+calamares-settings-solydxk (0.23+r12) stable; urgency=low
 
   * Add custom partition layout (root + home)
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Mon, 27 Sep 2021 10:57:17 +0200
 
-calamares-settings-solydxk (11.0.22) stable; urgency=low
+calamares-settings-solydxk (0.22+r12) stable; urgency=low
 
   * Move /usr/share/calamares to /etc/calamares to comply with calamares-settings-debian
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Fri, 24 Sep 2021 15:04:47 +0200
 
-calamares-settings-solydxk (11.0.21) stable; urgency=low
+calamares-settings-solydxk (0.21+r12) stable; urgency=low
 
   * postinst: add save bootloaderEntryName and efiBootloaderId in bootloader.conf
   * Changed install order in settings.conf
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Wed, 04 Aug 2021 10:09:40 +0200
 
-calamares-settings-solydxk (11.0.20) stable; urgency=low
+calamares-settings-solydxk (0.20+r12) stable; urgency=low
 
   * Remove Calamares auto-launch
   * Add qttools5-dev-tools as a build dependency
@@ -285,32 +291,32 @@ calamares-settings-solydxk (11.0.20) stable; urgency=low
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Mon, 21 Jun 2021 09:04:45 +0200
 
-calamares-settings-solydxk (11.0.19) stable; urgency=low
+calamares-settings-solydxk (0.19+r12) stable; urgency=low
 
   * Updated translation: de
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Tue, 13 Apr 2021 18:03:13 +0200
 
-calamares-settings-solydxk (11.0.18) stable; urgency=low
+calamares-settings-solydxk (0.18+r12) stable; urgency=low
 
   * Add module to configre system for SSD: ssd-config
   * Updated translations: pt, it
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Thu, 18 Feb 2021 13:38:45 +0100
 
-calamares-settings-solydxk (11.0.17) stable; urgency=low
+calamares-settings-solydxk (0.17+r12) stable; urgency=low
 
   * Fix bug crash in packages-conditional when installing on metal
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Thu, 31 Dec 2020 10:04:14 +0100
 
-calamares-settings-solydxk (11.0.16) stable; urgency=low
+calamares-settings-solydxk (0.16+r12) stable; urgency=low
 
   * Set system groups in users.conf
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Tue, 29 Dec 2020 10:57:47 +0100
 
-calamares-settings-solydxk (11.0.15) stable; urgency=low
+calamares-settings-solydxk (0.15+r12) stable; urgency=low
 
   * Add modules:
     - packages-conditional: install/remove packages when conditions are met.
@@ -318,31 +324,31 @@ calamares-settings-solydxk (11.0.15) stable; urgency=low
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Thu, 26 Nov 2020 20:35:31 +0100
 
-calamares-settings-solydxk (11.0.14) stable; urgency=low
+calamares-settings-solydxk (0.14+r12) stable; urgency=low
 
   * Fix bug not configuring Grub theme
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Thu, 19 Nov 2020 11:35:10 +0100
 
-calamares-settings-solydxk (11.0.13) stable; urgency=low
+calamares-settings-solydxk (0.13+r12) stable; urgency=low
 
   * Fix bug listing multiple repo components with a comma instead of a space
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Sun, 15 Nov 2020 12:40:00 +0100
 
-calamares-settings-solydxk (11.0.12) stable; urgency=low
+calamares-settings-solydxk (0.12+r12) stable; urgency=low
 
   * Add support for AMD graphics drivers
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Fri, 13 Nov 2020 10:26:44 +0100
 
-calamares-settings-solydxk (11.0.11) stable; urgency=low
+calamares-settings-solydxk (0.11+r12) stable; urgency=low
 
   * Add arch=amd64 to local apt list if only amd64 is provided
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Thu, 12 Nov 2020 21:46:07 +0100
 
-calamares-settings-solydxk (11.0.10) stable; urgency=low
+calamares-settings-solydxk (0.10+r12) stable; urgency=low
 
   * Finetune modules configuration
   * Create packages-non-free module
@@ -350,7 +356,7 @@ calamares-settings-solydxk (11.0.10) stable; urgency=low
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Tue, 10 Nov 2020 13:16:24 +0100
 
-calamares-settings-solydxk (11.0.9) stable; urgency=low
+calamares-settings-solydxk (0.9+r12) stable; urgency=low
 
   * Translate .desktop files
   * Add triggers for lightdm files
@@ -359,33 +365,33 @@ calamares-settings-solydxk (11.0.9) stable; urgency=low
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Sun, 08 Nov 2020 11:04:37 +0100
 
-calamares-settings-solydxk (11.0.8) stable; urgency=low
+calamares-settings-solydxk (0.8+r12) stable; urgency=low
 
   * Add triggers
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Fri, 06 Nov 2020 11:29:42 +0100
 
-calamares-settings-solydxk (11.0.7) stable; urgency=low
+calamares-settings-solydxk (0.7+r12) stable; urgency=low
 
   * Fix bug in SolydK 11: not showing install icon
   * Fix bug not able to re-login with live user
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Thu, 05 Nov 2020 09:36:45 +0100
 
-calamares-settings-solydxk (11.0.6) stable; urgency=low
+calamares-settings-solydxk (0.6+r12) stable; urgency=low
 
   * Extend packages to remove after installation (packages.conf)
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Mon, 02 Nov 2020 08:46:53 +0100
 
-calamares-settings-solydxk (11.0.5) stable; urgency=low
+calamares-settings-solydxk (0.5+r12) stable; urgency=low
 
   * Fix not removing live/calamares packages after installation
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Sun, 01 Nov 2020 17:35:33 +0100
 
-calamares-settings-solydxk (11.0.4) stable; urgency=low
+calamares-settings-solydxk (0.4+r12) stable; urgency=low
 
-  * Initial release (base: calamares-settings-debian-11.0.3)
+  * Initial release (base: calamares-settings-debian-0.3)
 
  -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Mon, 26 Oct 2020 10:12:24 +0100
