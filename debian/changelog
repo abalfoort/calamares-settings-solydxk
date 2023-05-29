@@ -1,3 +1,9 @@
+calamares-settings-solydxk (4.3+r12) stable; urgency=low
+
+  * Increase default minimal root size to 15G
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Mon, 29 May 2023 13:09:52 +0200
+
 calamares-settings-solydxk (4.2+r12) stable; urgency=low
 
   * Add module remove-deborphan
