@@ -20,6 +20,11 @@ while getopts 'dh' OPT; do
     esac
 done
 
+# Disable xfce4-power-manager: causes unresponsiveness on some laptops
+if [ ! -z "$(which xfce4-power-manager)" ]; then
+    xfce4-power-manager --quit
+fi
+
 # Make sure drives are not automounted
 qdbus org.kde.kded5 /kded org.kde.kded5.unloadModule device_automounter 2>/dev/null
 xfconf-query -c thunar-volman -p /automount-drives/enabled -s false 2>/dev/null
@@ -38,3 +43,8 @@ sudo mv /etc/fstab.orig.calamares /etc/fstab
 # Restore automount
 qdbus org.kde.kded5 /kded org.kde.kded5.loadModule device_automounter 2>/dev/null
 xfconf-query -c thunar-volman -p /automount-drives/enabled -s true 2>/dev/null
+
+# Enable xfce4-power-manager
+if [ ! -z "$(which xfce4-power-manager)" ]; then
+    xfce4-power-manager &
+fi
