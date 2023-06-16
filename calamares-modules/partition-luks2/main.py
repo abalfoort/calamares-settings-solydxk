@@ -89,12 +89,6 @@ def run():
             cmd = f"cryptsetup convert -q --type luks2 {partition['device']}"
             if shell_exec(command=cmd) != 0:
                 libcalamares.utils.debug(f"Unable to convert {partition['device']} to LUKS2")
-            else:
-                # Convert the key
-                luks2_hash = libcalamares.job.configuration.get("luks2Hash", "pbkdf2")
-                shell_exec(command=f"echo {partition['luksPassphrase']} | "
-                                   f"cryptsetup luksConvertKey {partition['device']}"
-                                   f" --pbkdf {luks2_hash}")
 
             # Mount the device again
             if mapper_path_used and not os.path.exists(mapper_path):
