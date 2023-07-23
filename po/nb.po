@@ -2,32 +2,36 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
+# Translators:
+# ilu lu, 2023
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-22 18:59+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2022-04-18 11:15+0200\n"
+"PO-Revision-Date: 2020-11-08 10:33+0000\n"
+"Last-Translator: ilu lu, 2023\n"
+"Language-Team: Norwegian Bokmål (https://app.transifex.com/abalfoort/teams/54212/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: nb\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: calamares-modules/luksboot-fix/main.py:28
 msgid "Calamares will continue despite this error."
-msgstr ""
+msgstr "Calamares vil fortsette til tross for denne feilen."
 
 #: calamares-modules/luksboot-fix/main.py:30
 msgid "Error"
-msgstr ""
+msgstr "Feil"
 
 #: calamares-modules/luksboot-fix/main.py:46
 msgid "Passphrase"
-msgstr ""
+msgstr "Passord"
 
 #: calamares-modules/luksboot-fix/main.py:50
 msgid ""
@@ -35,33 +39,38 @@ msgid ""
 "{!s}.\n"
 "Please, provide an existing passphrase to unlock."
 msgstr ""
+"Tidligere kryptert partisjon funnet:\n"
+"{!s}.\n"
+"Oppgi en eksisterende passordfrase for å låse opp."
 
 #: calamares-modules/luksboot-fix/main.py:99
 msgid "Unable to create {!s}: {!s}"
-msgstr ""
+msgstr "Kan ikke opprette {!s}: {!s}"
 
 #: calamares-modules/luksboot-fix/main.py:148
 msgid "Unable to add key for {!s} in {!s}: {!s} - {!s}"
-msgstr ""
+msgstr "Kunne ikke legge til nøkkel for {!s} in {!s}: {!s} - {!s}"
 
-#: calamares-modules/luksboot-fix/main.py:313
+#: calamares-modules/luksboot-fix/main.py:310
 msgid ""
 "Unable to determine the file system type of {!s}.\n"
 "You need to configure this device manually."
 msgstr ""
+"Kunne ikke fastslå filsystemtypen til {!s}.\n"
+"Du må konfigurere denne enheten manuelt."
 
-#: conf/install-solydxk.desktop.in.h:1 conf/install-solydxk.desktop.in.h:1
+#: conf/install-solydxk.desktop.in.h:1
 msgid "Install SolydXK"
-msgstr ""
+msgstr "Installer SolydXK"
 
-#: conf/install-solydxk.desktop.in.h:2 conf/install-solydxk.desktop.in.h:2
+#: conf/install-solydxk.desktop.in.h:2
 msgid "Calamares Installer"
-msgstr ""
+msgstr "Calamares installasjonsprogram"
 
-#: conf/install-solydxk.desktop.in.h:3 conf/install-solydxk.desktop.in.h:3
+#: conf/install-solydxk.desktop.in.h:3
 msgid "Calamares - Installer for SolydXK Live"
-msgstr ""
+msgstr "Calamares - installasjonsprogram for SolydXK Live"
 
-#: conf/install-solydxk.desktop.in.h:4 conf/install-solydxk.desktop.in.h:4
+#: conf/install-solydxk.desktop.in.h:4
 msgid "calamares;system;install;solydxk;installer"
-msgstr ""
+msgstr "calamares;system;installere;solydxk;installasjonsprogram"
