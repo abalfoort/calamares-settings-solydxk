@@ -1,3 +1,9 @@
+calamares-settings-solydxk (4.8+r13) stable; urgency=low
+
+  * Updated translations: nl, ru, it, fr, da, nb
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Fri, 21 Jul 2023 18:14:35 +0200
+
 calamares-settings-solydxk (4.7+r13) stable; urgency=low
 
   * Convert key to argon2id after converting luks1 to luks2
