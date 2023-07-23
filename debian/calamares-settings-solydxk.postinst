@@ -24,28 +24,6 @@ function adust_trigger_files {
         chmod 640 "$FLE"
     fi
 
-    # Configure LightDM
-    CONF='/etc/lightdm/lightdm.conf'
-    XSESSION='/etc/lightdm/Xsession'
-    if [ -e "$CONF" ]; then
-        for F in $(find etc/live/ -type f -name "*.conf"); do source "$F"; done
-        if [ ! -z "$LIVE_USERNAME" ]; then
-            sed -i -r -e "s|^#.*autologin-user=.*\$|autologin-user=$LIVE_USERNAME|" \
-                        -e "s|^#.*autologin-user-timeout=.*\$|autologin-user-timeout=0|" \
-                        "$CONF"
-            echo "Lightdm autologin-user set to $LIVE_USERNAME"
-        fi
-        sed -i -r -e "s|^#.*allow-user-switching=.*\$|allow-user-switching=true|" \
-                    -e "s|^#.*greeter-hide-users=.*\$|greeter-hide-users=false|" \
-                    "$CONF"
-        if [ -e "$XSESSION" ]; then
-            sed -i -r -e "s|^#.*session-wrapper=.*\$|session-wrapper=$XSESSION|"    "$CONF"
-        else
-            # Comment the line if not already commented
-            sed -i -r -e '/^session-wrapper=.*/ s/^#*/#/' "$CONF"
-        fi
-    fi
-
     # Save password
     if [ ! -z "$LIVE_USERNAME" ]; then
         # Change the default live password to configured live user name
