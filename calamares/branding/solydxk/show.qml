@@ -163,7 +163,6 @@ Presentation
 
         Text {
             text: qsTr("<h3>A great community</h3><br />" +
-                            "The SolydXK community is one of the best on the Internet. Our users provide most of our funding, as well as ideas, artwork and sometimes even source code.<br /><br />" +
                             "SolydXK users are happy to share their passion and enthusiasm and are eager to help. Don't hesitate to ask questions on the forums or to get involved in the community.<br /><br />" +
                             "Send us your feedback and tell us about your experience. We'll listen to your ideas and use them to further improve SolydXK.")
             anchors.fill: parent

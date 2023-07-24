@@ -35,7 +35,7 @@
     </message>
     <message>
         <location filename="../calamares/branding/solydxk/show.qml" line="165"/>
-        <source>&lt;h3&gt;A great community&lt;/h3&gt;&lt;br /&gt;The SolydXK community is one of the best on the Internet. Our users provide most of our funding, as well as ideas, artwork and sometimes even source code.&lt;br /&gt;&lt;br /&gt;SolydXK users are happy to share their passion and enthusiasm and are eager to help. Don&apos;t hesitate to ask questions on the forums or to get involved in the community.&lt;br /&gt;&lt;br /&gt;Send us your feedback and tell us about your experience. We&apos;ll listen to your ideas and use them to further improve SolydXK.</source>
+        <source>&lt;h3&gt;A great community&lt;/h3&gt;&lt;br /&gt;SolydXK users are happy to share their passion and enthusiasm and are eager to help. Don&apos;t hesitate to ask questions on the forums or to get involved in the community.&lt;br /&gt;&lt;br /&gt;Send us your feedback and tell us about your experience. We&apos;ll listen to your ideas and use them to further improve SolydXK.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

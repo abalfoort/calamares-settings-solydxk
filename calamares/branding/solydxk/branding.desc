@@ -123,10 +123,10 @@ navigation: widget
 strings:
     productName:                SolydXK
     shortProductName:           SolydXK
-    version:                    12
-    shortVersion:               12
-    versionedName:              SolydXK 12
-    shortVersionedName:         SolydXK 12
+    version:                    13
+    shortVersion:               13
+    versionedName:              SolydXK 13
+    shortVersionedName:         SolydXK 13
     bootloaderEntryName:        debian
     productUrl:                 https://solydxk.com/
     supportUrl:                 https://forums.solydxk.com/
