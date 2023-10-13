@@ -8,12 +8,12 @@ DESKTOP=$(xdg-user-dir DESKTOP)
 
 # Create ~/Desktop just in case this runs before the xdg folder
 # creation script.
-mkdir -p $DESKTOP
+mkdir -p "$DESKTOP"
 
 # Among the SolydXK desktop environments, LXDE is the only one
 # that behaves completely different.
 if [ -f /usr/bin/lxsession ]; then
-    cat > $DESKTOP/install-solydxk.desktop << EOF
+    cat > "$DESKTOP/install-solydxk.desktop" << EOF
 [Desktop Entry]
 Type=Link
 Name=Install SolydXK
@@ -22,9 +22,9 @@ URL=/usr/share/applications/install-solydxk.desktop
 EOF
 else
     #ln -s /usr/share/applications/install-solydxk.desktop $DESKTOP
-    cp /usr/share/applications/install-solydxk.desktop $DESKTOP
+    cp /usr/share/applications/install-solydxk.desktop "$DESKTOP"
     # Xfce: prevent Untrusted Application Launcher dialog
-    chmod g+w,a+x $DESKTOP/install-solydxk.desktop
-    gio set -t string "$DESKTOP/install-solydxk.desktop" metadata::xfce-exe-checksum "$(sha256sum $DESKTOP/install-solydxk.desktop | awk '{print $1}')"
+    chmod g+w,a+x "$DESKTOP/install-solydxk.desktop"
+    gio set -t string "$DESKTOP/install-solydxk.desktop" metadata::xfce-exe-checksum $(sha256sum "$DESKTOP/install-solydxk.desktop" | awk '{print $1}')
     gio set -t string "$DESKTOP/install-solydxk.desktop" metadata::trust "true"
 fi
