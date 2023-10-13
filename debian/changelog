@@ -1,3 +1,15 @@
+calamares-settings-solydxk (4.11+r13) stable; urgency=low
+
+  * Fix not placing installer shortcut on desktop with foreign languages
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Wed, 11 Oct 2023 15:56:56 +0200
+
+calamares-settings-solydxk (4.10+r13) stable; urgency=low
+
+  * Remove /usr/bin/solydxk-live-face script
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Mon, 21 Aug 2023 16:28:05 +0200
+
 calamares-settings-solydxk (4.9+r13) stable; urgency=low
 
   * Remove line about community funding
