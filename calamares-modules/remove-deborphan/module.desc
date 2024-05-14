@@ -1,6 +1,0 @@
----
-type:       "job"
-name:       "remove-deborphan"
-interface:  "process"
-command:    "/usr/sbin/remove-deborphan"
-timeout:    600
