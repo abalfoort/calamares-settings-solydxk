@@ -6,6 +6,15 @@ case "$1" in
         # Restore original Calamares icon 
         dpkg-divert --quiet --rename --package calamares-settings-solydxk \
                     --remove /usr/share/applications/calamares.desktop
+                    
+        # Change the password back to "live"
+        CFGS=$(grep '_PASSWORD='  /lib/live/config/* | cut -d':' -f 1)
+        for CFG in $CFGS; do
+            # Use live configured user name as password
+            LIVEPWD=$(echo "live" | mkpasswd -s)
+            sed -i -e "s#_PASSWORD=.*#_PASSWORD='${LIVEPWD}'#" $CFG
+            echo "Live user password reverted in $CFG"
+        done
     ;;
 esac
 
