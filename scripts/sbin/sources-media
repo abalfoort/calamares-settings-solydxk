@@ -1,7 +1,13 @@
 #!/bin/bash
 
 CHROOT=$(mount | grep proc | grep calamares | awk '{print $3}' | sed -e "s#/proc##g")
+
+# Check for deb822 sources
 MEDIA_LIST=$CHROOT/etc/apt/sources.list.d/solydxk-live-media.list
+if [ ! -z "$(ls /etc/apt/sources.list.d/*.sources 2>/dev/null)" ]; then
+    MEDIA_LIST=$CHROOT/etc/apt/sources.list.d/solydxk-live-media.sources
+fi
+    
 MEDIUM_PATH="/run/live/medium"
 
 if [ "$1" = "-u" ] && [ -e "$CHROOT/$MEDIUM_PATH" ]; then
@@ -22,16 +28,25 @@ if [ -d $MEDIUM_PATH/pool ]; then
         mount --bind $MEDIUM_PATH $CHROOT/$MEDIUM_PATH
     fi
     # Get info from Release file
-    RELEASE=$(grep -i 'codename:'  $MEDIUM_PATH/dists/*/Release | awk '{print $2}')
-    COMPONENTS=$(grep -i 'components:'  $MEDIUM_PATH/dists/*/Release | cut -d':' -f 2 | tr ',' ' ')
-    ARCH=$(grep -i 'architectures:'  $MEDIUM_PATH/dists/*/Release | awk '{print $2}')
-    # Check for single/multiple architectures
-    case $ARCH in  
-        *\ * ) DEBOPT="trusted=yes";;
-        *) DEBOPT="arch=$ARCH trusted=yes" ;;
-    esac
-    # Create apt list file and update
-    echo "deb [$DEBOPT] file:$MEDIUM_PATH $RELEASE $COMPONENTS" > $MEDIA_LIST
+    SUITES=$(grep -i 'codename:'  $MEDIUM_PATH/dists/*/Release | cut -d':' -f2 | xargs | sed 's/,/ /g')
+    COMPONENTS=$(grep -i 'components:'  $MEDIUM_PATH/dists/*/Release | cut -d':' -f 2 | xargs | sed 's/,/ /g')
+    ARCHS=$(grep -i 'architectures:'  $MEDIUM_PATH/dists/*/Release | cut -d':' -f 2 | xargs | sed 's/,/ /g')
+    
+    if [ "${SMEDIUM_PATH: -4}" == 'list' ]; then
+        # Create apt list file and update
+        echo "deb [arch=${ARCHS// /,} trusted=yes] file:$MEDIUM_PATH $SUITES $COMPONENTS" > $MEDIA_LIST
+    else
+        # deb822 sources file
+        cat > $MEDIA_LIST <<EOF
+Types: deb
+URIs: file:$MEDIUM_PATH
+Suites: $SUITES
+Components: $COMPONENTS
+Architectures: $ARCHS
+Trusted: yes
+EOF
+    fi
+
     if [ -z "$CHROOT" ]; then
         apt-get update
     else
