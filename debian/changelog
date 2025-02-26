@@ -1,3 +1,15 @@
+calamares-settings-solydxk (4.16+r13) stable; urgency=low
+
+  * sources-media: implement deb822
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Wed, 26 Feb 2025 14:15:59 +0100
+
+calamares-settings-solydxk (4.15+r13) stable; urgency=low
+
+  * Add configuration for SDDM
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Sat, 08 Feb 2025 15:39:35 +0100
+
 calamares-settings-solydxk (4.14+r13) stable; urgency=low
 
   * Revert live user password when uninstalling
