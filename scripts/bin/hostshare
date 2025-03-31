@@ -1,0 +1,22 @@
+#!/bin/bash
+
+'''
+Mounts hostshare by Iso Constructor in ~/Hostshare
+
+qemu argument: -virtfs local,path=${HOME},mount_tag=hostshare,security_model=passthrough,id=hostshare
+
+In Virt-Manager guest info tab:
+Add Hardware > Filesystem
+Driver: virtio-9p
+Choose source path
+Target path: hostshare
+
+Guest /etc/fstab:
+hostshare   /media/hostshare 9p  trans=virtio,rw,nofail  0   0
+'''
+
+mkdir $HOME/Hostshare
+sudo mount -t 9p -o trans=virtio,version=9p2000.L hostshare $HOME/Hostshare
+if [ -z "$(ls $HOME/Hostshare)" ]; then
+    rm -r $HOME/Hostshare
+fi 

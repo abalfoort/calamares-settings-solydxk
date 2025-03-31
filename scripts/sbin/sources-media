@@ -32,7 +32,7 @@ if [ -d $MEDIUM_PATH/pool ]; then
     COMPONENTS=$(grep -i 'components:'  $MEDIUM_PATH/dists/*/Release | cut -d':' -f 2 | xargs | sed 's/,/ /g')
     ARCHS=$(grep -i 'architectures:'  $MEDIUM_PATH/dists/*/Release | cut -d':' -f 2 | xargs | sed 's/,/ /g')
     
-    if [ "${SMEDIUM_PATH: -4}" == 'list' ]; then
+    if [ "${MEDIA_LIST: -4}" == 'list' ]; then
         # Create apt list file and update
         echo "deb [arch=${ARCHS// /,} trusted=yes] file:$MEDIUM_PATH $SUITES $COMPONENTS" > $MEDIA_LIST
     else

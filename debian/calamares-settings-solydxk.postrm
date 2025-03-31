@@ -2,7 +2,7 @@
 set -e
 
 case "$1" in
-    remove)
+    remove|abort-install|disappear|purge)
         # Restore original Calamares icon 
         dpkg-divert --quiet --rename --package calamares-settings-solydxk \
                     --remove /usr/share/applications/calamares.desktop
