@@ -6,5 +6,6 @@ conf/autostart/*.desktop etc/xdg/autostart
 conf/solydxk.conf etc/live/config.conf.d
 conf/install-solydxk.desktop usr/share/applications
 conf/packages-non-free.service lib/systemd/system
-artwork/installsolydxk.xpm usr/share/pixmaps
+artwork/*.xpm usr/share/pixmaps
+artwork/*.png usr/share/pixmaps
 po/mo/*  usr/share/locale/

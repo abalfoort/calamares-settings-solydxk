@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Creates an "Install SolydXK" icon on the live session tested with:
 # Xfce, LXDE, LXqt, Gnome, KDE, Mate, Cinnamon
 
@@ -27,4 +27,34 @@ else
     chmod g+w,a+x "$DESKTOP/install-solydxk.desktop"
     gio set -t string "$DESKTOP/install-solydxk.desktop" metadata::xfce-exe-checksum $(sha256sum "$DESKTOP/install-solydxk.desktop" | awk '{print $1}')
     gio set -t string "$DESKTOP/install-solydxk.desktop" metadata::trust "true"
+fi
+
+# Change desktop on certain dates
+CUR_DATE=$(date +%m%d)
+# Desktop specific
+DT=${XDG_CURRENT_DESKTOP:0:1}
+DT=${DT,,}
+BG="/usr/share/pixmaps/${CUR_DATE}-${DT}.png"
+if [ ! -e "$BG" ]; then
+    BG="/usr/share/pixmaps/${CUR_DATE}-a.png"
+fi
+if [ ! -e "$BG" ]; then
+    exit 0
+fi
+
+if [ ! -z "$(which plasma-apply-wallpaperimage)" ]; then
+    # KDE Plasma
+    plasma-apply-wallpaperimage "$BG"
+elif [ ! -z "$(which pcmanfm-qt)" ]; then
+    # Lxqt
+    pcmanfm-qt --set-wallpaper "$BG" --wallpaper-mode=stretch
+elif [ ! -z "$(which xfconf-query)" ]; then
+    # Xfce4
+    # Loop through all the monitors
+    # and set the background image
+    PROPS=$(xfconf-query -c xfce4-desktop -l | grep "workspace0/last-image")
+    for PROP in $PROPS; do
+        xfconf-query --channel xfce4-desktop --property $PROP --set "$BG"
+        xfconf-query --channel xfce4-desktop --property ${PROP%/*}/image-style --set 3
+    done
 fi

@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
-Name=Add Calamares Desktop Icon
-Exec=add-calamares-desktop-icon
+Name=Calamares Desktop
+Exec=calamares-desktop
 StartupNotify=false
 NoDisplay=true
 X-GNOME-Autostart-enabled=true
