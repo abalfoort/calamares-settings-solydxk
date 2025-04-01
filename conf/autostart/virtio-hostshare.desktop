@@ -1,12 +1,12 @@
 [Desktop Entry]
+Name=Mount Hostshare
+GenericName=Mount Virtio Hostshare directory
 Comment=Mounts hostshare by Iso Constructor in ~/Hostshare
 Exec=hostshare
-GenericName=Mount Virtio Hostshare directory
-Name=Mount Hostshare
 NoDisplay=true
 StartupNotify=false
 Terminal=false
 Type=Application
-X-GNOME-Autostart-Phase=Initialization
+X-GNOME-Autostart-enabled=true
+X-KDE-autostart-after=panel
 X-KDE-SubstituteUID=false
-X-KDE-autostart-phase=1

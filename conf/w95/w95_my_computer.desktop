@@ -2,7 +2,7 @@
 Type=Application
 Version=1.0
 Name=My Computer
-Exec=xdg-open ~/
+Exec=xdg-open /
 Icon=/usr/share/calamares-settings-solydxk/w95/w95_my_computer.png
 Terminal=false
 Categories=System;

@@ -6,6 +6,11 @@
 # names for different languages
 DESKTOP=$(xdg-user-dir DESKTOP)
 
+# Variables
+CUR_DATE=$(date +%m%d)
+DT=${XDG_CURRENT_DESKTOP:0:1}
+DT=${DT,,}
+
 # Create ~/Desktop just in case this runs before the xdg folder
 # creation script.
 mkdir -p "$DESKTOP"
@@ -13,41 +18,41 @@ mkdir -p "$DESKTOP"
 # Copy a .desktop file to the desktop
 function copy_desktop() {
     ORG=$1
+    [ ! -e "$ORG" ] && exit 0
+    
     DEST="$DESKTOP/$(basename $ORG)"
-
-    cp "$ORG" "$DEST"
-    chmod g+w,a+x "$DEST"
-    # Xfce: prevent Untrusted Application Launcher dialog
-    gio set -t string "$DEST" metadata::xfce-exe-checksum $(sha256sum "$DEST" | awk '{print $1}')
-    gio set -t string "$DEST" metadata::trust "true"
+    
+    if [ ! -z "$(which pcmanfm-qt)" ]; then
+        # Among the SolydXK desktop environments, LXDE is the only one
+        # that behaves completely different.
+        cat > "$DEST" << EOF
+[Desktop Entry]
+Type=Link
+$(grep ^Name= $ORG)
+$(grep ^Icon= $ORG)
+URL=$ORG
+EOF
+    else
+        cp "$ORG" "$DEST"
+        chmod g+w,a+x "$DEST"
+        # Xfce: prevent Untrusted Application Launcher dialog
+        gio set -t string "$DEST" metadata::xfce-exe-checksum $(sha256sum "$DEST" | awk '{print $1}')
+        gio set -t string "$DEST" metadata::trust "true"
+    fi
 }
 
 function copy_w95() {
-    DT_W95=$(ls /usr/share/calamares-settings-solydxk/w95/*.desktop)
-    for DT in $DT_W95; do
-        copy_desktop "$DT"
+    W95DTS=$(ls /usr/share/calamares-settings-solydxk/w95/*.desktop | grep -E "[a-z]{2}\.desktop|_${DT}\.desktop")
+    for W95DT in $W95DTS; do
+        copy_desktop "$W95DT"
     done
 }
 
-# Among the SolydXK desktop environments, LXDE is the only one
-# that behaves completely different.
-if [ -f /usr/bin/lxsession ]; then
-    cat > "$DESKTOP/install-solydxk.desktop" << EOF
-[Desktop Entry]
-Type=Link
-Name=Install SolydXK
-Icon=install-solydxk
-URL=/usr/share/applications/install-solydxk.desktop
-EOF
-else
-    copy_desktop "/usr/share/applications/install-solydxk.desktop"
-fi
+# Copy the install SolydXK desktop file to the desktop
+copy_desktop "/usr/share/applications/install-solydxk.desktop"
 
+# Easter Egg :)
 # Change desktop on certain dates
-CUR_DATE=$(date +%m%d)
-# Desktop specific
-DT=${XDG_CURRENT_DESKTOP:0:1}
-DT=${DT,,}
 BG="/usr/share/calamares-settings-solydxk/${CUR_DATE}-${DT}.png"
 if [ ! -e "$BG" ]; then
     BG="/usr/share/calamares-settings-solydxk/${CUR_DATE}-a.png"
@@ -63,8 +68,18 @@ if [ ! -z "$(which plasma-apply-wallpaperimage)" ]; then
 elif [ ! -z "$(which pcmanfm-qt)" ]; then
     # Lxqt
     pcmanfm-qt --set-wallpaper "$BG" --wallpaper-mode=stretch
+    [ $CUR_DATE == 0401 ] && copy_w95
 elif [ ! -z "$(which xfconf-query)" ]; then
     # Xfce4
+    # Xfce4 4.18 in Qemu does not create virtual workspaces the way 4.20 does
+    # Wait until virtual-1 workspace has been created
+    if  [ ! -z "$(lspci | grep -i qemu)" ]; then
+        while [ -z "$VIRT_CHECK" ]; do
+            sleep 1
+            VIRT_CHECK=$(xfconf-query -c xfce4-desktop -l | grep -E -i "virtual-1.*0/last-image")
+        done
+    fi
+
     # Loop through all the monitors
     # and set the background image
     PROPS=$(xfconf-query -c xfce4-desktop -l | grep "workspace0/last-image")

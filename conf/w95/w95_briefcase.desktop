@@ -2,7 +2,7 @@
 Type=Application
 Version=1.0
 Name=My Briefcase
-Exec=xdg-open ~/Documents
+Exec=xdg-open /home/solydxk/Documents
 Icon=/usr/share/calamares-settings-solydxk/w95/w95_briefcase.png
 Terminal=false
 Categories=System;

@@ -1,8 +1,9 @@
 [Desktop Entry]
-Type=Application
 Name=Calamares Desktop
 Exec=calamares-desktop
-StartupNotify=false
 NoDisplay=true
+StartupNotify=false
+Terminal=false
+Type=Application
 X-GNOME-Autostart-enabled=true
 X-KDE-autostart-after=panel

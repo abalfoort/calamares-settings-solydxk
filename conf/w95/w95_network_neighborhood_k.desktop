@@ -2,7 +2,7 @@
 Type=Application
 Version=1.0
 Name=Network Neighborhood
-Exec=xdg-open remote:/
+Exec=xdg-open remote:
 Icon=/usr/share/calamares-settings-solydxk/w95/w95_network_neighborhood.png
 Terminal=false
 Categories=System;

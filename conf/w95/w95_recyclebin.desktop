@@ -2,7 +2,7 @@
 Type=Application
 Version=1.0
 Name=Recycle Bin
-Exec=xdg-open trash:/
+Exec=xdg-open trash:
 Icon=/usr/share/calamares-settings-solydxk/w95/w95_recyclebin.png
 Terminal=false
 Categories=System;

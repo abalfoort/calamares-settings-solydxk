@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Network Neighborhood
+Exec=xdg-open network:
+Icon=/usr/share/calamares-settings-solydxk/w95/w95_network_neighborhood.png
+Terminal=false
+Categories=System;
+StartupNotify=True
