@@ -1,3 +1,9 @@
+calamares-settings-solydxk (4.19+r13) stable; urgency=low
+
+  * Create win 95 desktop icons
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Tue, 01 Apr 2025 09:32:43 +0200
+
 calamares-settings-solydxk (4.18+r13) stable; urgency=low
 
   * Script April 1 desktop change
