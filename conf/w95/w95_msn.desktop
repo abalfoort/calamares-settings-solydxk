@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=The Microsoft Network
+Exec=xdg-open https://forums.solydxk.com
+Icon=/usr/share/calamares-settings-solydxk/w95/w95_msn.png
+Terminal=false
+Categories=System;
+StartupNotify=True

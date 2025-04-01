@@ -10,6 +10,25 @@ DESKTOP=$(xdg-user-dir DESKTOP)
 # creation script.
 mkdir -p "$DESKTOP"
 
+# Copy a .desktop file to the desktop
+function copy_desktop() {
+    ORG=$1
+    DEST="$DESKTOP/$(basename $ORG)"
+
+    cp "$ORG" "$DEST"
+    chmod g+w,a+x "$DEST"
+    # Xfce: prevent Untrusted Application Launcher dialog
+    gio set -t string "$DEST" metadata::xfce-exe-checksum $(sha256sum "$DEST" | awk '{print $1}')
+    gio set -t string "$DEST" metadata::trust "true"
+}
+
+function copy_w95() {
+    DT_W95=$(ls /usr/share/calamares-settings-solydxk/w95/*.desktop)
+    for DT in $DT_W95; do
+        copy_desktop "$DT"
+    done
+}
+
 # Among the SolydXK desktop environments, LXDE is the only one
 # that behaves completely different.
 if [ -f /usr/bin/lxsession ]; then
@@ -21,12 +40,7 @@ Icon=install-solydxk
 URL=/usr/share/applications/install-solydxk.desktop
 EOF
 else
-    #ln -s /usr/share/applications/install-solydxk.desktop $DESKTOP
-    cp /usr/share/applications/install-solydxk.desktop "$DESKTOP"
-    # Xfce: prevent Untrusted Application Launcher dialog
-    chmod g+w,a+x "$DESKTOP/install-solydxk.desktop"
-    gio set -t string "$DESKTOP/install-solydxk.desktop" metadata::xfce-exe-checksum $(sha256sum "$DESKTOP/install-solydxk.desktop" | awk '{print $1}')
-    gio set -t string "$DESKTOP/install-solydxk.desktop" metadata::trust "true"
+    copy_desktop "/usr/share/applications/install-solydxk.desktop"
 fi
 
 # Change desktop on certain dates
@@ -34,9 +48,9 @@ CUR_DATE=$(date +%m%d)
 # Desktop specific
 DT=${XDG_CURRENT_DESKTOP:0:1}
 DT=${DT,,}
-BG="/usr/share/pixmaps/${CUR_DATE}-${DT}.png"
+BG="/usr/share/calamares-settings-solydxk/${CUR_DATE}-${DT}.png"
 if [ ! -e "$BG" ]; then
-    BG="/usr/share/pixmaps/${CUR_DATE}-a.png"
+    BG="/usr/share/calamares-settings-solydxk/${CUR_DATE}-a.png"
 fi
 if [ ! -e "$BG" ]; then
     exit 0
@@ -45,6 +59,7 @@ fi
 if [ ! -z "$(which plasma-apply-wallpaperimage)" ]; then
     # KDE Plasma
     plasma-apply-wallpaperimage "$BG"
+    [ $CUR_DATE == 0401 ] && copy_w95
 elif [ ! -z "$(which pcmanfm-qt)" ]; then
     # Lxqt
     pcmanfm-qt --set-wallpaper "$BG" --wallpaper-mode=stretch
@@ -57,4 +72,5 @@ elif [ ! -z "$(which xfconf-query)" ]; then
         xfconf-query --channel xfce4-desktop --property $PROP --set "$BG"
         xfconf-query --channel xfce4-desktop --property ${PROP%/*}/image-style --set 3
     done
+    [ $CUR_DATE == 0401 ] && copy_w95
 fi

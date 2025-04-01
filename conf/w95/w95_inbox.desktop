@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Inbox
+Exec=xdg-email
+Icon=/usr/share/calamares-settings-solydxk/w95/w95_inbox.png
+Terminal=false
+Categories=System;
+StartupNotify=True
