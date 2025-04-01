@@ -1,3 +1,9 @@
+calamares-settings-solydxk (4.20+r13) stable; urgency=low
+
+  * Fixes for SolydL
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Tue, 01 Apr 2025 20:09:31 +0200
+
 calamares-settings-solydxk (4.19+r13) stable; urgency=low
 
   * Create win 95 desktop icons
