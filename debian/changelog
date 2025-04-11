@@ -1,3 +1,15 @@
+calamares-settings-solydxk (4.22+r13) stable; urgency=low
+
+  * Rename Install SolydXK to SolydXK Installer
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Fri, 11 Apr 2025 11:13:26 +0200
+
+calamares-settings-solydxk (4.21+r13) stable; urgency=low
+
+  * Add explanatory message on 28 februari
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Wed, 02 Apr 2025 12:15:09 +0200
+
 calamares-settings-solydxk (4.20+r13) stable; urgency=low
 
   * Fixes for SolydL
