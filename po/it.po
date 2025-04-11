@@ -6,15 +6,16 @@
 # Translators:
 # Franco Frolloni <franco@frolloni.eu>, 2021
 # ilu lu, 2023
+# Arjen Balfoort <abalfoort_abos@tuta.com>, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-18 11:15+0200\n"
+"POT-Creation-Date: 2025-04-11 11:15+0200\n"
 "PO-Revision-Date: 2020-11-08 10:33+0000\n"
-"Last-Translator: ilu lu, 2023\n"
+"Last-Translator: Arjen Balfoort <abalfoort_abos@tuta.com>, 2025\n"
 "Language-Team: Italian (https://app.transifex.com/abalfoort/teams/54212/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -54,7 +55,7 @@ msgstr ""
 "Impossibile aggiungere la chiave di crittografia per {!s} in {!s}: {!s} - "
 "{!s}"
 
-#: calamares-modules/luksboot-fix/main.py:310
+#: calamares-modules/luksboot-fix/main.py:313
 msgid ""
 "Unable to determine the file system type of {!s}.\n"
 "You need to configure this device manually."
@@ -70,10 +71,16 @@ msgstr "Installare SolydXK"
 msgid "Calamares Installer"
 msgstr "Installatore Calamares"
 
-#: conf/install-solydxk.desktop.in.h:3
+#: conf/install-solydxk.desktop.in.h:3 conf/solydxk-installer.desktop.in.h:2
+#: conf/solydxk-installer.desktop.in.h:2
 msgid "Calamares - Installer for SolydXK Live"
 msgstr "Calamares - Installatore per SolydXK Live"
 
-#: conf/install-solydxk.desktop.in.h:4
+#: conf/install-solydxk.desktop.in.h:4 conf/solydxk-installer.desktop.in.h:3
+#: conf/solydxk-installer.desktop.in.h:3
 msgid "calamares;system;install;solydxk;installer"
 msgstr "calamares;sistema;installazione;solydxk;installatore"
+
+#: conf/solydxk-installer.desktop.in.h:1 conf/solydxk-installer.desktop.in.h:1
+msgid "SolydXK Installer"
+msgstr "Installatore SolydXK"

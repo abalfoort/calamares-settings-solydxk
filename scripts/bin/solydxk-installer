@@ -11,7 +11,7 @@ while getopts 'dh' OPT; do
             DEBUG='-d'
             ;;
         h)
-            echo 'Usage: install-solydxk [-d]'
+            echo 'Usage: solydxk-installer [-d]'
             echo '-d: start Calamares in debug mode'
             echo 'Do not close Calamares when finished'
             echo 'but save /root/.cache/calamares/session.log'
