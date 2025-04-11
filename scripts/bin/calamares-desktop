@@ -10,6 +10,7 @@ DESKTOP=$(xdg-user-dir DESKTOP)
 CUR_DATE=$(date +%m%d)
 DT=${XDG_CURRENT_DESKTOP:0:1}
 DT=${DT,,}
+YEARS=$(($(date +%Y) - 2013))
 
 # Create ~/Desktop just in case this runs before the xdg folder
 # creation script.
@@ -23,8 +24,8 @@ function copy_desktop() {
     DEST="$DESKTOP/$(basename $ORG)"
     
     if [ ! -z "$(which pcmanfm-qt)" ]; then
-        # Among the SolydXK desktop environments, LXDE is the only one
-        # that behaves completely different.
+        # Among the SolydXK desktop environments, LXDE is the only one that uses 
+        # desktop links on the desktop pointing to the actual desktop files...
         cat > "$DEST" << EOF
 [Desktop Entry]
 Type=Link
@@ -48,8 +49,21 @@ function copy_w95() {
     done
 }
 
+function show_years() {
+    [ -z "$(which zenity)" ] && exit 0
+    sleep 5
+    
+    ICON_PATH=$(dpkg -S solydxk.svg | head -n 1 | cut -d' ' -f 2)
+    zenity \
+    --info \
+    --window-icon="$ICON_PATH" \
+    --icon-name=solydxk \
+    --text="<span size=\"x-large\">Today is SolydXK's ${YEARS}th birthday.</span>\n\nTo celebrate this occasion we show you the wallpaper we used in our first release.\n\nThank you for using <b>SolydXK</b>." \
+    --title="SolydXK $YEARS years old"
+}
+
 # Copy the install SolydXK desktop file to the desktop
-copy_desktop "/usr/share/applications/install-solydxk.desktop"
+copy_desktop "/usr/share/applications/solydxk-installer.desktop"
 
 # Easter Egg :)
 # Change desktop on certain dates
@@ -65,10 +79,12 @@ if [ ! -z "$(which plasma-apply-wallpaperimage)" ]; then
     # KDE Plasma
     plasma-apply-wallpaperimage "$BG"
     [ $CUR_DATE == 0401 ] && copy_w95
+    [ $CUR_DATE == 0228 ] && show_years
 elif [ ! -z "$(which pcmanfm-qt)" ]; then
     # Lxqt
     pcmanfm-qt --set-wallpaper "$BG" --wallpaper-mode=stretch
     [ $CUR_DATE == 0401 ] && copy_w95
+    [ $CUR_DATE == 0228 ] && show_years
 elif [ ! -z "$(which xfconf-query)" ]; then
     # Xfce4
     # Xfce4 4.18 in Qemu does not create virtual workspaces the way 4.20 does
@@ -88,4 +104,5 @@ elif [ ! -z "$(which xfconf-query)" ]; then
         xfconf-query --channel xfce4-desktop --property ${PROP%/*}/image-style --set 3
     done
     [ $CUR_DATE == 0401 ] && copy_w95
+    [ $CUR_DATE == 0228 ] && show_years
 fi
