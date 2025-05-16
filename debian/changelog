@@ -1,3 +1,9 @@
+calamares-settings-solydxk (4.23+r13) stable; urgency=low
+
+  * Change depends
+
+ -- Arjen Balfoort <solydxk.abalfoort@tuta.com>  Fri, 16 May 2025 10:26:34 +0200
+
 calamares-settings-solydxk (4.22+r13) stable; urgency=low
 
   * Rename Install SolydXK to SolydXK Installer
