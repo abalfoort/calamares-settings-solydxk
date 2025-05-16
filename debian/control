@@ -10,9 +10,14 @@ Package: calamares-settings-solydxk
 Architecture: all
 # For welcomeq, localeq and keyboardq modules add these dependencies:
 # qml-module-qtgraphicaleffects, qml-module-qtquick-controls, qml-module-org-kde-kirigami2
-Depends: ${misc:Depends},
-    calamares (>= 3.3),
-    python3-apt
+Depends: calamares, 
+  rsync, 
+  cryptsetup, 
+  libglib2.0-bin, 
+  keyutils, 
+  pkexec, 
+  qml6-module-qtquick-window | qml-module-qtquick-window2, 
+  dconf-gsettings-backend | gsettings-backend
 Provides: calamares-settings
 Conflicts: calamares-settings-debian,
   calamares-settings-mobian
