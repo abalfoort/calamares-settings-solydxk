@@ -6,7 +6,6 @@ conf/autostart/*.desktop etc/xdg/autostart
 conf/solydxk.conf etc/live/config.conf.d
 conf/solydxk-installer.desktop usr/share/applications
 conf/w95 usr/share/calamares-settings-solydxk/
-conf/packages-non-free.service lib/systemd/system
 artwork/*.xpm usr/share/pixmaps
 artwork/*.png usr/share/calamares-settings-solydxk
 po/mo/*  usr/share/locale/

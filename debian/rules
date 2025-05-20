@@ -27,6 +27,9 @@ desktopfls := $(shell find ./conf -maxdepth 1 -name '*.desktop' -print 2>/dev/nu
 %:
 	dh $@
 
+override_dh_installsystemd:
+	dh_installsystemd --name=packages-non-free
+
 override_dh_auto_clean:
 	# Cleanup first
 	find ./calamares/branding/solydxk/lang -type f -name "*.qm" -delete
