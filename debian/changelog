@@ -1,3 +1,9 @@
+calamares-settings-solydxk (4.24+r13) stable; urgency=low
+
+  * Install systemd service the debian way
+
+ -- Arjen Balfoort <solydxk.abalfoort@tuta.com>  Tue, 20 May 2025 16:19:52 +0200
+
 calamares-settings-solydxk (4.23+r13) stable; urgency=low
 
   * Change depends
