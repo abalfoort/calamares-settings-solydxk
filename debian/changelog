@@ -1,3 +1,9 @@
+calamares-settings-solydxk (4.25+r13) stable; urgency=low
+
+  * Fix Xfce4 wallpaper not setting in live environment
+
+ -- Arjen Balfoort <solydxk.abalfoort@tuta.com>  Tue, 20 May 2025 21:30:18 +0200
+
 calamares-settings-solydxk (4.24+r13) stable; urgency=low
 
   * Install systemd service the debian way
