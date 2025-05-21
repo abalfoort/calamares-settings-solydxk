@@ -22,6 +22,7 @@ function copy_desktop() {
     [ ! -e "$ORG" ] && exit 0
     
     DEST="$DESKTOP/$(basename $ORG)"
+    echo "Create $DEST"
     
     if [ ! -z "$(which pcmanfm-qt)" ]; then
         # Among the SolydXK desktop environments, LXDE is the only one that uses 
@@ -62,6 +63,37 @@ function show_years() {
     --title="SolydXK $YEARS years old"
 }
 
+function set_xfce_wallpaper {
+    # Check if image exists and xfconf-query is installed
+    BG=$1
+    if [ ! -e "$BG" ] || [ -z "$(which xfconf-query)" ]; then
+        return
+    fi
+    
+    # Wait until workspace has been created   
+    MONITOR=$(LANG=C xrandr | grep " connected" | awk '{print $1}')
+    CNT=0
+    while [ -z "$MON_CHECK" ]; do
+        MON_CHECK=$(xfconf-query -c xfce4-desktop -l | grep -E -i "$MONITOR/workspace.*/last-image")
+        CNT=$((CNT+1))
+        [ $CNT -gt 5 ] && break
+        [ -z "$MON_CHECK" ] && sleep 1
+    done
+    
+    # Set background image
+    for MON in $MON_CHECK; do
+        echo "Set $MON: $BG"
+        xfconf-query --channel xfce4-desktop --property $MON --set "$BG"
+        xfconf-query --channel xfce4-desktop --property ${MON%/*}/image-style --set 5
+    done
+}
+
+# Set background image for Xfce
+# Setting /etc/skel/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml
+# does not work properly because of monitor naming in xfce4-desktop.xml
+SVG=$(grep svg /etc/skel/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml 2>/dev/null | cut -d'"' -f 6 | head -n 1)
+set_xfce_wallpaper "$SVG"
+
 # Copy the install SolydXK desktop file to the desktop
 copy_desktop "/usr/share/applications/solydxk-installer.desktop"
 
@@ -75,34 +107,13 @@ if [ ! -e "$BG" ]; then
     exit 0
 fi
 
+set_xfce_wallpaper "$BG"
 if [ ! -z "$(which plasma-apply-wallpaperimage)" ]; then
     # KDE Plasma
     plasma-apply-wallpaperimage "$BG"
-    [ $CUR_DATE == 0401 ] && copy_w95
-    [ $CUR_DATE == 0228 ] && show_years
 elif [ ! -z "$(which pcmanfm-qt)" ]; then
     # Lxqt
     pcmanfm-qt --set-wallpaper "$BG" --wallpaper-mode=stretch
-    [ $CUR_DATE == 0401 ] && copy_w95
-    [ $CUR_DATE == 0228 ] && show_years
-elif [ ! -z "$(which xfconf-query)" ]; then
-    # Xfce4
-    # Xfce4 4.18 in Qemu does not create virtual workspaces the way 4.20 does
-    # Wait until virtual-1 workspace has been created
-    if  [ ! -z "$(lspci | grep -i qemu)" ]; then
-        while [ -z "$VIRT_CHECK" ]; do
-            sleep 1
-            VIRT_CHECK=$(xfconf-query -c xfce4-desktop -l | grep -E -i "virtual-1.*0/last-image")
-        done
-    fi
-
-    # Loop through all the monitors
-    # and set the background image
-    PROPS=$(xfconf-query -c xfce4-desktop -l | grep "workspace0/last-image")
-    for PROP in $PROPS; do
-        xfconf-query --channel xfce4-desktop --property $PROP --set "$BG"
-        xfconf-query --channel xfce4-desktop --property ${PROP%/*}/image-style --set 3
-    done
-    [ $CUR_DATE == 0401 ] && copy_w95
-    [ $CUR_DATE == 0228 ] && show_years
 fi
+[ $CUR_DATE == 0401 ] && copy_w95
+[ $CUR_DATE == 0228 ] && show_years
