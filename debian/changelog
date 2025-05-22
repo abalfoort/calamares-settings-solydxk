@@ -1,3 +1,9 @@
+calamares-settings-solydxk (4.26+r13) stable; urgency=low
+
+  * Remove line that mentions os-prober functionality
+
+ -- Arjen Balfoort <solydxk.abalfoort@tuta.com>  Thu, 22 May 2025 12:02:33 +0200
+
 calamares-settings-solydxk (4.25+r13) stable; urgency=low
 
   * Fix Xfce4 wallpaper not setting in live environment
