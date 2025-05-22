@@ -122,8 +122,7 @@ Presentation
         Text {
             text: qsTr("<h3>An alternative to mainstream operating systems</h3><br />" +
                             "SolydXK is easy to use, powerful and configurable.<br /><br />" +
-                            "SolydXK is safe and stable. Unlike other operating systems, it is not prone to computer viruses or spyware, it does not suffer from disk fragmentation, and it has no registry that requires periodic cleaning.<br /><br />" +
-                            "SolydXK can detect other operating systems and install itself beside them.You can choose which operating system to launch when you start the computer.")
+                            "SolydXK is safe and stable. Unlike other operating systems, it is not prone to computer viruses or spyware, it does not suffer from disk fragmentation, and it has no registry that requires periodic cleaning.")
             anchors.fill: parent
             anchors.rightMargin: 300
             anchors.leftMargin: 20

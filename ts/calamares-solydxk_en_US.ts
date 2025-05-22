@@ -25,16 +25,16 @@
     </message>
     <message>
         <location filename="../calamares/branding/solydxk/show.qml" line="123"/>
-        <source>&lt;h3&gt;An alternative to mainstream operating systems&lt;/h3&gt;&lt;br /&gt;SolydXK is easy to use, powerful and configurable.&lt;br /&gt;&lt;br /&gt;SolydXK is safe and stable. Unlike other operating systems, it is not prone to computer viruses or spyware, it does not suffer from disk fragmentation, and it has no registry that requires periodic cleaning.&lt;br /&gt;&lt;br /&gt;SolydXK can detect other operating systems and install itself beside them.You can choose which operating system to launch when you start the computer.</source>
+        <source>&lt;h3&gt;An alternative to mainstream operating systems&lt;/h3&gt;&lt;br /&gt;SolydXK is easy to use, powerful and configurable.&lt;br /&gt;&lt;br /&gt;SolydXK is safe and stable. Unlike other operating systems, it is not prone to computer viruses or spyware, it does not suffer from disk fragmentation, and it has no registry that requires periodic cleaning.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../calamares/branding/solydxk/show.qml" line="143"/>
+        <location filename="../calamares/branding/solydxk/show.qml" line="142"/>
         <source>&lt;h3&gt;Safe updates&lt;/h3&gt;&lt;br /&gt;Some operating systems make updating your system harder than it really needs to be. SolydXK thinks upgrades should be quick and easy, and then get out of the way.&lt;br /&gt;&lt;br /&gt;The Update Manager sits discreetly in your system tray and lets you know when updates are available. You don&apos;t have to apply updates when you don&apos;t want to. The Update Manager won&apos;t pop up or annoy you in any way.&lt;br /&gt;&lt;br /&gt;All updated files are maintained and closely checked by trusted developers and maintainers.&lt;br /&gt;&lt;br /&gt;All files are stored in special secure repositories for your use.&lt;br /&gt;&lt;br /&gt;The security repository is synchronized daily.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../calamares/branding/solydxk/show.qml" line="165"/>
+        <location filename="../calamares/branding/solydxk/show.qml" line="164"/>
         <source>&lt;h3&gt;A great community&lt;/h3&gt;&lt;br /&gt;SolydXK users are happy to share their passion and enthusiasm and are eager to help. Don&apos;t hesitate to ask questions on the forums or to get involved in the community.&lt;br /&gt;&lt;br /&gt;Send us your feedback and tell us about your experience. We&apos;ll listen to your ideas and use them to further improve SolydXK.</source>
         <translation type="unfinished"></translation>
     </message>
